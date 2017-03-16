@@ -1,16 +1,14 @@
-#Aihe
+# Ajanhallintajärjestelmä
 
-Ajanhallintajärjestelmä
+Toteutan ajanhallintajärjestelmän, jonka avulla voidaan mitata ajankäyttöä reaaliajassa eri projekteille. Projekteilla voi olla aliprojekteja tai tägejä, joiden ajankäyttöä myös mitataan.
 
-Toteutan ajanhallintajärjestelmän, jonka avulla voidaan mitata ajankäyttöä reaaliajassa eri aiheille. Aiheella voi olla aliaiheita tai tägejä, joiden ajankäyttöä myös mitataan.
-
-Ohjelmasta voi ottaa ulos json-tiedoston ajankäytöstä jokaista aihetta, tagiä, tai aliaihetta kohtaan. Toteutan pienimuotoisen tietokannan ohjelman viereen jotta käyttäjän ajankäyttö säilyy vaikka ohjelma suljettaisiin.
+Ohjelmasta voi ottaa ulos json-tiedoston ajankäytöstä jokaisesta projektista, tagistä, tai aliprojektista. Toteutan pienimuotoisen tietokannan ohjelman viereen jotta käyttäjän ajankäyttö säilyy vaikka ohjelma suljettaisiin.
 
 Lisäksi toteutan ominaisuuden jossa käyttäjä voi halutessaan määrittää aiheestaan saaman tuntipalkan, ja tulostaa ohjelmasta ulos pdf-muotoisen raportin.
 
 Ajanhallintajärjestelmän tulee tukea Windows, Ubuntu ja Mac OS käyttöjärjestelmiä.
 
-##Toiminnot:
+## Toiminnot:
 
  - Aiheen lisääminen
  - Aliaiheen lisääminen
