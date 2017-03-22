@@ -7,10 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="vulpy" />
+        <module name="vulpy-core" />
+        <module name="vulpy-ui" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="vulpy" target="1.8" />
+      <module name="vulpy-core" target="1.8" />
+      <module name="vulpy-ui" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
