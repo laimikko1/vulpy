@@ -1,4 +1,4 @@
-package core;
+package vulpy.core;
 
 public class Tag {
     private String name;

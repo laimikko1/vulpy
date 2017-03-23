@@ -16,3 +16,6 @@ Ajanhallintajärjestelmän tulee tukea Windows, Ubuntu ja Mac OS käyttöjärjes
  - Ajankäytön mittaamisen aloittaminen ja lopettaminen
  - Tuntipalkan määrittäminen
  - Raportin ulosotto
+
+## Luokkakaavio
+![Luokkakaavio](https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/luokkakaavio-13.3.png)

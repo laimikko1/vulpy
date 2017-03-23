@@ -1,4 +1,4 @@
-package core.tracker;
+package vulpy.core.tracker;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

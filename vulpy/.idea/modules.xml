@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/vulpy.iml" filepath="$PROJECT_DIR$/vulpy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/vulpy-core/vulpy-core.iml" filepath="$PROJECT_DIR$/vulpy-core/vulpy-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/vulpy-ui/vulpy-ui.iml" filepath="$PROJECT_DIR$/vulpy-ui/vulpy-ui.iml" />
     </modules>
   </component>
 </project>

@@ -1,6 +1,5 @@
-package core;
+package vulpy.core;
 
-import core.tracker.Tracker;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

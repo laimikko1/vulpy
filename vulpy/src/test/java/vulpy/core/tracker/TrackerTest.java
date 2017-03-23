@@ -1,4 +1,4 @@
-package core.tracker;
+package vulpy.core.tracker;
 
 import org.junit.After;
 import org.junit.AfterClass;

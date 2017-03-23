@@ -1,6 +1,6 @@
-package core;
+package vulpy.core;
 
-import core.tracker.Calendar;
+import vulpy.core.tracker.Calendar;
 import java.util.ArrayList;
 
 public class Project {
