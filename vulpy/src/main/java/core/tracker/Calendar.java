@@ -31,21 +31,25 @@ public class Calendar {
         return this.dates.values().stream().mapToLong(Tracker::getSeconds).sum();
     }
 
-    private void ifNotContainsCurrentDate(String currentDate){
+    public void ifNotContainsCurrentDate(String currentDate){
         if(!dates.containsKey(currentDate)){
             dates.put(currentDate, new Tracker());
         }
     }
 
-    private String getCurrentDate(){
+    public String getCurrentDate(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         Date date = new Date();
         return dateFormat.format(date);
     }
 
-    private ArrayList<String> getStringDates(){
+    public ArrayList<String> getStringDates(){
         ArrayList<String> stringDates = new ArrayList<>();
         this.dates.keySet().stream().forEach(o -> stringDates.add(o));
         return stringDates;
+    }
+
+    public void putOneDate(String date){
+        ifNotContainsCurrentDate(date);
     }
 }

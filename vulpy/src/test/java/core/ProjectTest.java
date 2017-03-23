@@ -51,5 +51,12 @@ public class ProjectTest {
         TimeUnit.SECONDS.sleep(2);
         assertEquals(2,this.project.getTime());
     }
+
+    @Test
+    public void projectHaveCorrectName(){
+        assertEquals("työmaa",this.project.getName());
+    }
+
+
 }
 
