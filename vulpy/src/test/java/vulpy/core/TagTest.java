@@ -1,9 +1,8 @@
 package vulpy.core;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class TagTest {
 
@@ -26,5 +25,17 @@ public class TagTest {
     public void tearDown() {
     }
 
+    @Test
+    public void returnRightName(){
+        Tag tag = new Tag("tagi");
+        assertEquals(tag.getName(),"tagi");
+    }
+
+    @Test
+    public void setRightName(){
+        Tag tag = new Tag("tagi");
+        tag.setName("tag");
+        assertEquals(tag.getName(),"tag");
+    }
 }
 

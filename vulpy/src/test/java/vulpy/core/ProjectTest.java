@@ -5,15 +5,28 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import vulpy.core.tracker.Calendar;
+import vulpy.core.tracker.TimeSupplier;
+import vulpy.core.tracker.Tracker;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
+import java.util.Date;
+import java.util.concurrent.atomic.AtomicLong;
 
 import static org.junit.Assert.assertEquals;
 
 public class ProjectTest {
 
+    private static final long SECONDS_TO_NANOSECONDS = 1000000000;
+    private static final long MINUTES_TO_NANOSECONDS = 60 * SECONDS_TO_NANOSECONDS;
+    private static final long HOURS_TO_NANOSECONDS = 60 * MINUTES_TO_NANOSECONDS;
+    private static final long DAY_TO_NANOSECONDS = 24 * HOURS_TO_NANOSECONDS;
+
     private Project project;
+    private TimeSupplier timeSupplier;
+    private AtomicLong time;
 
     public ProjectTest() {
     }
@@ -32,7 +45,12 @@ public class ProjectTest {
         for (int i = 0; i < 12; i++) {
             tags.add("Testi" + i + "Testi");
         }
-        this.project = new Project("työmaa", tags);
+        Calendar calendar = new Calendar();
+        this.time = new AtomicLong(System.currentTimeMillis());
+        this.timeSupplier = time::get;
+        Tracker tracker = new Tracker(timeSupplier);
+        calendar.putOneDateAndTracker(currentDate(),tracker);
+        this.project = new Project("työmaa", tags,calendar);
     }
 
     @After
@@ -45,10 +63,21 @@ public class ProjectTest {
     }
 
     @Test
-    public void rightTimeAfterTwoSeconds() throws InterruptedException {
+    public void rightTimeAfterThreeHoursFiveMinutesAndTenSeconds() {
         this.project.startTracking();
-        TimeUnit.SECONDS.sleep(2);
-        assertEquals(2,this.project.getTime());
+        long threeHoursFiveMinutesAndTenSeconds = 3 * HOURS_TO_NANOSECONDS + 5 * MINUTES_TO_NANOSECONDS + 10 * SECONDS_TO_NANOSECONDS;
+        this.time.addAndGet(threeHoursFiveMinutesAndTenSeconds);
+        assertEquals(nanosecondsToCentiseconds(threeHoursFiveMinutesAndTenSeconds),this.project.getTime());
+    }
+
+    @Test
+    public void rightAnswerAfterStop(){
+        this.project.startTracking();
+        long threeHoursFiveMinutesAndTenSeconds = 3 * HOURS_TO_NANOSECONDS + 5 * MINUTES_TO_NANOSECONDS + 10 * SECONDS_TO_NANOSECONDS;
+        this.time.addAndGet(threeHoursFiveMinutesAndTenSeconds);
+        this.project.stopTracking();
+        this.time.addAndGet(threeHoursFiveMinutesAndTenSeconds);
+        assertEquals(nanosecondsToCentiseconds(threeHoursFiveMinutesAndTenSeconds),this.project.getTime());
     }
 
     @Test
@@ -56,6 +85,16 @@ public class ProjectTest {
         assertEquals("työmaa",this.project.getName());
     }
 
+    public String currentDate(){
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+
+
+    public long nanosecondsToCentiseconds(long nanoseconds){
+        return nanoseconds / 10000000;
+    }
 
 }
 

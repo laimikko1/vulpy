@@ -1,4 +1,6 @@
 # vulpy
 Time tracking system for everyone
 
-[Dokumentaatio](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio)
+## Dokumentaatio (Finnish)
+[Aiheen kuvaus ja rakenne](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/aiheenKuvausJaRakenne.md)
+[Tuntikirjanpito](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/tuntikirjanpito.md)

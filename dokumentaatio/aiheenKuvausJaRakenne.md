@@ -18,4 +18,4 @@ Ajanhallintajärjestelmän tulee tukea Windows, Ubuntu ja Mac OS käyttöjärjes
  - Raportin ulosotto
 
 ## Luokkakaavio
-![Luokkakaavio](https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/luokkakaavio-13.3.png)
+![Luokkakaavio](https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/luokkakaavio-23.3.png)
