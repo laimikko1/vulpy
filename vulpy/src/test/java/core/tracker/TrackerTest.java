@@ -41,7 +41,7 @@ public class TrackerTest {
         Tracker tracker = new Tracker();
         tracker.startTracking();
         TimeUnit.SECONDS.sleep(5);
-        assertEquals(tracker.getSeconds(),5);
+        assertEquals(5,tracker.getSeconds());
     }
 
     @Test
@@ -51,7 +51,7 @@ public class TrackerTest {
         TimeUnit.SECONDS.sleep(2);
         tracker.stopTracking();
         TimeUnit.SECONDS.sleep(1);
-        assertEquals(tracker.getSeconds(),2);
+        assertEquals(2,tracker.getSeconds());
     }
 
     @Test
@@ -64,7 +64,7 @@ public class TrackerTest {
             tracker.stopTracking();
             TimeUnit.SECONDS.sleep(1);
         }
-        assertEquals(tracker.getSeconds(),5);
+        assertEquals(5,tracker.getSeconds());
     }
 }
 

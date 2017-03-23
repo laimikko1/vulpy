@@ -6,17 +6,26 @@ import java.util.ArrayList;
 public class Project {
 
     private String name;
-    private ArrayList<Tag> tags;
     private Calendar calendar;
+    private ArrayList<Tag> tags;
 
     public Project(String name, ArrayList<String> tags){
         this.name = name;
-        this.tags = makeTags(tags);
         this.calendar = new Calendar();
+        this.tags = new ArrayList<>();
+        wordToTags(tags);
+    }
+
+    public String getName(){
+        return this.name;
     }
 
     public void addTag(String tag){
         this.tags.add(new Tag(tag));
+    }
+
+    public ArrayList<Tag> getTags(){
+        return this.tags;
     }
 
     public void startTracking(){
@@ -27,15 +36,11 @@ public class Project {
         this.calendar.stop();
     }
 
-    public void getTime(){
-        this.calendar.getSeconds();
+    public long getTime(){
+        return this.calendar.getSeconds();
     }
 
-    public ArrayList<Tag> makeTags(ArrayList<String> words){
-        ArrayList<Tag> tags = new ArrayList<>();
-        for (int i = 0; i < tags.size(); i++) {
-            tags.add(new Tag(words.get(i)));
-        }
-        return tags;
+    public void wordToTags(ArrayList<String> words){
+        words.stream().forEach(o -> this.tags.add(new Tag(o)));
     }
 }

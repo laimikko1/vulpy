@@ -21,14 +21,14 @@ public class Tracker {
     }
 
     public long getSeconds() {
-        long currentTimeSeconds = (System.currentTimeMillis()) / 1000;
-        if(this.seconds + (currentTimeSeconds - this.startTime) > 86400){
+        long currentMillis = System.currentTimeMillis();
+        if((this.on && ((currentMillis - startTime) / 1000 + this.seconds) > 86400) || seconds > 86400){
             this.on = false;
             return 86400;
-        } else if(this.on){
-            return seconds + (currentTimeSeconds - this.startTime) / 1000;
-        } else {
-            return seconds;
         }
+        if(this.on){
+            return this.seconds + (currentMillis - startTime) / 1000;
+        }
+        return this.seconds;
     }
 }
