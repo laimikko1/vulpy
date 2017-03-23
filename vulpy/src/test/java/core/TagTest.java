@@ -6,9 +6,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class UserTest{
+public class TagTest {
 
-    public UserTest() {
+    public TagTest() {
     }
 
     @BeforeClass
@@ -25,16 +25,6 @@ public class UserTest{
 
     @After
     public void tearDown() {
-    }
-
-    @Test
-    public void mainPrintHelloWorld() throws InterruptedException {
-
-    }
-
-    @Test
-    public void mainNotPrintElloWorld() throws InterruptedException {
-
     }
 
 }

@@ -3,11 +3,11 @@ package core.tracker;
 public class Tracker {
 
     private long startTime;
-    private int seconds;
+    private long seconds;
     private boolean on;
 
     public Tracker() {
-        int seconds = 0;
+        this.seconds = 0;
     }
 
     public void startTracking(){
@@ -16,13 +16,17 @@ public class Tracker {
     }
 
     public void stopTracking(){
-        this.seconds += (int)(System.currentTimeMillis() - this.startTime) / 1000;
+        this.seconds += (System.currentTimeMillis() - this.startTime) / 1000;
         this.on = false;
     }
 
-    public int getSeconds() {
-        if(this.on){
-            return seconds + (int)(System.currentTimeMillis() - this.startTime) / 1000;
+    public long getSeconds() {
+        long currentTimeSeconds = (System.currentTimeMillis()) / 1000;
+        if(this.seconds + (currentTimeSeconds - this.startTime) > 86400){
+            this.on = false;
+            return 86400;
+        } else if(this.on){
+            return seconds + (currentTimeSeconds - this.startTime) / 1000;
         } else {
             return seconds;
         }
