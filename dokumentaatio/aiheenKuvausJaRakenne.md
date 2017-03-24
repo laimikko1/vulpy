@@ -9,6 +9,8 @@ Lisäksi toteutan ominaisuuden jossa käyttäjä voi halutessaan määrittää a
 Ajanhallintajärjestelmän tulee tukea Windows, Ubuntu ja Mac OS käyttöjärjestelmiä.
 
 ## Toiminnot:
+Kaikilla käyttäjillä on samat toiminnot.
+Kaikkien käyttäjien toiminnot:
 
  - Aiheen lisääminen
  - Aliaiheen lisääminen
