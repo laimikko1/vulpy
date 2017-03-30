@@ -10,7 +10,7 @@ public class HourlyWage {
     private String unit;
 
     public HourlyWage(int wage, String unit){
-        refreshHourlyWage(wage,unit);
+        setHourlyWage(wage,unit);
     }
 
     public int getWage() {
@@ -29,9 +29,63 @@ public class HourlyWage {
         this.unit = unit;
     }
 
-    public void refreshHourlyWage(int wage, String unit){
-
+    public void setHourlyWage(int wage, String unit) {
+        if (!(this.unit.equals("Euro") || this.unit.equals("Dollar") || this.unit.equals("CNY"))) {
+            this.unit = "Euro";
+            this.wage = 0;
+        } else {
+            this.unit = unit;
+            this.wage = wage;
+        }
     }
 
+    public String getSymbol(){
+        if(this.unit.equals("Dollar")){
+            return "$";
+        } else if(this.unit.equals("CNY")){
+            return "¥";
+        }
+        return "€";
+    }
 
+    public void convertUnit(String unit){
+        if(!(this.unit.equals("Euro") || this.unit.equals("Dollar") || this.unit.equals("CNY"))){
+            return;
+        } else if(this.unit.equals(unit)){
+            return;
+        } else if (this.unit.equals("Euro")){
+            convertEuro(unit);
+        } else if (this.unit.equals("Dollar")){
+            convertDollar(unit);
+        } else (this.unit.equals("CNY")){
+            convertCNY(unit);
+        }
+    }
+
+    public void convertEuro(String unit){
+        if(unit.equals("Dollar")){
+            this.wage = this.wage * DOLLAR;
+        } else if(this.equals("CNY")){
+            this.wage = this.wage * CNY;
+        }
+        this.unit = unit;
+    }
+
+    public void convertDollar(String unit){
+        if(unit.equals("Euro")){
+            this.wage = this.wage / DOLLAR;
+        } else if(this.equals("CNY")){
+            this.wage = (this.wage / DOLLAR) * CNY;
+        }
+        this.unit = unit;
+    }
+
+    public void convertCNY(String unit){
+        if(unit.equals("Euro")){
+            this.wage = this.wage / CNY;
+        } else if(this.equals("Dollar")){
+            this.wage = (this.wage / CNY) * DOLLAR;
+        }
+        this.unit = unit;
+    }
 }
