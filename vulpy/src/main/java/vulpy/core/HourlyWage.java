@@ -2,9 +2,9 @@ package vulpy.core;
 
 public class HourlyWage {
 
-    private static int EURO = 100000;
-    private static int DOLLAR = 107275;
-    private static int CNY = 739180;
+    private static int EURO = 1000;
+    private static int DOLLAR = 1072;
+    private static int CNY = 7391;
 
     private int wage;
     private String unit;
@@ -26,11 +26,11 @@ public class HourlyWage {
     }
 
     public void setUnit(String unit) {
-        this.unit = unit;
+        setHourlyWage(this.wage, unit);
     }
 
     public void setHourlyWage(int wage, String unit) {
-        if (!(this.unit.equals("Euro") || this.unit.equals("Dollar") || this.unit.equals("CNY"))) {
+        if (!(unit.equals("Euro") || unit.equals("Dollar") || unit.equals("CNY"))) {
             this.unit = "Euro";
             this.wage = 0;
         } else {
@@ -48,44 +48,7 @@ public class HourlyWage {
         return "€";
     }
 
-    public void convertUnit(String unit){
-        if(!(this.unit.equals("Euro") || this.unit.equals("Dollar") || this.unit.equals("CNY"))){
-            return;
-        } else if(this.unit.equals(unit)){
-            return;
-        } else if (this.unit.equals("Euro")){
-            convertEuro(unit);
-        } else if (this.unit.equals("Dollar")){
-            convertDollar(unit);
-        } else (this.unit.equals("CNY")){
-            convertCNY(unit);
-        }
-    }
-
-    public void convertEuro(String unit){
-        if(unit.equals("Dollar")){
-            this.wage = this.wage * DOLLAR;
-        } else if(this.equals("CNY")){
-            this.wage = this.wage * CNY;
-        }
-        this.unit = unit;
-    }
-
-    public void convertDollar(String unit){
-        if(unit.equals("Euro")){
-            this.wage = this.wage / DOLLAR;
-        } else if(this.equals("CNY")){
-            this.wage = (this.wage / DOLLAR) * CNY;
-        }
-        this.unit = unit;
-    }
-
-    public void convertCNY(String unit){
-        if(unit.equals("Euro")){
-            this.wage = this.wage / CNY;
-        } else if(this.equals("Dollar")){
-            this.wage = (this.wage / CNY) * DOLLAR;
-        }
-        this.unit = unit;
+    public int getSalary(int hours){
+        return hours * this.wage;
     }
 }
