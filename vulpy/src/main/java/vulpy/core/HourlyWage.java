@@ -2,15 +2,15 @@ package vulpy.core;
 
 public class HourlyWage {
 
-    private static int EURO = 1000;
-    private static int DOLLAR = 1072;
-    private static int CNY = 7391;
+    private static final int EURO = 1000;
+    private static final int DOLLAR = 1072;
+    private static final int CNY = 7391;
 
     private int wage;
     private String unit;
 
-    public HourlyWage(int wage, String unit){
-        setHourlyWage(wage,unit);
+    public HourlyWage(int wage, String unit) {
+        setHourlyWage(wage, unit);
     }
 
     public int getWage() {
@@ -39,16 +39,16 @@ public class HourlyWage {
         }
     }
 
-    public String getSymbol(){
-        if(this.unit.equals("Dollar")){
+    public String getSymbol() {
+        if (this.unit.equals("Dollar")) {
             return "$";
-        } else if(this.unit.equals("CNY")){
+        } else if (this.unit.equals("CNY")) {
             return "¥";
         }
         return "€";
     }
 
-    public int getSalary(int hours){
+    public int getSalary(int hours) {
         return hours * this.wage;
     }
 }

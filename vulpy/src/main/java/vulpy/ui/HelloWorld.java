@@ -9,8 +9,7 @@ import javafx.stage.Stage;
 public class HelloWorld extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("vulpy.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 900, 600));
