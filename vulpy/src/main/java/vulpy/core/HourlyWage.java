@@ -43,15 +43,15 @@ public class HourlyWage {
         }
     }
 
-    public void changeCurrency(String unit){
-        if(this.unit.equals(unit)){
+    public void changeCurrency(String unit) {
+        if (this.unit.equals(unit)) {
             return;
         }
-        if(this.unit.equals("Euro")) {
+        if (this.unit.equals("Euro")) {
             changeEuroToUnit(unit);
-        } else if(this.unit.equals("Dollar")) {
+        } else if (this.unit.equals("Dollar")) {
             changeDollarToUnit(unit);
-        } else if(this.unit.equals("CNY")) {
+        } else if (this.unit.equals("CNY")) {
             changeCNYToUnit(unit);
         }
     }

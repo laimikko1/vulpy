@@ -15,27 +15,28 @@ import java.net.URL;
 public class Vulpy extends Application {
 
     Stage window;
-    Scene projects, reports, tags;
 
     public static void main(String[] args) {
         try {
-            // Won't work on Windows or Linux. Only for Mac dock
             URL iconURL  = Vulpy.class.getClassLoader().getResource("ui/logo.png");
             Image image = new ImageIcon(iconURL).getImage();
             com.apple.eawt.Application.getApplication().setDockIconImage(image);
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            //This is for linux and windows
+        }
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        this.window = primaryStage;
 
         BorderPane layout = new BorderPane();
-
         layout.setStyle("-fx-background-color: #FAFBFC;");
 
-        Sidebar sidebar = new Sidebar();
+        Scene scene = new Scene(layout, 800, 500);
+        scene.getStylesheets().add(getClass().getResource("/vulpy.css").toExternalForm());
+
+        Sidebar sidebar = new Sidebar(primaryStage, scene, scene, scene);
 
         layout.setRight(sidebar.getSidebar());
         layout.setMaxHeight(500);
@@ -43,11 +44,9 @@ public class Vulpy extends Application {
         layout.setMaxWidth(800);
         layout.setMinWidth(700);
 
-        this.projects = new Scene(layout,800,500);
-        this.projects.getStylesheets().add(getClass().getResource("/vulpy.css").toExternalForm());
-
+        window = sidebar.getWindow();
         window.setTitle("Vulpy");
-        window.setScene(this.projects);
+        window.setScene(sidebar.getProjects());
         window.setResizable(false);
         window.show();
     }

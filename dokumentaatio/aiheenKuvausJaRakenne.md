@@ -20,4 +20,4 @@ Kaikkien käyttäjien toiminnot:
  - Raportin ulosotto
 
 ## Luokkakaavio
-![Luokkakaavio](https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/luokkakaavio-23.3.png)
+![Luokkakaavio](https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/luokkakaavio-6.4.2017.png)

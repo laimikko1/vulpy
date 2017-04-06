@@ -11,4 +11,5 @@ Päivä | Tunnit | Kuvaus
 30.03.2016 | 2h | Tein tuntipalkkaa varten oman luokan ja siihen testit
 04.04.2016 | 3h | Harjoittelin lisäää javaFx:n käyttöä
 05.04.2016 | 2h | Tein GUI:ta eteenpäin
+06.04.2016 | 3h | Uudet luokkakaaviot, koodausta ja suunnittelua.
 06.04.2016 | 4h | Valmistelin palautusta

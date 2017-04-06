@@ -20,11 +20,19 @@ public class Calendar {
         this.dates = new HashMap<>();
     }
 
+    /**
+     * Metodi aloittaa tämän päivän ajanlaskemisen.
+     */
+
     public void start() {
         String currentDate = getCurrentDate();
         ifNotContainsCurrentDate(currentDate);
         dates.get(currentDate).startTracking();
     }
+
+    /**
+     * Metodi lopettaaa tämän päivän ajanlaskemisen.
+     */
 
     public void stop() {
         String currentDate = getCurrentDate();
@@ -32,11 +40,16 @@ public class Calendar {
         dates.get(currentDate).stopTracking();
     }
 
+    /**
+     * Metodi käy koko hashmapin läpi ja laskee koko projektiin käytetyn ajan sekuntteina.
+     * @return koko projektiin käytetty aika.
+     */
+
     public long getSeconds() {
         return this.dates.values().stream().mapToLong(Tracker::getCentiseconds).sum();
     }
 
-    public void ifNotContainsCurrentDate(String currentDate) {
+    private void ifNotContainsCurrentDate(String currentDate) {
         if (!dates.containsKey(currentDate)) {
             dates.put(currentDate, new Tracker());
         }
@@ -47,6 +60,11 @@ public class Calendar {
         Date date = new Date();
         return dateFormat.format(date);
     }
+
+    /**
+     * Metodi käy läpi kaikki päivät milloin on laskettu aikaa.
+     * @return kaikki päivät milloin on mitattu aikaa.
+     */
 
     public ArrayList<String> getStringDates() {
         ArrayList<String> stringDates = new ArrayList<>();

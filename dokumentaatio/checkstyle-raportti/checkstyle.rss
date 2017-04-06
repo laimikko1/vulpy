@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2017</copyright>
     <item>
-      <title>File: 11,
+      <title>File: 14,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -60,7 +60,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#vulpy.ui.HelloWorld.java">vulpy/ui/HelloWorld.java</a>
+                  <a href="${project.url}/checkstyle.html#vulpy.core.tracker.Tracker.java">vulpy/core/tracker/Tracker.java</a>
                 </td>
                 <td>
                   0
@@ -74,7 +74,63 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#vulpy.core.tracker.Tracker.java">vulpy/core/tracker/Tracker.java</a>
+                  <a href="${project.url}/checkstyle.html#vulpy.core.Project.java">vulpy/core/Project.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#vulpy.ui.Vulpy.java">vulpy/ui/Vulpy.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#vulpy.ui.Sidebar.java">vulpy/ui/Sidebar.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#vulpy.core.tracker.Calendar.java">vulpy/core/tracker/Calendar.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#vulpy.ui.Tags.java">vulpy/ui/Tags.java</a>
                 </td>
                 <td>
                   0
@@ -102,7 +158,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#vulpy.core.Project.java">vulpy/core/Project.java</a>
+                  <a href="${project.url}/checkstyle.html#vulpy.ui.Projects.java">vulpy/ui/Projects.java</a>
                 </td>
                 <td>
                   0
@@ -158,35 +214,21 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#vulpy.ui.Reports.java">vulpy/ui/Reports.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#vulpy.core.Report.java">vulpy/core/Report.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#vulpy.core.tracker.Calendar.java">vulpy/core/tracker/Calendar.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#vulpy.ui.Main.java">vulpy/ui/Main.java</a>
                 </td>
                 <td>
                   0

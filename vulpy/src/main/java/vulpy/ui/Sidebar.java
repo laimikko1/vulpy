@@ -19,15 +19,19 @@ public class Sidebar {
     private Scene projects;
     private Scene reports;
     private Scene tags;
-
     private VBox sidebar;
 
 
-    public Sidebar(){
+    public Sidebar(Stage window, Scene projects, Scene reports, Scene tags) {
+        this.window = window;
+        this.projects = projects;
+        this.reports = reports;
+        this.tags = tags;
+
         createSidebar();
     }
 
-    public void createSidebar(){
+    public void createSidebar() {
         Button toProjects = new Button("Projects");
         toProjects.setMinWidth(200);
         toProjects.setOnAction(e -> window.setScene(projects));
@@ -41,12 +45,44 @@ public class Sidebar {
         toTags.setOnAction(e -> window.setScene(tags));
 
         this.sidebar = new VBox(10);
-        sidebar.setPadding(new Insets(50,10,0,10));
+        sidebar.setPadding(new Insets(50, 10, 0, 10));
         sidebar.setStyle("-fx-background-color: #323232;");
-        sidebar.getChildren().addAll(toProjects,toReports,toTags);
+        sidebar.getChildren().addAll(toProjects, toReports, toTags);
     }
 
-    public VBox getSidebar(){
+    public VBox getSidebar() {
         return this.sidebar;
+    }
+
+    public Stage getWindow() {
+        return window;
+    }
+
+    public void setWindow(Stage window) {
+        this.window = window;
+    }
+
+    public Scene getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Scene projects) {
+        this.projects = projects;
+    }
+
+    public Scene getReports() {
+        return reports;
+    }
+
+    public void setReports(Scene reports) {
+        this.reports = reports;
+    }
+
+    public Scene getTags() {
+        return tags;
+    }
+
+    public void setTags(Scene tags) {
+        this.tags = tags;
     }
 }
