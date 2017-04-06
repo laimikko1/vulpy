@@ -4,11 +4,13 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
+
+/**
+ * Main-luokka joka tarjoaa ohjelman käynnistämisen ja pitää huolen UI:n pääikkunasta
+ */
 
 public class Vulpy extends Application {
 

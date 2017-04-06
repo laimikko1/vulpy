@@ -1,5 +1,10 @@
 package vulpy.core;
 
+/**
+ * Tag-luokka tarjoaa tagin, jota voi hyödyntää niinkuin projektia.
+ * Kuitenkin yksi projekti voi käyttää useita tagejä.
+ */
+
 public class Tag {
     private String name;
 

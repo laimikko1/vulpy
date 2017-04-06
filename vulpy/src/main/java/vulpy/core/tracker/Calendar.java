@@ -7,6 +7,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Calendar-luokka tarjoaa ajanlaskuun tarvittavat metodit päivien tasolla.
+ * Jokaisella projektilla on yksi Calendar-olio, jokaista mitattua päivää kohden vähintään yksi Tracker olio.
+ */
+
 public class Calendar {
 
     Map<String, Tracker> dates;

@@ -6,6 +6,10 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * Sidebar-luokka tarjoaa sidebar näkymän UI:hin
+ */
+
 public class Sidebar {
 
     private Button toProjects;

@@ -2,8 +2,8 @@ package vulpy.core.tracker;
 
 /**
  * Tracker-luokka tarjoaa ajanlaskuun tarvittavat metodit.
+ * Yksi tracker-olio voi korkeintaan laskea 24h aikaa.
  */
-
 
 public class Tracker {
 
