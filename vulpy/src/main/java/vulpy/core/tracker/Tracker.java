@@ -1,5 +1,10 @@
 package vulpy.core.tracker;
 
+/**
+ * Tracker-luokka tarjoaa ajanlaskuun tarvittavat metodit.
+ */
+
+
 public class Tracker {
 
     private static final long DAY_TO_CENTISECONDS = 8640000;

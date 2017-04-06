@@ -1,0 +1,18 @@
+.button {
+    -fx-font: 14 Helvetica;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-radius: 0;
+    -fx-background-color: #323232;
+    -fx-text-fill: #CCCCCC;
+}
+
+
+.button:focused{
+    -fx-focus-color: transparent;
+    -fx-background-color: #1D1C1C;
+}
+
+.button:hover{
+    -fx-background-color: #1D1C1C;
+}
