@@ -7,7 +7,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * Sidebar-luokka tarjoaa sidebar näkymän UI:hin
+ * Sidebar-luokka tarjoaa sidebar näkymän UI:hin.
  */
 
 public class Sidebar {

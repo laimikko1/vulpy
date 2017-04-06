@@ -4,7 +4,7 @@ import vulpy.core.tracker.Calendar;
 import java.util.ArrayList;
 
 /**
- * Project luokka tarjoaa projektin luontia varten tärkeimmät metodit
+ * Project luokka tarjoaa projektin luontia varten tärkeimmät metodit.
  */
 
 public class Project {

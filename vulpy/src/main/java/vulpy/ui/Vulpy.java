@@ -9,7 +9,7 @@ import java.awt.*;
 import java.net.URL;
 
 /**
- * Main-luokka joka tarjoaa ohjelman käynnistämisen ja pitää huolen UI:n pääikkunasta
+ * Main-luokka joka tarjoaa ohjelman käynnistämisen ja pitää huolen UI:n pääikkunasta.
  */
 
 public class Vulpy extends Application {
