@@ -36,13 +36,12 @@ public class Vulpy extends Application {
         Scene scene = new Scene(layout, 800, 500);
         scene.getStylesheets().add(getClass().getResource("/vulpy.css").toExternalForm());
 
-        Sidebar sidebar = new Sidebar(primaryStage, scene, scene, scene);
+        Projects projects = new Projects();
+
+        Sidebar sidebar = new Sidebar(primaryStage,layout, scene, scene, scene);
 
         layout.setRight(sidebar.getSidebar());
-        layout.setMaxHeight(500);
-        layout.setMinHeight(400);
-        layout.setMaxWidth(800);
-        layout.setMinWidth(700);
+        layout.setPrefSize(800,500);
 
         window = sidebar.getWindow();
         window.setTitle("Vulpy");
