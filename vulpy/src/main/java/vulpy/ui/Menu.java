@@ -33,8 +33,8 @@ public class Menu {
 
         toProjects.setMinWidth(200);
         toProjects.setOnAction(e -> {
-                layout.setLeft(projects.getProjectsSection());
-                layout.setBottom(projects.writingSection());
+            layout.setLeft(projects.getProjectsSection());
+            layout.setBottom(projects.writingSection());
         });
 
         Button toReports = new Button("Reports");

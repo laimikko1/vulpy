@@ -15,20 +15,20 @@ public class Projects {
     private List<Project> projects;
     private VBox projectsSection;
 
-    public Projects(){
+    public Projects() {
         this.projects = new ArrayList<>();
         this.projectsSection = new VBox();
     }
 
-    public VBox writingSection(){
+    public VBox writingSection() {
         Text addNew = new Text("Add new");
         HBox textArea = textArea();
         VBox vBox = new VBox();
-        vBox.getChildren().addAll(addNew,textArea);
+        vBox.getChildren().addAll(addNew, textArea);
         return vBox;
     }
 
-    public HBox textArea(){
+    public HBox textArea() {
         HBox writingSection = new HBox();
         writingSection.setMaxWidth(600);
         TextArea name = new TextArea("");
@@ -37,42 +37,42 @@ public class Projects {
         Button add = new Button("Add");
         add.setMinWidth(120);
         add.setOnAction(e -> {
-            addProject(name,tags);
+            addProject(name, tags);
             ProjectHBox hBox = new ProjectHBox(projects.get(projects.size() - 1));
             projectsSection.getChildren().add(hBox.getHbox());
         });
 
         writingSection.setMaxHeight(50);
         writingSection.getChildren().
-                addAll(overText(name,"Name"),overText(tags, "Tags, separate with comma"),add);
+                addAll(overText(name, "Name"), overText(tags,  "Tags, separate with comma"), add);
         return writingSection;
     }
 
-    public VBox overText(TextArea textArea, String addText){
+    public VBox overText(TextArea textArea, String addText) {
         VBox vBox = new VBox();
         Text text = new Text(addText);
-        vBox.getChildren().addAll(text,textArea);
+        vBox.getChildren().addAll(text, textArea);
         return vBox;
     }
 
-    public void addProject(TextArea textAreaName, TextArea textAreaTags){
+    public void addProject(TextArea textAreaName, TextArea textAreaTags) {
         String name = textAreaName.getText();
         ArrayList<String> tags = separate(textAreaTags.getText());
-        projects.add(new Project(name,tags));
+        projects.add(new Project(name, tags));
         textAreaName.clear();
         textAreaTags.clear();
     }
 
-    public ArrayList<String> separate(String stringTags){
+    public ArrayList<String> separate(String stringTags) {
         ArrayList<String> tags = new ArrayList<>();
-        if(!stringTags.isEmpty()){
+        if (!stringTags.isEmpty()) {
             String[] list = stringTags.split(",");
-            Arrays.stream(list).forEach(e -> tags.add(e.replaceAll("\\s+","")));
+            Arrays.stream(list).forEach(e -> tags.add(e.replaceAll("\\s+", "")));
         }
         return tags;
     }
 
-    public List<Project> getProjects(){
+    public List<Project> getProjects() {
         return this.projects;
     }
 

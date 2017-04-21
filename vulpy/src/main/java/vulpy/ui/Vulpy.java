@@ -44,9 +44,9 @@ public class Vulpy extends Application {
 
         Projects projects = new Projects();
 
-        Menu menu = new Menu(primaryStage,borderPane, scene);
+        Menu menu = new Menu(primaryStage, borderPane, scene);
 
-        borderPane.setPrefSize(800,500);
+        borderPane.setPrefSize(800, 500);
         layout.getChildren().addAll(menu.getSidebar());
         window = menu.getWindow();
         window.setTitle("Vulpy");

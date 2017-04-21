@@ -16,6 +16,10 @@ public class Calendar {
 
     Map<String, Tracker> dates;
 
+    /**
+     * Konstruktorissa luodaan uusi Calendar-olio.
+     */
+
     public Calendar() {
         this.dates = new HashMap<>();
     }
@@ -49,11 +53,22 @@ public class Calendar {
         return this.dates.values().stream().mapToLong(Tracker::getCentiseconds).sum();
     }
 
+    /**
+     * ifNotContainsCurrentDate metodi katsoo onko kalenterissa olemassa jo kyseistä päivää.
+     * Jos ei niin luodaan uusi päivä.
+     * @param currentDate nykyinen päivä.
+     */
+
     private void ifNotContainsCurrentDate(String currentDate) {
         if (!dates.containsKey(currentDate)) {
             dates.put(currentDate, new Tracker());
         }
     }
+
+    /**
+     * getCurrentDate metodi tarjoaa tämän päivän.
+     * @return tämänhetkinen päivä.
+     */
 
     public String getCurrentDate() {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -72,15 +87,31 @@ public class Calendar {
         return stringDates;
     }
 
+    /**
+     * putOneDate metodi antaa mahdollisuuden lisätä kalenteriin yhden päivän.
+     * @param date päivä.
+     */
+
     public void putOneDate(String date) {
         ifNotContainsCurrentDate(date);
     }
+
+    /**
+     * putOneDateAndTracker metodi antaa mahdollisuuden lisätä kalenteriin yhden päivän ja trackerin.
+     * @param date päivä.
+     * @param tracker tracker.
+     */
 
     public void putOneDateAndTracker(String date, Tracker tracker) {
         if (!dates.containsKey(date)) {
             dates.put(date, tracker);
         }
     }
+
+    /**
+     * getCalendarSize metodi palauttaa kalenterin tämänhetkisen koon.
+     * @return kalenterin tämänhetkinen koko.
+     */
 
     public int getCalendarSize() {
         return this.dates.size();

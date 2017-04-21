@@ -19,7 +19,7 @@ public class ProjectHBox {
     private Text time;
     private boolean onOff;
 
-    public ProjectHBox (Project project){
+    public ProjectHBox(Project project) {
         this.hbox = new HBox();
         this.timeline = new Timeline();
         this.project = project;
@@ -29,21 +29,21 @@ public class ProjectHBox {
         makeProjectHbox();
     }
 
-    public void makeProjectHbox(){
+    public void makeProjectHbox() {
         Text name = new Text(this.project.getName());
         Text tags = new Text(getTagsString(this.project));
         Text hourlyWage = new Text(project.getHourlyWage().getWage() + "/" + project.getHourlyWage().getSymbol());
         Button startButton = greateButton();
-        this.hbox.getChildren().addAll(name,tags,hourlyWage,this.time,startButton);
+        this.hbox.getChildren().addAll(name, tags, hourlyWage, this.time, startButton);
     }
 
-    public Button greateButton(){
+    public Button greateButton() {
         Button button = new Button();
         button.setText("Start / Stop");
         button.setOnAction(new EventHandler() {
             @Override
             public void handle(Event event) {
-                if(onOff){
+                if (onOff) {
                     onOff = false;
                     project.stopTracking();
                     timeline.stop();
@@ -53,12 +53,12 @@ public class ProjectHBox {
                         timeline = new Timeline(
                             new KeyFrame(Duration.millis(100),
                             new EventHandler<ActionEvent>() {
-                                @Override
-                                public void handle(ActionEvent t) {
-                                    time.setText("" + project.getTime());
-                                    System.out.println(project.getTime());
-                                }
-                            })
+                                    @Override
+                                    public void handle(ActionEvent t) {
+                                        time.setText("" + project.getTime());
+                                        System.out.println(project.getTime());
+                                    }
+                                })
                         );
                         timeline.setCycleCount(Timeline.INDEFINITE);
                         timeline.play();
@@ -68,10 +68,10 @@ public class ProjectHBox {
         return button;
     }
 
-    public String getTagsString(Project project){
+    public String getTagsString(Project project) {
         String tagStrign = "Tags: ";
         for (int i = 0; i < project.getTags().size(); i++) {
-            if(i == project.getTags().size() - 1){
+            if (i == project.getTags().size() - 1) {
                 tagStrign += project.getTags().get(i).getName();
             } else {
                 tagStrign += project.getTags().get(i).getName() +  ", ";
