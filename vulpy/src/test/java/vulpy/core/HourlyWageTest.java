@@ -24,7 +24,7 @@ public class HourlyWageTest {
 
     @Before
     public void setUp() {
-        this.hourlyWage =new HourlyWage(1200,  "Euro");
+        this.hourlyWage = new HourlyWage(1200,  "EURO");
     }
 
     @After
@@ -40,11 +40,11 @@ public class HourlyWageTest {
 
     @Test
     public void changeCurrencyWorks(){
-        assertEquals("Euro", this.hourlyWage.getUnit());
+        assertEquals("EURO", this.hourlyWage.getUnit());
         this.hourlyWage.setUnit("Cnyasd");
-        assertEquals("Euro", this.hourlyWage.getUnit());
-        this.hourlyWage.setUnit("Dollar");
-        assertEquals("Dollar", this.hourlyWage.getUnit());
+        assertEquals("EURO", this.hourlyWage.getUnit());
+        this.hourlyWage.setUnit("DOLLAR");
+        assertEquals("DOLLAR", this.hourlyWage.getUnit());
         this.hourlyWage.setUnit("CNY");
         assertEquals("CNY", this.hourlyWage.getUnit());
     }
@@ -58,11 +58,11 @@ public class HourlyWageTest {
 
     @Test
     public void getRightSymbol(){
-        this.hourlyWage.setUnit("Euro");
+        this.hourlyWage.setUnit("EURO");
         assertEquals("€", this.hourlyWage.getSymbol());
         this.hourlyWage.setUnit("CNY");
         assertEquals("¥", this.hourlyWage.getSymbol());
-        this.hourlyWage.setUnit("Dollar");
+        this.hourlyWage.setUnit("DOLLAR");
         assertEquals("$", this.hourlyWage.getSymbol());
     }
 }

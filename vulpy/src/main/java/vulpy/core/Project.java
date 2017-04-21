@@ -1,6 +1,7 @@
 package vulpy.core;
 
 import vulpy.core.tracker.Calendar;
+
 import java.util.ArrayList;
 
 /**
@@ -11,9 +12,11 @@ public class Project {
 
     private String name;
     private Calendar calendar;
+    private HourlyWage hourlyWage;
     private ArrayList<Tag> tags;
 
     public Project(String name, ArrayList<String> tags) {
+        this.hourlyWage = new HourlyWage(0,"Euro");
         this.name = name;
         this.calendar = new Calendar();
         this.tags = new ArrayList<>();
@@ -53,5 +56,13 @@ public class Project {
 
     public void wordToTags(ArrayList<String> words) {
         words.stream().forEach(o -> this.tags.add(new Tag(o)));
+    }
+
+    public HourlyWage getHourlyWage() {
+        return hourlyWage;
+    }
+
+    public void setHourlyWage(HourlyWage hourlyWage) {
+        this.hourlyWage = hourlyWage;
     }
 }

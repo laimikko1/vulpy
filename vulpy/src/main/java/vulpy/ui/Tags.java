@@ -12,5 +12,7 @@ public class Tags {
         this.box = new VBox();
     }
 
-    public VBox 
+    public VBox getBox(){
+        return this.box;
+    }
 }

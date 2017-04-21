@@ -14,39 +14,44 @@ import javafx.stage.Stage;
 public class Menu {
 
     private Stage window;
-    private Scene projects;
-    private Scene reports;
-    private Scene tags;
+    private Scene scene;
     private VBox sidebar;
     private BorderPane layout;
 
-    public Menu(Stage window, BorderPane layout, Scene projects, Scene reports, Scene tags) {
+    public Menu(Stage window, BorderPane layout, Scene scene) {
         this.window = window;
         this.layout = layout;
-        this.projects = projects;
-        this.reports = reports;
-        this.tags = tags;
+        this.scene = scene;
         createSidebar();
     }
 
     public void createSidebar() {
         Button toProjects = new Button("Projects");
-        Projects projectsWindow = new Projects();
-        Reports reportsWindow = new Reports(projectsWindow);
-        Tags tagsWindow = new Tags(projectsWindow);
+        Projects projects = new Projects();
+        Reports reports = new Reports(projects);
+        Tags tags = new Tags(projects);
 
-        Projects projects1 = new Projects();
         toProjects.setMinWidth(200);
-        toProjects.setOnAction(e -> layout.setLeft(projects1.getBox()));
-
+        toProjects.setOnAction(e -> {
+                layout.setLeft(projects.getProjectsSection());
+                layout.setBottom(projects.writingSection());
+        });
 
         Button toReports = new Button("Reports");
         toReports.setMinWidth(200);
-        toReports.setOnAction(e -> layout.setLeft(reportsWindow.));
+        toReports.setOnAction(e -> {
+            layout.setLeft(reports.getBox());
+            layout.setBottom(null);
+        });
 
         Button toTags = new Button("Tags");
         toTags.setMinWidth(200);
-        toTags.setOnAction(e -> layout.setLeft(new VBox()));
+        toTags.setOnAction(e -> {
+            layout.setLeft(tags.getBox());
+            layout.setBottom(null);
+        });
+
+        toProjects.fire();
 
         this.sidebar = new VBox(10);
         this.sidebar.setPadding(new Insets(50, 10, 0, 10));
@@ -62,31 +67,8 @@ public class Menu {
         return window;
     }
 
-    public void setWindow(Stage window) {
-        this.window = window;
+    public Scene getScene() {
+        return scene;
     }
 
-    public Scene getProjects() {
-        return projects;
-    }
-
-    public void setProjects(Scene projects) {
-        this.projects = projects;
-    }
-
-    public Scene getReports() {
-        return reports;
-    }
-
-    public void setReports(Scene reports) {
-        this.reports = reports;
-    }
-
-    public Scene getTags() {
-        return tags;
-    }
-
-    public void setTags(Scene tags) {
-        this.tags = tags;
-    }
 }

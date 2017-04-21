@@ -34,8 +34,8 @@ public class HourlyWage {
     }
 
     public void setHourlyWage(int wage, String unit) {
-        if (!(unit.equals("Euro") || unit.equals("Dollar") || unit.equals("CNY"))) {
-            this.unit = "Euro";
+        if (!(unit.equals("EURO") || unit.equals("DOLLAR") || unit.equals("CNY"))) {
+            this.unit = "EURO";
             this.wage = 0;
         } else {
             this.unit = unit;
@@ -47,9 +47,9 @@ public class HourlyWage {
         if (this.unit.equals(unit)) {
             return;
         }
-        if (this.unit.equals("Euro")) {
+        if (this.unit.equals("EURO")) {
             changeEuroToUnit(unit);
-        } else if (this.unit.equals("Dollar")) {
+        } else if (this.unit.equals("DOLLAR")) {
             changeDollarToUnit(unit);
         } else if (this.unit.equals("CNY")) {
             changeCNYToUnit(unit);
@@ -69,12 +69,12 @@ public class HourlyWage {
     }
 
     public String getSymbol() {
-        if (this.unit.equals("Dollar")) {
-            return "$";
+        if (this.unit.equals("EURO")) {
+            return "€";
         } else if (this.unit.equals("CNY")) {
             return "¥";
         }
-        return "€";
+        return "$";
     }
 
     public int getSalary(int hours) {
