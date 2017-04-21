@@ -30,4 +30,4 @@ Kaikkien käyttäjien toiminnot:
 
 #### Aiheen lisääminen
 
-![Aiheen lisääminen](https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/aiheenlisaaminen.png)
+![Aiheen lisääminen](https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/Aiheenlisaaminen.png)
