@@ -2,7 +2,7 @@
 
 Toteutan ajanhallintajärjestelmän, jonka avulla voidaan mitata ajankäyttöä reaaliajassa eri projekteille. Projekteilla voi olla aliprojekteja tai tägejä, joiden ajankäyttöä myös mitataan.
 
-Ohjelmasta voi ottaa ulos json-tiedoston ajankäytöstä jokaisesta projektista, tagistä, tai aliprojektista. Toteutan pienimuotoisen tietokannan ohjelman viereen jotta käyttäjän ajankäyttö säilyy vaikka ohjelma suljettaisiin.
+Ohjelmasta voi ottaa ulos json-tiedoston ajankäytöstä jokaisesta projektista, tagistä, tai aliprojektista.
 
 Lisäksi toteutan ominaisuuden jossa käyttäjä voi halutessaan määrittää aiheestaan saaman tuntipalkan, ja tulostaa ohjelmasta ulos pdf-muotoisen raportin.
 
@@ -20,4 +20,4 @@ Kaikkien käyttäjien toiminnot:
  - Raportin ulosotto
 
 ## Luokkakaavio
-![Luokkakaavio](https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/luokkakaavio-6.4.2017.png)
+![Luokkakaavio](https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/Luokkakaavio-6.4.2017.png)
