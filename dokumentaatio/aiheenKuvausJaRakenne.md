@@ -21,3 +21,7 @@ Kaikkien käyttäjien toiminnot:
 
 ## Luokkakaavio
 ![Luokkakaavio](https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/luokkakaavio-6.4.2017.png)
+
+## Sekvenssikaaviot
+
+![Ajankäytön mittaamisen aloittaminen ja lopettaminen](https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/ajankaytto.png)
