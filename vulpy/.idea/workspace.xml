@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="947e40bf-eb7d-4b49-a334-75d0d83a8b35" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checkstyle.xml" afterPath="$PROJECT_DIR$/checkstyle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/core/HourlyWage.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/core/HourlyWage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/core/Project.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/core/Project.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/core/Tag.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/core/Tag.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/core/tracker/Calendar.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/core/tracker/Calendar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/ui/Menu.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/ui/Menu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/ui/ProjectHBox.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/ui/ProjectHBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/ui/Projects.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/ui/Projects.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/ui/Reports.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/ui/Reports.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/ui/Tags.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/ui/Tags.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/ui/Vulpy.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/ui/Vulpy.java" />
-    </list>
+    <list default="true" id="947e40bf-eb7d-4b49-a334-75d0d83a8b35" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/vulpy-core/target/" />
     <ignored path="$PROJECT_DIR$/vulpy-ui/target/" />
@@ -1253,7 +1241,7 @@
       <workItem from="1492428206908" duration="8696000" />
       <workItem from="1492531180621" duration="3185000" />
       <workItem from="1492684321807" duration="1289000" />
-      <workItem from="1492699554988" duration="20259000" />
+      <workItem from="1492699554988" duration="20791000" />
     </task>
     <servers />
   </component>
@@ -1290,7 +1278,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120036000" />
+    <option name="totallyTimeSpent" value="120568000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="718" y="23" width="562" height="733" extended-state="0" />
