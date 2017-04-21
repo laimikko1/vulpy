@@ -38,14 +38,14 @@ public class Vulpy extends Application {
 
         Projects projects = new Projects();
 
-        Sidebar sidebar = new Sidebar(primaryStage,layout, scene, scene, scene);
+        Menu menu = new Menu(primaryStage,layout, scene, scene, scene);
 
-        layout.setRight(sidebar.getSidebar());
+        layout.setRight(menu.getSidebar());
         layout.setPrefSize(800,500);
 
-        window = sidebar.getWindow();
+        window = menu.getWindow();
         window.setTitle("Vulpy");
-        window.setScene(sidebar.getProjects());
+        window.setScene(menu.getProjects());
         window.setResizable(false);
         window.show();
     }

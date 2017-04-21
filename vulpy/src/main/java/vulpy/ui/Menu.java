@@ -8,10 +8,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * Sidebar-luokka tarjoaa sidebar näkymän UI:hin.
+ * Menu-luokka tarjoaa menun, sekä scenejen vaihto ominaisuudet UI:hin.
  */
 
-public class Sidebar {
+public class Menu {
 
     private Stage window;
     private Scene projects;
@@ -20,7 +20,7 @@ public class Sidebar {
     private VBox sidebar;
     private BorderPane layout;
 
-    public Sidebar(Stage window, BorderPane layout, Scene projects, Scene reports, Scene tags) {
+    public Menu(Stage window, BorderPane layout, Scene projects, Scene reports, Scene tags) {
         this.window = window;
         this.layout = layout;
         this.projects = projects;
@@ -32,21 +32,21 @@ public class Sidebar {
     public void createSidebar() {
         Button toProjects = new Button("Projects");
         Projects projectsWindow = new Projects();
+        Reports reportsWindow = new Reports(projectsWindow);
+        Tags tagsWindow = new Tags(projectsWindow);
 
-
-
+        Projects projects1 = new Projects();
         toProjects.setMinWidth(200);
-        toProjects.setOnAction(e -> window.setScene(projects));
-        Projects projects = new Projects();
+        toProjects.setOnAction(e -> layout.setLeft(projects1.getBox()));
 
 
         Button toReports = new Button("Reports");
         toReports.setMinWidth(200);
-        toReports.setOnAction(e -> window.setScene(reports));
+        toReports.setOnAction(e -> layout.setLeft(reportsWindow.));
 
         Button toTags = new Button("Tags");
         toTags.setMinWidth(200);
-        toTags.setOnAction(e -> window.setScene(tags));
+        toTags.setOnAction(e -> layout.setLeft(new VBox()));
 
         this.sidebar = new VBox(10);
         this.sidebar.setPadding(new Insets(50, 10, 0, 10));
