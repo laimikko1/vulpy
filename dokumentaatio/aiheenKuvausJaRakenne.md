@@ -24,4 +24,10 @@ Kaikkien käyttäjien toiminnot:
 
 ## Sekvenssikaaviot
 
+#### Ajankäytön mittaamisen aloittaminen ja lopettaminen
+
 ![Ajankäytön mittaamisen aloittaminen ja lopettaminen](https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/ajankaytto.png)
+
+#### Aiheen lisääminen
+
+![Aiheen lisääminen](https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/ajankaytto.png)
