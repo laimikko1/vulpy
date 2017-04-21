@@ -24,6 +24,7 @@ public class Project {
     }
 
     public Project(String name, ArrayList<String> tags, Calendar calendar) {
+        this.hourlyWage = new HourlyWage(0,"Euro");
         this.name = name;
         this.calendar = calendar;
         this.tags = new ArrayList<>();
@@ -54,7 +55,7 @@ public class Project {
         return this.calendar.getSeconds();
     }
 
-    public void wordToTags(ArrayList<String> words) {
+    private void wordToTags(ArrayList<String> words) {
         words.stream().forEach(o -> this.tags.add(new Tag(o)));
     }
 

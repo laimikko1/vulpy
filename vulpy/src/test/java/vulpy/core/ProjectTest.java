@@ -81,8 +81,30 @@ public class ProjectTest {
     }
 
     @Test
+    public void rightAmountTagsAfterAddedTags(){
+        for (int i = 0; i < 10; i++) {
+            this.project.addTag("tagii");
+        }
+        assertEquals(22,this.project.getTags().size());
+    }
+
+    @Test
+    public void rightHourlyWage(){
+        assertEquals(0,this.project.getHourlyWage().getWage());
+        this.project.setHourlyWage(new HourlyWage(100,"EURO"));
+        assertEquals(100,this.project.getHourlyWage().getWage());
+    }
+
+    @Test
     public void projectHaveCorrectName(){
         assertEquals("työmaa",this.project.getName());
+    }
+
+    @Test
+    public void anotherConstructor(){
+        Project project = new Project("Työmaa", new ArrayList<>());
+        assertEquals("Työmaa",project.getName());
+        assertEquals(0,project.getTags().size());
     }
 
     public String currentDate(){
@@ -90,6 +112,7 @@ public class ProjectTest {
         Date date = new Date();
         return dateFormat.format(date);
     }
+
 
 
     public long nanosecondsToCentiseconds(long nanoseconds){
