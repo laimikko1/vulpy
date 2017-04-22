@@ -72,7 +72,7 @@ public class CalendarTest {
         this.calendar.start();
         long sevenHoursTenMinutesFiveSeconds = 7 * HOURS_TO_NANOSECONDS + 10 * MINUTES_TO_NANOSECONDS + 5 * SECONDS_TO_NANOSECONDS;
         time.addAndGet(sevenHoursTenMinutesFiveSeconds);
-        assertEquals(nanosecondsToCentiseconds(sevenHoursTenMinutesFiveSeconds),this.calendar.getSeconds());
+        assertEquals(nanosecondsToCentiseconds(sevenHoursTenMinutesFiveSeconds),this.calendar.getCentiSeconds());
     }
 
     @Test
@@ -83,7 +83,7 @@ public class CalendarTest {
         time.addAndGet(clock);
         this.calendar.stop();
         time.addAndGet(clock);
-        assertEquals(nanosecondsToCentiseconds(clock),this.calendar.getSeconds());
+        assertEquals(nanosecondsToCentiseconds(clock),this.calendar.getCentiSeconds());
     }
 
     @Test

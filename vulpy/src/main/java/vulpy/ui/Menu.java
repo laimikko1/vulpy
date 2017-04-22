@@ -3,6 +3,7 @@ package vulpy.ui;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -17,10 +18,13 @@ public class Menu {
     private Scene scene;
     private VBox sidebar;
     private BorderPane layout;
+    private ScrollPane content;
 
     public Menu(Stage window, BorderPane layout, Scene scene) {
         this.window = window;
         this.layout = layout;
+        this.content = new ScrollPane();
+        this.layout.setCenter(content);
         this.scene = scene;
         createSidebar();
     }
@@ -33,21 +37,21 @@ public class Menu {
 
         toProjects.setMinWidth(200);
         toProjects.setOnAction(e -> {
-            layout.setLeft(projects.getProjectsSection());
+            content.setContent(projects.getProjectsSection());
             layout.setBottom(projects.writingSection());
         });
 
         Button toReports = new Button("Reports");
         toReports.setMinWidth(200);
         toReports.setOnAction(e -> {
-            layout.setLeft(reports.getBox());
+            content.setContent(reports.getBox());
             layout.setBottom(null);
         });
 
         Button toTags = new Button("Tags");
         toTags.setMinWidth(200);
         toTags.setOnAction(e -> {
-            layout.setLeft(tags.getBox());
+            content.setContent(tags.getBox());
             layout.setBottom(null);
         });
 

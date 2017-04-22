@@ -16,3 +16,33 @@
 .button:hover{
     -fx-background-color: #1D1C1C;
 }
+
+#timerText {
+    -fx-padding: 10 10 10 10;
+    -fx-font: 12 Helvetica;
+    -fx-fill: #FFFFFF;
+}
+
+#projectBox {
+    -fx-background-color: #323232;
+    -fx-padding: 10 10 10 10;
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+}
+
+#projectsSection {
+    -fx-padding: 10 10 10 10;
+}
+
+#projectButton{
+    -fx-font: 12 Helvetica;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #F25917;
+    -fx-border-radius: 20 20 20 20;
+}
+
+#projectText {
+    -fx-padding: 10 10 10 10;
+    -fx-font: 12 Helvetica;
+    -fx-fill: #FFFFFF;
+}

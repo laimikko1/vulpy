@@ -49,7 +49,7 @@ public class Calendar {
      * @return koko projektiin käytetty aika.
      */
 
-    public long getSeconds() {
+    public long getCentiSeconds() {
         return this.dates.values().stream().mapToLong(Tracker::getCentiseconds).sum();
     }
 

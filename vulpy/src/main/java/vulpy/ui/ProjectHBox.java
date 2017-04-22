@@ -11,6 +11,8 @@ import vulpy.core.Project;
 import javafx.animation.Timeline;
 import javafx.scene.layout.HBox;
 
+import java.time.LocalTime;
+
 
 public class ProjectHBox {
     private HBox hbox;
@@ -20,26 +22,33 @@ public class ProjectHBox {
     private boolean onOff;
 
     public ProjectHBox(Project project) {
-        this.hbox = new HBox();
+        this.hbox = new HBox(25);
+        this.hbox.setPrefWidth(550);
+        this.hbox.setMinWidth(550);
+        this.hbox.setId("projectBox");
         this.timeline = new Timeline();
         this.project = project;
-        this.time = new Text("" + this.project.getTime());
+        this.time = new Text(getHoursMinutesAndSeconds());
+        this.time.setId("timerText");
         this.onOff = false;
-
         makeProjectHbox();
     }
 
     public void makeProjectHbox() {
         Text name = new Text(this.project.getName());
         Text tags = new Text(getTagsString(this.project));
-        Text hourlyWage = new Text(project.getHourlyWage().getWage() + "/" + project.getHourlyWage().getSymbol());
+        Text hourlyWage = new Text(project.getHourlyWage().getWage() + " " + project.getHourlyWage().getSymbol() + " / hour");
+        name.setId("projectText");
+        tags.setId("projectText");
+        hourlyWage.setId("projectText");
         Button startButton = greateButton();
         this.hbox.getChildren().addAll(name, tags, hourlyWage, this.time, startButton);
     }
 
     public Button greateButton() {
         Button button = new Button();
-        button.setText("Start / Stop");
+        button.setId("projectButton");
+        button.setText("S");
         button.setOnAction(new EventHandler() {
             @Override
             public void handle(Event event) {
@@ -51,12 +60,12 @@ public class ProjectHBox {
                         onOff = true;
                         project.startTracking();
                         timeline = new Timeline(
-                            new KeyFrame(Duration.millis(100),
+                            new KeyFrame(Duration.millis(1000),
                             new EventHandler<ActionEvent>() {
                                     @Override
                                     public void handle(ActionEvent t) {
-                                        time.setText("" + project.getTime());
-                                        System.out.println(project.getTime());
+                                        LocalTime localTime = project.getHoursMinutesAndSeconds();
+                                        time.setText(getHoursMinutesAndSeconds());
                                     }
                                 })
                         );
@@ -66,6 +75,22 @@ public class ProjectHBox {
                 }
             });
         return button;
+    }
+
+    public String getHoursMinutesAndSeconds(){
+        LocalTime localTime = project.getHoursMinutesAndSeconds();
+        String time = getNumberWithZero(localTime.getHour()) + "h ";
+        time += getNumberWithZero(localTime.getMinute()) + "min ";
+        time += getNumberWithZero(localTime.getSecond()) + "sec";
+        return time;
+    }
+
+    public String getNumberWithZero(int n){
+        String number = "";
+        if(n < 10){
+            number = "0";
+        }
+        return number += n;
     }
 
     public String getTagsString(Project project) {

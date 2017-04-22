@@ -17,7 +17,8 @@ public class Projects {
 
     public Projects() {
         this.projects = new ArrayList<>();
-        this.projectsSection = new VBox();
+        this.projectsSection = new VBox(10);
+        this.projectsSection.setId("projectsSection");
     }
 
     public VBox writingSection() {

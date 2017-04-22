@@ -2,6 +2,7 @@ package vulpy.core;
 
 import vulpy.core.tracker.Calendar;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 /**
@@ -69,6 +70,12 @@ public class Project {
         words.stream().forEach(o -> this.tags.add(new Tag(o)));
     }
 
+    public LocalTime getHoursMinutesAndSeconds(){
+        long seconds = getTime() / 100;
+        LocalTime timeOfDay = LocalTime.ofSecondOfDay(seconds);
+        return timeOfDay;
+    }
+
     /**
      * addTag metodi tarjoaa toiminnon yhden tagin lisäämiseen.
      * @param tag annetaan String muodossa tag.
@@ -83,7 +90,7 @@ public class Project {
     }
 
     public long getTime() {
-        return this.calendar.getSeconds();
+        return this.calendar.getCentiSeconds();
     }
 
     public HourlyWage getHourlyWage() {
