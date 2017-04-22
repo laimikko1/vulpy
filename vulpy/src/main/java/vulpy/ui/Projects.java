@@ -17,7 +17,7 @@ public class Projects {
 
     public Projects() {
         this.projects = new ArrayList<>();
-        this.projectsSection = new VBox(10);
+        this.projectsSection = new VBox(40);
         this.projectsSection.setId("projectsSection");
     }
 
@@ -45,7 +45,7 @@ public class Projects {
 
         writingSection.setMaxHeight(50);
         writingSection.getChildren().
-                addAll(overText(name, "Name"), overText(tags,  "Tags, separate with comma"), add);
+                addAll(overText(name, "Name"), overText(tags,  "Tags, separate with comma (max 2)"), add);
         return writingSection;
     }
 

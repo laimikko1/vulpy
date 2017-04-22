@@ -15,6 +15,7 @@ public class Project {
     private Calendar calendar;
     private HourlyWage hourlyWage;
     private ArrayList<Tag> tags;
+    private Report report;
 
     /**
      * Konstruktori jota käytetään normaalisti ohjelmassa.
@@ -27,6 +28,7 @@ public class Project {
         this.name = name;
         this.calendar = new Calendar();
         this.tags = new ArrayList<>();
+        this.report = new Report(this);
         wordToTags(tags);
     }
 
@@ -42,6 +44,7 @@ public class Project {
         this.name = name;
         this.calendar = calendar;
         this.tags = new ArrayList<>();
+        this.report = new Report(this);
         wordToTags(tags);
     }
 
@@ -103,5 +106,9 @@ public class Project {
 
     public String getName() {
         return this.name;
+    }
+
+    public Calendar getCalendar(){
+        return this.calendar;
     }
 }

@@ -116,4 +116,8 @@ public class Calendar {
     public int getCalendarSize() {
         return this.dates.size();
     }
+
+    public Map<String,Tracker> getDates(){
+        return this.dates;
+    }
 }

@@ -24,6 +24,8 @@ public class Menu {
         this.window = window;
         this.layout = layout;
         this.content = new ScrollPane();
+        this.content.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        this.content.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         this.layout.setCenter(content);
         this.scene = scene;
         createSidebar();

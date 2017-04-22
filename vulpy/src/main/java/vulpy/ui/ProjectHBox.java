@@ -22,9 +22,9 @@ public class ProjectHBox {
     private boolean onOff;
 
     public ProjectHBox(Project project) {
-        this.hbox = new HBox(25);
-        this.hbox.setPrefWidth(550);
-        this.hbox.setMinWidth(550);
+        this.hbox = new HBox(10);
+        this.hbox.setPrefWidth(540);
+        this.hbox.setMinWidth(540);
         this.hbox.setId("projectBox");
         this.timeline = new Timeline();
         this.project = project;
