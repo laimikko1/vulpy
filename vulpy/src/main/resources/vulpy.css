@@ -19,7 +19,7 @@
 
 #timerText {
     -fx-padding: 10 10 10 10;
-    -fx-font: 12 Helvetica;
+    -fx-font: 13 Helvetica;
     -fx-fill: #FFFFFF;
 }
 
@@ -43,7 +43,15 @@
 
 #projectText {
     -fx-padding: 10 10 10 10;
-    -fx-font: 12 Helvetica;
+    -fx-font: 13 Helvetica;
     -fx-fill: #FFFFFF;
 }
 
+#reportButton {
+    -fx-font: 14 Helvetica;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-radius: 0;
+    -fx-background-color: #323232;
+    -fx-fill: #FFFFFF;
+}

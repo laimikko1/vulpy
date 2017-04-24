@@ -3,7 +3,9 @@ import javafx.animation.KeyFrame;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 import vulpy.core.Project;
@@ -12,6 +14,8 @@ import javafx.animation.Timeline;
 import javafx.scene.layout.HBox;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ProjectHBox {
@@ -26,6 +30,7 @@ public class ProjectHBox {
         this.hbox.setPrefWidth(540);
         this.hbox.setMinWidth(540);
         this.hbox.setId("projectBox");
+        this.hbox.setAlignment(Pos.CENTER);
         this.timeline = new Timeline();
         this.project = project;
         this.time = new Text(getHoursMinutesAndSeconds());
@@ -36,12 +41,15 @@ public class ProjectHBox {
 
     public void makeProjectHbox() {
         Text name = new Text(this.project.getName());
-        Text tags = new Text(getTagsString(this.project));
+        Text tags = new Text(this.project.getTagsString());
         Text hourlyWage = new Text(project.getHourlyWage().getWage() + " " + project.getHourlyWage().getSymbol() + " / hour");
         name.setId("projectText");
         tags.setId("projectText");
+        name.setWrappingWidth(75);
+        tags.setWrappingWidth(165);
         hourlyWage.setId("projectText");
         Button startButton = greateButton();
+        startButton.setAlignment(Pos.CENTER_LEFT);
         this.hbox.getChildren().addAll(name, tags, hourlyWage, this.time, startButton);
     }
 
@@ -91,18 +99,6 @@ public class ProjectHBox {
             number = "0";
         }
         return number += n;
-    }
-
-    public String getTagsString(Project project) {
-        String tagStrign = "Tags: ";
-        for (int i = 0; i < project.getTags().size(); i++) {
-            if (i == project.getTags().size() - 1) {
-                tagStrign += project.getTags().get(i).getName();
-            } else {
-                tagStrign += project.getTags().get(i).getName() +  ", ";
-            }
-        }
-        return tagStrign;
     }
 
     public HBox getHbox() {

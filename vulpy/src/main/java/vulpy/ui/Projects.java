@@ -17,7 +17,9 @@ public class Projects {
 
     public Projects() {
         this.projects = new ArrayList<>();
-        this.projectsSection = new VBox(40);
+        this.projectsSection = new VBox(10);
+        Text yourProjects = new Text("Your projects!");
+        this.projectsSection.getChildren().addAll(yourProjects);
         this.projectsSection.setId("projectsSection");
     }
 
@@ -38,14 +40,28 @@ public class Projects {
         Button add = new Button("Add");
         add.setMinWidth(120);
         add.setOnAction(e -> {
-            addProject(name, tags);
-            ProjectHBox hBox = new ProjectHBox(projects.get(projects.size() - 1));
-            projectsSection.getChildren().add(hBox.getHbox());
+            if(name.getText().equals("Set name!") || name.getText().equals("Name is too long!") || tags.getText().equals("Set at least one tag!") || tags.getText().equals("Too much tags!")){
+                name.setText("");
+                tags.setText("");
+            } else if(name.getText().isEmpty()){
+                name.setText("Set name!");
+            } else if(name.getText().length() > 10){
+                name.setText("Name is too long!");
+            } else if(tags.getText().isEmpty()){
+                tags.setText("Set at least one tag!");
+            } else if(tags.getText().length() > 20){
+                tags.setText("Too much tags!");
+            } else {
+                addProject(name, tags);
+                ProjectHBox hBox = new ProjectHBox(projects.get(projects.size() - 1));
+                projectsSection.getChildren().add(hBox.getHbox());
+            }
         });
 
         writingSection.setMaxHeight(50);
         writingSection.getChildren().
-                addAll(overText(name, "Name"), overText(tags,  "Tags, separate with comma (max 2)"), add);
+                addAll(overText(name, "Name"),
+                       overText(tags,  "Tags, separate with comma (max 2)"), add);
         return writingSection;
     }
 

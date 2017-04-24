@@ -79,6 +79,18 @@ public class Project {
         return timeOfDay;
     }
 
+    public String getTagsString() {
+        String tagStrign = "Tags: ";
+        for (int i = 0; i < getTags().size(); i++) {
+            if (i == getTags().size() - 1) {
+                tagStrign += getTags().get(i).getName();
+            } else {
+                tagStrign += getTags().get(i).getName() +  ", ";
+            }
+        }
+        return tagStrign;
+    }
+
     /**
      * addTag metodi tarjoaa toiminnon yhden tagin lisäämiseen.
      * @param tag annetaan String muodossa tag.
