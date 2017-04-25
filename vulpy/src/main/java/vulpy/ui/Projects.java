@@ -1,5 +1,6 @@
 package vulpy.ui;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
@@ -18,26 +19,30 @@ public class Projects {
     public Projects() {
         this.projects = new ArrayList<>();
         this.projectsSection = new VBox(10);
-        Text yourProjects = new Text("Your projects!");
-        this.projectsSection.getChildren().addAll(yourProjects);
         this.projectsSection.setId("projectsSection");
     }
 
     public VBox writingSection() {
-        Text addNew = new Text("Add new");
+        Text addNew = new Text("Add new project");
+        addNew.setId("addNew");
         HBox textArea = textArea();
-        VBox vBox = new VBox();
+        VBox vBox = new VBox(10);
+        vBox.setPadding(new Insets(10, 30, 10, 10));
         vBox.getChildren().addAll(addNew, textArea);
         return vBox;
     }
 
     public HBox textArea() {
-        HBox writingSection = new HBox();
-        writingSection.setMaxWidth(600);
+        HBox writingSection = new HBox(10);
+        writingSection.setMaxWidth(700);
         TextArea name = new TextArea("");
         TextArea tags = new TextArea("");
 
+
+
         Button add = new Button("Add");
+        add.setMinHeight(30);
+        add.setId("addButton");
         add.setMinWidth(120);
         add.setOnAction(e -> {
             if(name.getText().equals("Set name!") || name.getText().equals("Name is too long!") || tags.getText().equals("Set at least one tag!") || tags.getText().equals("Too much tags!")){
@@ -58,16 +63,20 @@ public class Projects {
             }
         });
 
-        writingSection.setMaxHeight(50);
+        VBox vBoxAdd = new VBox(10);
+        vBoxAdd.getChildren().addAll(new Text(),add);
+
+        writingSection.setMaxHeight(70);
         writingSection.getChildren().
                 addAll(overText(name, "Name"),
-                       overText(tags,  "Tags, separate with comma (max 2)"), add);
+                       overText(tags,  "Tags, separate with comma (max 2)"), vBoxAdd);
         return writingSection;
     }
 
     public VBox overText(TextArea textArea, String addText) {
-        VBox vBox = new VBox();
+        VBox vBox = new VBox(10);
         Text text = new Text(addText);
+        text.setId("addNew");
         vBox.getChildren().addAll(text, textArea);
         return vBox;
     }

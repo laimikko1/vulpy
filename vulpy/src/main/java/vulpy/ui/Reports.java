@@ -1,6 +1,7 @@
 package vulpy.ui;
 
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import vulpy.core.Project;
@@ -14,8 +15,10 @@ public class Reports {
     private VBox left;
     private List<Project> projects;
     private Projects project;
+    private BorderPane layout;
 
-    public Reports(Projects project) {
+    public Reports(Projects project, BorderPane layout) {
+        this.layout = layout;
         formatReports(project);
         addAllReports();
     }
@@ -26,6 +29,8 @@ public class Reports {
         this.box = new HBox(10);
         this.right = new VBox(10);
         this.left = new VBox(10);
+        this.left.setId("reportBox");
+        this.right.setId("reportBox");
         this.box.getChildren().addAll(right,left);
     }
 
@@ -41,10 +46,20 @@ public class Reports {
 
     public Button addReportButton(int i){
         Button reportButton = new Button();
-        reportButton.setPrefWidth(250);
+        addButtonFunctions(reportButton,i);
+        reportButton.setPrefWidth(300);
         reportButton.setId("reportButton");
         reportButton.setText(this.projects.get(i).getName() + "\t" + this.projects.get(i).getTagsString());
+        addButtonFunctions(reportButton,i);
         return reportButton;
+    }
+
+    public void addButtonFunctions(Button button, int i){
+        ReportHBox reportHBox = new ReportHBox(this.projects.get(i));
+        HBox hbox = reportHBox.getBox();
+        button.setOnAction(e -> {
+
+        });
     }
 
     public HBox getBox() {

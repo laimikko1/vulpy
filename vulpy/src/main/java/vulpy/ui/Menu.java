@@ -34,27 +34,27 @@ public class Menu {
     public void createSidebar() {
         Button toProjects = new Button("Projects");
         Projects projects = new Projects();
-        Reports reports = new Reports(projects);
+        Reports reports = new Reports(projects, this.layout);
         Tags tags = new Tags(projects);
 
         toProjects.setMinWidth(200);
         toProjects.setOnAction(e -> {
-            content.setContent(projects.getProjectsSection());
+            this.content.setContent(projects.getProjectsSection());
             layout.setBottom(projects.writingSection());
         });
 
         Button toReports = new Button("Reports");
         toReports.setMinWidth(200);
         toReports.setOnAction(e -> {
-            content.setContent(reports.getBox());
-            layout.setBottom(null);
+            this.content.setContent(reports.getBox());
+            this.layout.setBottom(null);
         });
 
         Button toTags = new Button("Tags");
         toTags.setMinWidth(200);
         toTags.setOnAction(e -> {
-            content.setContent(tags.getBox());
-            layout.setBottom(null);
+            this.content.setContent(tags.getBox());
+            this.layout.setBottom(null);
         });
 
         toProjects.fire();

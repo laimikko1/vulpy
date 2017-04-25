@@ -5,7 +5,6 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 import vulpy.core.Project;
@@ -14,8 +13,6 @@ import javafx.animation.Timeline;
 import javafx.scene.layout.HBox;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class ProjectHBox {
@@ -26,9 +23,9 @@ public class ProjectHBox {
     private boolean onOff;
 
     public ProjectHBox(Project project) {
-        this.hbox = new HBox(10);
-        this.hbox.setPrefWidth(540);
-        this.hbox.setMinWidth(540);
+        this.hbox = new HBox(30);
+        this.hbox.setPrefWidth(640);
+        this.hbox.setMinWidth(640);
         this.hbox.setId("projectBox");
         this.hbox.setAlignment(Pos.CENTER);
         this.timeline = new Timeline();
@@ -45,8 +42,8 @@ public class ProjectHBox {
         Text hourlyWage = new Text(project.getHourlyWage().getWage() + " " + project.getHourlyWage().getSymbol() + " / hour");
         name.setId("projectText");
         tags.setId("projectText");
-        name.setWrappingWidth(75);
-        tags.setWrappingWidth(165);
+        name.setWrappingWidth(105);
+        tags.setWrappingWidth(195);
         hourlyWage.setId("projectText");
         Button startButton = greateButton();
         startButton.setAlignment(Pos.CENTER_LEFT);
