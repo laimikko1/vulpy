@@ -113,8 +113,6 @@ public class ProjectTest {
         return dateFormat.format(date);
     }
 
-
-
     public long nanosecondsToCentiseconds(long nanoseconds){
         return nanoseconds / 10000000;
     }

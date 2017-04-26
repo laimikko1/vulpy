@@ -25,7 +25,7 @@ public class Menu {
         this.layout = layout;
         this.content = new ScrollPane();
         this.content.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        this.content.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        this.content.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         this.layout.setCenter(content);
         this.scene = scene;
         createSidebar();
@@ -34,11 +34,12 @@ public class Menu {
     public void createSidebar() {
         Button toProjects = new Button("Projects");
         Projects projects = new Projects();
-        Reports reports = new Reports(projects, this.layout);
+        Reports reports = new Reports(projects, this.content);
         Tags tags = new Tags(projects);
 
         toProjects.setMinWidth(200);
         toProjects.setOnAction(e -> {
+            this.content.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
             this.content.setContent(projects.getProjectsSection());
             layout.setBottom(projects.writingSection());
         });
@@ -46,6 +47,7 @@ public class Menu {
         Button toReports = new Button("Reports");
         toReports.setMinWidth(200);
         toReports.setOnAction(e -> {
+            this.content.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
             this.content.setContent(reports.getBox());
             this.layout.setBottom(null);
         });
@@ -53,6 +55,7 @@ public class Menu {
         Button toTags = new Button("Tags");
         toTags.setMinWidth(200);
         toTags.setOnAction(e -> {
+            this.content.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
             this.content.setContent(tags.getBox());
             this.layout.setBottom(null);
         });

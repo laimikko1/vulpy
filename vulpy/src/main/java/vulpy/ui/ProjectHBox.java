@@ -30,7 +30,7 @@ public class ProjectHBox {
         this.hbox.setAlignment(Pos.CENTER);
         this.timeline = new Timeline();
         this.project = project;
-        this.time = new Text(getHoursMinutesAndSeconds());
+        this.time = new Text(project.getHoursMinutesAndSeconds());
         this.time.setId("timerText");
         this.onOff = false;
         makeProjectHbox();
@@ -69,8 +69,7 @@ public class ProjectHBox {
                             new EventHandler<ActionEvent>() {
                                     @Override
                                     public void handle(ActionEvent t) {
-                                        LocalTime localTime = project.getHoursMinutesAndSeconds();
-                                        time.setText(getHoursMinutesAndSeconds());
+                                        time.setText(project.getHoursMinutesAndSeconds());
                                     }
                                 })
                         );
@@ -82,21 +81,6 @@ public class ProjectHBox {
         return button;
     }
 
-    public String getHoursMinutesAndSeconds(){
-        LocalTime localTime = project.getHoursMinutesAndSeconds();
-        String time = getNumberWithZero(localTime.getHour()) + "h ";
-        time += getNumberWithZero(localTime.getMinute()) + "min ";
-        time += getNumberWithZero(localTime.getSecond()) + "sec";
-        return time;
-    }
-
-    public String getNumberWithZero(int n){
-        String number = "";
-        if(n < 10){
-            number = "0";
-        }
-        return number += n;
-    }
 
     public HBox getHbox() {
         return hbox;

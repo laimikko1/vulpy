@@ -13,10 +13,18 @@ public class Tracker {
     private long startTime;
     private long centiseconds;
     private boolean on;
+    private int max;
 
     public Tracker() {
         this(new SystemTimeSupplier());
         this.centiseconds = 0;
+        this.max = 0;
+    }
+
+    public Tracker(int max) {
+        this(new SystemTimeSupplier());
+        this.centiseconds = 0;
+        this.max = max;
     }
 
     public Tracker(TimeSupplier timeSupplier) {
@@ -46,6 +54,10 @@ public class Tracker {
             return this.centiseconds + nanosecondsToCentiseconds(currentNano - startTime);
         }
         return this.centiseconds;
+    }
+
+    public double getMinutes() {
+        return (double) getCentiseconds() / 6000;
     }
 
     public long nanosecondsToCentiseconds(Long nanoseconds) {

@@ -1,14 +1,14 @@
 .button {
-    -fx-font: 14 Helvetica;
+    -fx-font: 13 Helvetica;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
     -fx-border-radius: 0;
     -fx-background-color: #323232;
-    -fx-text-fill: #CCCCCC;
+    -fx-text-fill: #ffffff;
 }
 
 
-.button:focused{
+#buttonFocused{
     -fx-focus-color: transparent;
     -fx-background-color: #1D1C1C;
 }
@@ -20,7 +20,7 @@
 #timerText {
     -fx-padding: 10 10 10 10;
     -fx-font: 13 Helvetica;
-    -fx-fill: #FFFFFF;
+    -fx-fill: #ffffff;
 }
 
 #projectBox {
@@ -35,11 +35,12 @@
 }
 
 #projectButton{
-    -fx-font: 12 Helvetica;
+    -fx-font: 13 Helvetica;
     -fx-text-fill: #FFFFFF;
     -fx-background-color: #F25917;
     -fx-border-radius: 20 20 20 20;
 }
+
 
 #projectText {
     -fx-padding: 10 10 10 10;
@@ -48,33 +49,91 @@
 }
 
 #reportButton {
-    -fx-font: 14 Helvetica;
+    -fx-font: 13 Helvetica;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
     -fx-background-color: #323232;
-    -fx-fill: #FFFFFF;
-    -fx-padding: 5 5 5 5;
+    -fx-fill: #ffffff;
     -fx-border-radius: 10 10 10 10;
     -fx-background-radius: 10 10 10 10;
     -fx-alignment: center-left;
-    -fx-padding: 5 10 5 20;
 }
 
 #addButton {
-    -fx-font: 12 Helvetica;
-    -fx-text-fill: #FFFFFF;
+    -fx-font: 13 Helvetica;
+    -fx-text-fill: #ffffff;
     -fx-background-color: #F25917;
+    -fx-border-radius: 30 30 30 30;
+}
+
+#addButton:hover {
+    -fx-font: 13 Helvetica;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #f27800;
     -fx-border-radius: 30 30 30 30;
 }
 
 #addNew {
     -fx-padding: 10 10 10 10;
-    -fx-font: 12 Helvetica;
+    -fx-font: 13 Helvetica;
     -fx-fill: #323232;
 }
 
 #reportBox {
-    -fx-padding: 40 10 10 10;
+    -fx-padding: 40 60 0 60;
+}
+
+#yourProjects {
+    -fx-font: 16 Helvetica;
+    -fx-text-fill: #323232;
+}
+
+#reportSubBox {
+    -fx-padding: 20 0 0 0;
+}
+
+#reportHBox {
+    -fx-padding: 40 40 40 40;
+}
+
+#reportWindowButtons {
+    -fx-font: 13 Helvetica;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #F25917;
+    -fx-border-radius: 30 30 30 30;
+}
+
+#reportWindowButtons:hover {
+    -fx-font: 13 Helvetica;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #f27800;
+    -fx-border-radius: 30 30 30 30;
+}
+
+#back {
+    -fx-font: 13 Helvetica;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #F25917;
+    -fx-border-radius: 30 30 30 30;
+}
+
+#back:hover {
+    -fx-font: 13 Helvetica;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #f27800;
+    -fx-border-radius: 30 30 30 30;
+}
+
+#projectName {
+    -fx-font: 18 Helvetica;
+    -fx-text-fill: #323232;
+}
+
+#reportTextBox{
+#projectText {
+    -fx-font: 13 Helvetica;
+    -fx-fill: #323232;
+}
 }
 
 

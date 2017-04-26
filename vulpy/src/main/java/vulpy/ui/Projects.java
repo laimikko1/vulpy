@@ -37,9 +37,6 @@ public class Projects {
         writingSection.setMaxWidth(700);
         TextArea name = new TextArea("");
         TextArea tags = new TextArea("");
-
-
-
         Button add = new Button("Add");
         add.setMinHeight(30);
         add.setId("addButton");

@@ -1,24 +1,26 @@
 package vulpy.ui;
 
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import vulpy.core.Project;
 
 import java.util.List;
 
 public class Reports {
 
-    private HBox box;
+    private VBox box;
     private VBox right;
     private VBox left;
     private List<Project> projects;
     private Projects project;
-    private BorderPane layout;
+    private ScrollPane content;
+    private HBox subBox;
 
-    public Reports(Projects project, BorderPane layout) {
-        this.layout = layout;
+    public Reports(Projects project, ScrollPane content) {
+        this.content = content;
         formatReports(project);
         addAllReports();
     }
@@ -26,12 +28,17 @@ public class Reports {
     public void formatReports(Projects project){
         this.projects = project.getProjects();
         this.project = project;
-        this.box = new HBox(10);
+        this.box = new VBox(10);
+        this.box.setId("reportBox");
+        this.subBox = new HBox(10);
         this.right = new VBox(10);
         this.left = new VBox(10);
-        this.left.setId("reportBox");
-        this.right.setId("reportBox");
-        this.box.getChildren().addAll(right,left);
+        this.right.setId("reportSubBox");
+        this.left.setId("reportSubBox");
+        Text text = new Text("Your projects!");
+        text.setId("yourProjects");
+        this.subBox.getChildren().addAll(right,left);
+        this.box.getChildren().addAll(text,subBox);
     }
 
     public void addAllReports(){
@@ -47,24 +54,30 @@ public class Reports {
     public Button addReportButton(int i){
         Button reportButton = new Button();
         addButtonFunctions(reportButton,i);
-        reportButton.setPrefWidth(300);
+        reportButton.setPrefWidth(250);
+        reportButton.setPrefHeight(30);
         reportButton.setId("reportButton");
-        reportButton.setText(this.projects.get(i).getName() + "\t" + this.projects.get(i).getTagsString());
+        reportButton.setText(this.projects.get(i).getName() + "    " + this.projects.get(i).getTagsString());
         addButtonFunctions(reportButton,i);
         return reportButton;
     }
 
     public void addButtonFunctions(Button button, int i){
-        ReportHBox reportHBox = new ReportHBox(this.projects.get(i));
+        ReportHBox reportHBox = new ReportHBox(this.projects.get(i),this);
         HBox hbox = reportHBox.getBox();
         button.setOnAction(e -> {
-
+            this.content.setContent(hbox);
+            this.content.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         });
     }
 
-    public HBox getBox() {
+    public VBox getBox() {
         formatReports(this.project);
         addAllReports();
         return this.box;
+    }
+
+    public ScrollPane getContent() {
+        return content;
     }
 }

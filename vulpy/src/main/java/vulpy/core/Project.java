@@ -73,10 +73,24 @@ public class Project {
         words.stream().forEach(o -> this.tags.add(new Tag(o)));
     }
 
-    public LocalTime getHoursMinutesAndSeconds(){
-        long seconds = getTime() / 100;
-        LocalTime timeOfDay = LocalTime.ofSecondOfDay(seconds);
-        return timeOfDay;
+    public String getHoursMinutesAndSeconds(){
+        long longVal = getTime() / 100;
+        int hours = (int) longVal / 3600;
+        int remainder = (int) longVal - hours * 3600;
+        int mins = remainder / 60;
+        remainder = remainder - mins * 60;
+        int secs = remainder;
+        String hoursMinutesAndSeconds = underTen(hours) + "h " + underTen(mins) + "min " + underTen(secs) + "sec";
+        return hoursMinutesAndSeconds;
+    }
+
+    public String underTen(int n){
+        String number = "";
+        if(n < 10){
+            number += "0";
+        }
+        number += n;
+        return number;
     }
 
     public String getTagsString() {

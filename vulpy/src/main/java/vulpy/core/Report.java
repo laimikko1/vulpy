@@ -14,13 +14,11 @@ public class Report {
     private Project project;
     private Map<String,Tracker> dates;
     private ReportJson json;
-    private ReportPdf pdf;
 
     public Report(Project project){
         this.project = project;
         this.dates = project.getCalendar().getDates();
         this.json = new ReportJson(project);
-        this.pdf = new ReportPdf(project);
     }
 
     public ArrayList<String[]> getDatesArray(){
