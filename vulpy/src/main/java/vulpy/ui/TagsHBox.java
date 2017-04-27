@@ -10,33 +10,26 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import vulpy.core.Project;
+import vulpy.core.Tag;
 
-public class ReportHBox {
+public class TagsHBox {
 
+    private Tag tag;
+    private Tags tags;
     private HBox hBox;
-    private Project project;
-    private Reports reports;
 
-    public ReportHBox(Project project, Reports reports){
-        this.hBox = new HBox();
-        this.project = project;
-        this.reports = reports;
-        greateHBox();
-    }
-
-    public void refresh(){
+    public TagsHBox(Tag tag, Tags tags){
+        this.tag = tag;
+        this.tags = tags;
         this.hBox = new HBox();
         greateHBox();
-        this.reports.getContent().setContent(this.hBox);
     }
-
 
     public void greateHBox(){
-        this.hBox.setId("reportHBox");
+        this.hBox.setId("tagHBox");
         VBox vbox = new VBox(20);
-        Text projectName = new Text(project.getName());
-        projectName.setId("projectName");
+        Text projectName = new Text(tag.getName());
+        projectName.setId("tagName");
         final CategoryAxis xAxis = new CategoryAxis();
         final NumberAxis yAxis = new NumberAxis();
         final BarChart<String,Number> bc = new BarChart<>(xAxis,yAxis);
@@ -62,7 +55,6 @@ public class ReportHBox {
     public VBox buttons(){
         VBox vBox = new VBox(10);
         HBox json = new HBox(10);
-        HBox hourlyWage = new HBox(10);
         TextArea postUrl = new TextArea("Add url");
         postUrl.setPrefRowCount(1);
         postUrl.setMaxWidth(200);
@@ -70,50 +62,38 @@ public class ReportHBox {
         newHourlyWage.setPrefRowCount(1);
         newHourlyWage.setMaxWidth(200);
         Button jsonButton = new Button("Send Json");
-        Button hourlyWageButton = new Button("Change hourly wage");
         jsonButton.setPrefWidth(160);
-        hourlyWageButton.setPrefWidth(160);
         jsonButton.setId("reportWindowButtons");
-        hourlyWageButton.setId("reportWindowButtons");
-        hourlyWageButton.setOnAction(e -> {
-            this.project.getHourlyWage().setWage(Integer.parseInt(newHourlyWage.getText()));
-            refresh();
-        });
         json.getChildren().addAll(postUrl,jsonButton);
-        hourlyWage.getChildren().addAll(newHourlyWage,hourlyWageButton);
-        vBox.getChildren().addAll(json,hourlyWage);
+        vBox.getChildren().addAll(json);
         return vBox;
     }
 
     public VBox textBox(){
         VBox vbox = new VBox(10);
-        Text workingTime = new Text("Working time: " + this.project.getHoursMinutesAndSeconds());
-        String hourlyWage = "Hourly wage: " + this.project.getHourlyWage().getWage() + " " + this.project.getHourlyWage().getSymbol() + " / h";
-        Text hw = new Text(hourlyWage);
-        Text salary = new Text("Salary: " + this.project.getHourlyWage().getSalary((int)(this.project.getCalendar().getCentiSeconds() / (6000l * 60))) + " " + this.project.getHourlyWage().getSymbol());
+        Text workingTime = new Text("Working time: " + this.tag.getHoursMinutesAndSeconds());
         workingTime.setId("reportTextBox");
-        hw.setId("reportTextBox");
-        salary.setId("reportTextBox");
-        vbox.getChildren().addAll(workingTime,hw,salary);
-        return vbox;
-    }
 
-    public XYChart.Series addData(){
-        XYChart.Series series = new XYChart.Series();
-        for (String date:project.getCalendar().getDates().keySet()) {
-            series.getData().add(new XYChart.Data(date,project.getCalendar().getDates().get(date).getMinutes()));
-        }
-        return series;
+        vbox.getChildren().addAll(workingTime);
+        return vbox;
     }
 
     public Button back(){
         Button button = new Button("Back");
         button.setId("back");
         button.setOnAction(event -> {
-            this.reports.getContent().setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-            this.reports.getContent().setContent(this.reports.getBox());
+            this.tags.getContent().setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+            this.tags.getContent().setContent(this.tags.getBox());
         });
         return button;
+    }
+
+    public XYChart.Series addData(){
+        XYChart.Series series = new XYChart.Series();
+        for (String date:tag.getCalendar().getDates().keySet()) {
+            series.getData().add(new XYChart.Data(date,tag.getCalendar().getDates().get(date).getMinutes()));
+        }
+        return series;
     }
 
     public HBox getBox(){

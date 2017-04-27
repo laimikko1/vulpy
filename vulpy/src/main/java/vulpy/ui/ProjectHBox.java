@@ -7,29 +7,30 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
+import vulpy.core.Collector;
 import vulpy.core.Project;
 
 import javafx.animation.Timeline;
 import javafx.scene.layout.HBox;
 
-import java.time.LocalTime;
-
-
 public class ProjectHBox {
+
+    private Collector collector;
+    private Project project;
     private HBox hbox;
     private Timeline timeline;
-    private Project project;
     private Text time;
     private boolean onOff;
 
-    public ProjectHBox(Project project) {
+    public ProjectHBox(Collector collector) {
+        this.project = collector.getProject(collector.getProjectListSize() - 1);
         this.hbox = new HBox(30);
         this.hbox.setPrefWidth(640);
         this.hbox.setMinWidth(640);
         this.hbox.setId("projectBox");
         this.hbox.setAlignment(Pos.CENTER);
         this.timeline = new Timeline();
-        this.project = project;
+        this.collector = collector;
         this.time = new Text(project.getHoursMinutesAndSeconds());
         this.time.setId("timerText");
         this.onOff = false;
@@ -59,11 +60,11 @@ public class ProjectHBox {
             public void handle(Event event) {
                 if (onOff) {
                     onOff = false;
-                    project.stopTracking();
+                    collector.stopTrackingByProject(project);
                     timeline.stop();
                 } else {
                         onOff = true;
-                        project.startTracking();
+                        collector.startTrackingByProject(project);
                         timeline = new Timeline(
                             new KeyFrame(Duration.millis(1000),
                             new EventHandler<ActionEvent>() {

@@ -6,6 +6,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import vulpy.core.Collector;
 import vulpy.core.Project;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,11 +14,13 @@ import java.util.List;
 
 public class Projects {
 
+    private Collector collector;
     private List<Project> projects;
     private VBox projectsSection;
 
     public Projects() {
-        this.projects = new ArrayList<>();
+        this.collector = new Collector();
+        this.projects = this.collector.getProjectList();
         this.projectsSection = new VBox(10);
         this.projectsSection.setId("projectsSection");
     }
@@ -55,7 +58,7 @@ public class Projects {
                 tags.setText("Too much tags!");
             } else {
                 addProject(name, tags);
-                ProjectHBox hBox = new ProjectHBox(projects.get(projects.size() - 1));
+                ProjectHBox hBox = new ProjectHBox(collector);
                 projectsSection.getChildren().add(hBox.getHbox());
             }
         });
@@ -80,8 +83,8 @@ public class Projects {
 
     public void addProject(TextArea textAreaName, TextArea textAreaTags) {
         String name = textAreaName.getText();
-        ArrayList<String> tags = separate(textAreaTags.getText());
-        projects.add(new Project(name, tags));
+        List<String> tags = separate(textAreaTags.getText());
+        this.collector.addProject(new Project(name,tags));
         textAreaName.clear();
         textAreaTags.clear();
     }
@@ -95,8 +98,8 @@ public class Projects {
         return tags;
     }
 
-    public List<Project> getProjects() {
-        return this.projects;
+    public Collector getCollector(){
+        return this.collector;
     }
 
     public VBox getProjectsSection() {

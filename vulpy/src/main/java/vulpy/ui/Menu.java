@@ -35,7 +35,7 @@ public class Menu {
         Button toProjects = new Button("Projects");
         Projects projects = new Projects();
         Reports reports = new Reports(projects, this.content);
-        Tags tags = new Tags(projects);
+        Tags tags = new Tags(projects.getCollector(),this.content);
 
         toProjects.setMinWidth(200);
         toProjects.setOnAction(e -> {

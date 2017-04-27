@@ -11,24 +11,13 @@ import java.util.Map;
 
 public class Report {
 
-    private Project project;
+    private Measurable measurable;
     private Map<String,Tracker> dates;
     private ReportJson json;
 
-    public Report(Project project){
-        this.project = project;
-        this.dates = project.getCalendar().getDates();
-        this.json = new ReportJson(project);
-    }
-
-    public ArrayList<String[]> getDatesArray(){
-        ArrayList<String[]> datesArray = new ArrayList<>();
-        for (String dates:dates.keySet()) {
-            String[] date = new String[2];
-            date[0] = dates;
-            date[1] = this.dates.get(dates).getCentiseconds() + "";
-            datesArray.add(date);
-        }
-        return datesArray;
+    public Report(Measurable measurable){
+        this.measurable = measurable;
+        this.dates = measurable.getCalendar().getDates();
+        this.json = new ReportJson(measurable);
     }
 }

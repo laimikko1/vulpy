@@ -26,7 +26,7 @@ public class Reports {
     }
 
     public void formatReports(Projects project){
-        this.projects = project.getProjects();
+        this.projects = project.getCollector().getProjectList();
         this.project = project;
         this.box = new VBox(10);
         this.box.setId("reportBox");

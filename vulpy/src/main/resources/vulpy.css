@@ -88,12 +88,17 @@
     -fx-text-fill: #323232;
 }
 
+#yourTags {
+    -fx-font: 16 Helvetica;
+    -fx-text-fill: #323232;
+}
+
 #reportSubBox {
     -fx-padding: 20 0 0 0;
 }
 
 #reportHBox {
-    -fx-padding: 40 40 40 40;
+    -fx-padding: 40 45 40 45;
 }
 
 #reportWindowButtons {
@@ -126,14 +131,27 @@
 
 #projectName {
     -fx-font: 18 Helvetica;
-    -fx-text-fill: #323232;
+    -fx-text-fill: i
 }
 
-#reportTextBox{
 #projectText {
     -fx-font: 13 Helvetica;
-    -fx-fill: #323232;
-}
+    -fx-fill: #ffffff;
 }
 
+#tagName {
+    -fx-font: 18 Helvetica;
+    -fx-text-fill: i
+}
 
+#tagSubBox {
+    -fx-padding: 20 0 0 0;
+}
+
+#tagBox {
+    -fx-padding: 40 60 0 60;
+}
+
+#tagHBox {
+    -fx-padding: 40 45 40 45;
+}

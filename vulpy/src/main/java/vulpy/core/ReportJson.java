@@ -8,10 +8,10 @@ import com.google.gson.JsonObject;
 
 public class ReportJson {
 
-    private Project project;
+    private Measurable measurable;
 
-    public ReportJson(Project project){
-        this.project = project;
+    public ReportJson(Measurable measurable){
+        this.measurable = measurable;
     }
 
     public String getJson(){

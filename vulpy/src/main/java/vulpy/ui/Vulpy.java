@@ -15,43 +15,37 @@ import java.net.URL;
 
 public class Vulpy extends Application {
 
-    Stage window;
+    public static Stage window;
 
     public static void main(String[] args) {
-        try {
-            URL iconURL  = Vulpy.class.getClassLoader().getResource("ui/logo.png");
-            java.awt.Image image = new ImageIcon(iconURL).getImage();
-            com.apple.eawt.Application.getApplication().setDockIconImage(image);
-        } catch (Exception e) {
-            //This is for linux and windows
-        }
+        /*URL iconURL  = Vulpy.class.getClassLoader().getResource("ui/logo.png");
+        java.awt.Image image = new ImageIcon(iconURL).getImage();
+        com.apple.eawt.Application.getApplication().setDockIconImage(image);*/
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.getIcons().add(new Image(Vulpy.class.getClassLoader().getResourceAsStream("ui/logo32.png")));
-
         HBox layout = new HBox();
-        layout.setStyle("-fx-background-color: #FAFBFC;");
-
         BorderPane borderPane = new BorderPane();
+
+        layout.setStyle("-fx-background-color: #FAFBFC;");
         borderPane.setStyle("-fx-background-color: #FAFBFC;");
 
-        layout.getChildren().addAll(borderPane);
-
         Scene scene = new Scene(layout, 900, 500);
-        scene.getStylesheets().add(getClass().getResource("/vulpy.css").toExternalForm());
-
+        borderPane.setPrefSize(900, 500);
         Menu menu = new Menu(primaryStage, borderPane, scene);
 
-        borderPane.setPrefSize(900, 500);
+        scene.getStylesheets().add(getClass().getResource("/vulpy.css").toExternalForm());
+        primaryStage.getIcons().add(new Image(Vulpy.class.getClassLoader().getResourceAsStream("ui/logo32.png")));
+
+        layout.getChildren().addAll(borderPane);
         layout.getChildren().addAll(menu.getSidebar());
+
         window = menu.getWindow();
         window.setTitle("Vulpy");
         window.setScene(menu.getScene());
         window.setResizable(false);
         window.show();
     }
-
 }

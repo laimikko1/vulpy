@@ -1,20 +1,18 @@
 package vulpy.core;
 
 import vulpy.core.tracker.Calendar;
-
-import java.time.LocalTime;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Project-luokka tarjoaa projektin luontia varten tärkeimmät metodit.
  */
 
-public class Project {
+public class Project implements Measurable{
 
     private String name;
     private Calendar calendar;
     private HourlyWage hourlyWage;
-    private ArrayList<Tag> tags;
+    private List<String> tags;
     private Report report;
 
     /**
@@ -23,13 +21,12 @@ public class Project {
      * @param tags Lista tageja jota projektilla on.
      */
 
-    public Project(String name, ArrayList<String> tags) {
+    public Project(String name, List<String> tags) {
         this.hourlyWage = new HourlyWage(0, "Euro");
         this.name = name;
         this.calendar = new Calendar();
-        this.tags = new ArrayList<>();
+        this.tags = tags;
         this.report = new Report(this);
-        wordToTags(tags);
     }
 
     /**
@@ -39,13 +36,12 @@ public class Project {
      * @param calendar Calendar olio jota yleensä puukotetaan testeissä.
      */
 
-    public Project(String name, ArrayList<String> tags, Calendar calendar) {
+    public Project(String name, List<String> tags, Calendar calendar) {
         this.hourlyWage = new HourlyWage(0, "Euro");
         this.name = name;
         this.calendar = calendar;
-        this.tags = new ArrayList<>();
+        this.tags = tags;
         this.report = new Report(this);
-        wordToTags(tags);
     }
 
     /**
@@ -62,15 +58,6 @@ public class Project {
 
     public void stopTracking() {
         this.calendar.stop();
-    }
-
-    /**
-     * wordToTags metodi tarjoaa toiminnon tagi olioiden tekemiseen.
-     * @param words lista tagejä String muodossa
-     */
-
-    private void wordToTags(ArrayList<String> words) {
-        words.stream().forEach(o -> this.tags.add(new Tag(o)));
     }
 
     public String getHoursMinutesAndSeconds(){
@@ -97,9 +84,9 @@ public class Project {
         String tagStrign = "Tags: ";
         for (int i = 0; i < getTags().size(); i++) {
             if (i == getTags().size() - 1) {
-                tagStrign += getTags().get(i).getName();
+                tagStrign += getTags().get(i);
             } else {
-                tagStrign += getTags().get(i).getName() +  ", ";
+                tagStrign += getTags().get(i) +  ", ";
             }
         }
         return tagStrign;
@@ -111,10 +98,10 @@ public class Project {
      */
 
     public void addTag(String tag) {
-        this.tags.add(new Tag(tag));
+        this.tags.add(tag);
     }
 
-    public ArrayList<Tag> getTags() {
+    public List<String> getTags() {
         return this.tags;
     }
 
