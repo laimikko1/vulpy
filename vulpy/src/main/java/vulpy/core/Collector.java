@@ -1,7 +1,5 @@
 package vulpy.core;
 
-import vulpy.core.tracker.Calendar;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,38 +9,22 @@ public class Collector {
 
     private List<Project> projectList;
     private Map<String, Tag> tagMap;
+    private Map<String, Integer> howManyTagsIsOnSameTime;
 
     public Collector(){
         this.projectList = new ArrayList<>();
         this.tagMap = new HashMap<>();
-    }
-
-    public void startTracking(int i){
-        List<String> tags = this.projectList.get(i).getTags();
-        for (int j = 0; j < tags.size(); j++) {
-            if(!this.tagMap.containsKey(tags.get(j))){
-                System.out.println(tags.get(j));
-                this.tagMap.put(tags.get(j),new Tag(tags.get(j)));
-            }
-            this.tagMap.get(tags.get(j)).startTracking();
-        }
-        this.projectList.get(i).startTracking();
-    }
-
-    public void stopTracking(int i){
-        List<String> tags = this.projectList.get(i).getTags();
-        for (int j = 0; j < tags.size(); j++) {
-            if(!this.tagMap.containsKey(tags.get(j))){
-                this.tagMap.put(tags.get(j),new Tag(tags.get(j)));
-            }
-            this.tagMap.get(tags.get(j)).stopTracking();
-        }
-        this.projectList.get(i).stopTracking();
+        this.howManyTagsIsOnSameTime = new HashMap<>();
     }
 
     public void startTrackingByProject(Project project){
         List<String> tags = project.getTags();
         for (int j = 0; j < tags.size(); j++) {
+            if(!this.howManyTagsIsOnSameTime.containsKey(tags.get(j))){
+                this.howManyTagsIsOnSameTime.put(tags.get(j), 1);
+            } else {
+                this.howManyTagsIsOnSameTime.put(tags.get(j), this.howManyTagsIsOnSameTime.get(tags.get(j)) + 1);
+            }
             if(!this.tagMap.containsKey(tags.get(j))){
                 this.tagMap.put(tags.get(j),new Tag(tags.get(j)));
             }
@@ -54,10 +36,15 @@ public class Collector {
     public void stopTrackingByProject(Project project){
         List<String> tags = project.getTags();
         for (int j = 0; j < tags.size(); j++) {
-            if(!this.tagMap.containsKey(tags.get(j))){
-                this.tagMap.put(tags.get(j),new Tag(tags.get(j)));
+            if(this.howManyTagsIsOnSameTime.containsKey(tags.get(j)) && this.howManyTagsIsOnSameTime.get(tags.get(j)) == 1){
+                this.howManyTagsIsOnSameTime.remove(tags.get(j));
+                if(!this.tagMap.containsKey(tags.get(j))){
+                    this.tagMap.put(tags.get(j),new Tag(tags.get(j)));
+                }
+                this.tagMap.get(tags.get(j)).stopTracking();
+            } else {
+                this.howManyTagsIsOnSameTime.put(tags.get(j), this.howManyTagsIsOnSameTime.get(tags.get(j)) - 1);
             }
-            this.tagMap.get(tags.get(j)).stopTracking();
         }
         project.stopTracking();
     }
@@ -92,6 +79,7 @@ public class Collector {
             return null;
         }
     }
+
 
     public Map<String, Tag> getTagMap(){
         return tagMap;

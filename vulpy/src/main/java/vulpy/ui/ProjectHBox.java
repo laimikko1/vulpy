@@ -20,6 +20,7 @@ public class ProjectHBox {
     private HBox hbox;
     private Timeline timeline;
     private Text time;
+    private Text hourlyWage;
     private boolean onOff;
 
     public ProjectHBox(Collector collector) {
@@ -31,7 +32,7 @@ public class ProjectHBox {
         this.hbox.setAlignment(Pos.CENTER);
         this.timeline = new Timeline();
         this.collector = collector;
-        this.time = new Text(project.getHoursMinutesAndSeconds());
+        this.time = new Text(project.getReport().getHoursMinutesAndSeconds());
         this.time.setId("timerText");
         this.onOff = false;
         makeProjectHbox();
@@ -40,15 +41,15 @@ public class ProjectHBox {
     public void makeProjectHbox() {
         Text name = new Text(this.project.getName());
         Text tags = new Text(this.project.getTagsString());
-        Text hourlyWage = new Text(project.getHourlyWage().getWage() + " " + project.getHourlyWage().getSymbol() + " / hour");
+        this.hourlyWage = new Text(project.getHourlyWage().getWage() + " " + project.getHourlyWage().getSymbol() + " / hour");
         name.setId("projectText");
         tags.setId("projectText");
         name.setWrappingWidth(105);
         tags.setWrappingWidth(195);
-        hourlyWage.setId("projectText");
+        this.hourlyWage.setId("projectText");
         Button startButton = greateButton();
         startButton.setAlignment(Pos.CENTER_LEFT);
-        this.hbox.getChildren().addAll(name, tags, hourlyWage, this.time, startButton);
+        this.hbox.getChildren().addAll(name, tags, this.hourlyWage, this.time, startButton);
     }
 
     public Button greateButton() {
@@ -70,7 +71,7 @@ public class ProjectHBox {
                             new EventHandler<ActionEvent>() {
                                     @Override
                                     public void handle(ActionEvent t) {
-                                        time.setText(project.getHoursMinutesAndSeconds());
+                                        time.setText(project.getReport().getHoursMinutesAndSeconds());
                                     }
                                 })
                         );
@@ -80,6 +81,10 @@ public class ProjectHBox {
                 }
             });
         return button;
+    }
+
+    public void refresh(){
+        this.hourlyWage.setText(project.getHourlyWage().getWage() + " " + project.getHourlyWage().getSymbol() + " / hour");
     }
 
 

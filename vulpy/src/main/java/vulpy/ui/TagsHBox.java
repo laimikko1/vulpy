@@ -71,9 +71,8 @@ public class TagsHBox {
 
     public VBox textBox(){
         VBox vbox = new VBox(10);
-        Text workingTime = new Text("Working time: " + this.tag.getHoursMinutesAndSeconds());
+        Text workingTime = new Text("Working time: " + this.tag.getReport().getHoursMinutesAndSeconds());
         workingTime.setId("reportTextBox");
-
         vbox.getChildren().addAll(workingTime);
         return vbox;
     }

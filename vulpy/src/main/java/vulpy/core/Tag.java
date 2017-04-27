@@ -8,6 +8,7 @@ import vulpy.core.tracker.Calendar;
  */
 
 public class Tag implements Measurable {
+
     private String name;
     private Calendar calendar;
     private Report report;
@@ -44,26 +45,6 @@ public class Tag implements Measurable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getHoursMinutesAndSeconds(){
-        long longVal = getTime() / 100;
-        int hours = (int) longVal / 3600;
-        int remainder = (int) longVal - hours * 3600;
-        int mins = remainder / 60;
-        remainder = remainder - mins * 60;
-        int secs = remainder;
-        String hoursMinutesAndSeconds = underTen(hours) + "h " + underTen(mins) + "min " + underTen(secs) + "sec";
-        return hoursMinutesAndSeconds;
-    }
-
-    public String underTen(int n){
-        String number = "";
-        if(n < 10){
-            number += "0";
-        }
-        number += n;
-        return number;
     }
 
     public Calendar getCalendar() {

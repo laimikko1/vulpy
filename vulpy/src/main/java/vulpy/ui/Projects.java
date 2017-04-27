@@ -17,12 +17,14 @@ public class Projects {
     private Collector collector;
     private List<Project> projects;
     private VBox projectsSection;
+    private List<ProjectHBox> projectHBoxes;
 
     public Projects() {
         this.collector = new Collector();
         this.projects = this.collector.getProjectList();
         this.projectsSection = new VBox(10);
         this.projectsSection.setId("projectsSection");
+        this.projectHBoxes = new ArrayList<>();
     }
 
     public VBox writingSection() {
@@ -33,6 +35,12 @@ public class Projects {
         vBox.setPadding(new Insets(10, 30, 10, 10));
         vBox.getChildren().addAll(addNew, textArea);
         return vBox;
+    }
+
+    public void refresh(){
+        for (int i = 0; i < projectHBoxes.size(); i++) {
+            projectHBoxes.get(i).refresh();
+        }
     }
 
     public HBox textArea() {
@@ -59,6 +67,7 @@ public class Projects {
             } else {
                 addProject(name, tags);
                 ProjectHBox hBox = new ProjectHBox(collector);
+                projectHBoxes.add(hBox);
                 projectsSection.getChildren().add(hBox.getHbox());
             }
         });
@@ -103,6 +112,7 @@ public class Projects {
     }
 
     public VBox getProjectsSection() {
+        refresh();
         return projectsSection;
     }
 }

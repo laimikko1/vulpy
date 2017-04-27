@@ -32,13 +32,17 @@ public class Tracker {
     }
 
     public void startTracking() {
-        this.startTime = timeSupplier.getNanoseconds();
-        this.on = true;
+        if(!this.on){
+            this.startTime = timeSupplier.getNanoseconds();
+            this.on = true;
+        }
     }
 
     public void stopTracking() {
-        this.centiseconds += nanosecondsToCentiseconds(timeSupplier.getNanoseconds() - this.startTime);
-        this.on = false;
+        if(this.on){
+            this.centiseconds += nanosecondsToCentiseconds(timeSupplier.getNanoseconds() - this.startTime);
+            this.on = false;
+        }
     }
 
     public long getCentiseconds() {

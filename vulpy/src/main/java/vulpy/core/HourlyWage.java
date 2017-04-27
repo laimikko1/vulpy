@@ -6,9 +6,7 @@ package vulpy.core;
 
 public class HourlyWage {
 
-    private static final int EURO = 1000;
-    private static final int DOLLAR = 1072;
-    private static final int CNY = 7391;
+    private static final int EURO = 1;
 
     private int wage;
     private String unit;
@@ -20,24 +18,18 @@ public class HourlyWage {
      */
 
     public HourlyWage(int wage, String unit) {
-        setHourlyWage(wage, unit);
+        setHourlyWage(wage);
     }
 
     /**
      * setHourlyWage metodin avulla voi vaihtaa HourlyWagea lennosta.
      * Metodi asettaa sekä uuden unitin ja wagen.
      * @param wage tuntipalkka
-     * @param unit rahayksikkö
      */
 
-    public void setHourlyWage(int wage, String unit) {
-        if (!(unit.equals("EURO") || unit.equals("DOLLAR") || unit.equals("CNY"))) {
-            this.unit = "EURO";
-            this.wage = 0;
-        } else {
-            this.unit = unit;
-            this.wage = wage;
-        }
+    public void setHourlyWage(int wage) {
+        this.unit = "EURO";
+        this.wage = wage;
     }
 
     /**
@@ -46,12 +38,7 @@ public class HourlyWage {
      */
 
     public String getSymbol() {
-        if (this.unit.equals("EURO")) {
-            return "€";
-        } else if (this.unit.equals("CNY")) {
-            return "¥";
-        }
-        return "$";
+        return "€";
     }
 
     /**
@@ -62,15 +49,6 @@ public class HourlyWage {
 
     public int getSalary(int hours) {
         return hours * this.wage;
-    }
-
-    /**
-     * setUnit metodi antaa vaihtaa rahayksikköä, jos rahayksikkö ei ole käytössä käytetään euroa.
-     * @param unit vaatii rahayksikön, jos kyseinen String ei ole rahayksikkö, käytetään euroa.
-     */
-
-    public void setUnit(String unit) {
-        setHourlyWage(this.wage, unit);
     }
 
     public void setWage(int wage) {

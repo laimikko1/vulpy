@@ -7,9 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class HourlyWageTest {
 
     private HourlyWage hourlyWage;
-    private static int EURO = 1000;
-    private static int DOLLAR = 1072;
-    private static int CNY = 7391;
+    private static int EURO = 1;
 
     public HourlyWageTest() {
     }
@@ -39,31 +37,10 @@ public class HourlyWageTest {
     }
 
     @Test
-    public void changeCurrencyWorks(){
-        assertEquals("EURO", this.hourlyWage.getUnit());
-        this.hourlyWage.setUnit("Cnyasd");
-        assertEquals("EURO", this.hourlyWage.getUnit());
-        this.hourlyWage.setUnit("DOLLAR");
-        assertEquals("DOLLAR", this.hourlyWage.getUnit());
-        this.hourlyWage.setUnit("CNY");
-        assertEquals("CNY", this.hourlyWage.getUnit());
-    }
-
-    @Test
     public void getRightSalary(){
         int hours = 12;
         this.hourlyWage.setWage(1200);
         assertEquals(12*1200, this.hourlyWage.getSalary(hours));
-    }
-
-    @Test
-    public void getRightSymbol(){
-        this.hourlyWage.setUnit("EURO");
-        assertEquals("€", this.hourlyWage.getSymbol());
-        this.hourlyWage.setUnit("CNY");
-        assertEquals("¥", this.hourlyWage.getSymbol());
-        this.hourlyWage.setUnit("DOLLAR");
-        assertEquals("$", this.hourlyWage.getSymbol());
     }
 }
 
