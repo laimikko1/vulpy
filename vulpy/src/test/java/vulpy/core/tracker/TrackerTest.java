@@ -83,28 +83,6 @@ public class TrackerTest {
         assertEquals(nanosecondsToCentiseconds(5 * MINUTES_TO_NANOSECONDS),tracker.getCentiseconds());
     }
 
-    @Test
-    public void ifCentisecondsIsBiggerThanDay() {
-        Tracker tracker = new Tracker(this.timeSupplier);
-        tracker.startTracking();
-        this.time.addAndGet(2 * DAY_TO_NANOSECONDS);
-        assertEquals(nanosecondsToCentiseconds(DAY_TO_NANOSECONDS), tracker.getCentiseconds());
-        this.time.addAndGet(2 * DAY_TO_NANOSECONDS);
-        tracker.stopTracking();
-        assertEquals(nanosecondsToCentiseconds(DAY_TO_NANOSECONDS), tracker.getCentiseconds());
-        Tracker traker1 = new Tracker(this.timeSupplier);
-        traker1.startTracking();
-        tracker.startTracking();
-        this.time.addAndGet(23 * HOURS_TO_NANOSECONDS);
-        tracker.stopTracking();
-        assertEquals(nanosecondsToCentiseconds(DAY_TO_NANOSECONDS), tracker.getCentiseconds());
-        assertEquals(nanosecondsToCentiseconds(23 * HOURS_TO_NANOSECONDS), traker1.getCentiseconds());
-        this.time.addAndGet(2 * HOURS_TO_NANOSECONDS);
-        assertEquals(nanosecondsToCentiseconds(DAY_TO_NANOSECONDS),traker1.getCentiseconds());
-    }
-
-
-
     public long nanosecondsToCentiseconds(long nanoseconds){
         return nanoseconds / 10000000;
     }

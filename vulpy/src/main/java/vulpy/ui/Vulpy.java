@@ -23,9 +23,9 @@ public class Vulpy extends Application {
      */
 
     public static void main(String[] args) {
-        URL iconURL  = Vulpy.class.getClassLoader().getResource("ui/logo.png");
+        /*URL iconURL  = Vulpy.class.getClassLoader().getResource("ui/logo.png");
         java.awt.Image image = new ImageIcon(iconURL).getImage();
-        com.apple.eawt.Application.getApplication().setDockIconImage(image);
+        com.apple.eawt.Application.getApplication().setDockIconImage(image);*/
         launch(args);
     }
 
@@ -42,7 +42,7 @@ public class Vulpy extends Application {
         Menu menu = new Menu(primaryStage, borderPane, scene);
 
         scene.getStylesheets().add(getClass().getResource("/vulpy.css").toExternalForm());
-        primaryStage.getIcons().add(new Image(Vulpy.class.getClassLoader().getResourceAsStream("ui/logo32.png")));
+        //primaryStage.getIcons().add(new Image(Vulpy.class.getClassLoader().getResourceAsStream("ui/logo32.png")));
 
         layout.getChildren().addAll(borderPane);
         layout.getChildren().addAll(menu.getSidebar());

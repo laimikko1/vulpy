@@ -6,6 +6,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import static org.junit.Assert.assertEquals;
@@ -54,7 +55,7 @@ public class CalendarTest {
 
     @Test
     public void getCorrectStringListOfDates(){
-        ArrayList<String> Dates = calendar.getStringDates();
+        List<String> Dates = calendar.getStringDates();
         boolean b = false;
         for (int i = 0; i < 5; i++) {
             String contains = Dates.get(i);
