@@ -12,11 +12,21 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import vulpy.core.Tag;
 
+/**
+ * TagsHBox-luokka tarjoaa raportin tagista.
+ */
+
 public class TagsHBox {
 
     private Tag tag;
     private Tags tags;
     private HBox hBox;
+
+    /**
+     * Konstruktorissa otetaan luokalle sisään tagi mistä raportti tehdään, sekä tags-olio, jotta voimme päivittää näkymää.
+     * @param tag tagi mille tehdään reportti.
+     * @param tags tags olio mitä päivitetään.
+     */
 
     public TagsHBox(Tag tag, Tags tags) {
         this.tag = tag;
@@ -24,6 +34,10 @@ public class TagsHBox {
         this.hBox = new HBox();
         greateHBox();
     }
+
+    /**
+     * Metodi greateHBox luo boxin missä on melkeen kaikki tieto raportista.
+     */
 
     public void greateHBox() {
         this.hBox.setId("tagHBox");
@@ -43,6 +57,12 @@ public class TagsHBox {
         this.hBox.getChildren().addAll(vbox);
     }
 
+    /**
+     * Metodi editingBox rakentaa HBoxin joka sisältää kaksi VBoxia.
+     * Vasen on textBox ja oikea sisältää datan vaihtoon liittyviä asioita.
+     * @return HBox jossa on reportin tietoja.
+     */
+
     public HBox editingBox() {
         HBox hBox = new HBox(10);
         VBox left = textBox();
@@ -51,6 +71,12 @@ public class TagsHBox {
         hBox.getChildren().addAll(left, right);
         return hBox;
     }
+
+    /**
+     * Metodi buttons tarjoaa reportissa olevat mahdollisuudet datan muuttamiseen.
+     * Metodi luo yhden napin, ja yhden tekstikentän. Näiden avulla on mahdollista lähettää json-posteja.
+     * @return VBox jossa nappi sekä tekstikenttä sijaitsee.
+     */
 
     public VBox buttons() {
         VBox vBox = new VBox(10);
@@ -69,6 +95,12 @@ public class TagsHBox {
         return vBox;
     }
 
+    /**
+     * Metodi textBox luo VBoxin jossa on kaikki tärkeimmät tiedot tagista.
+     * VBoxiin lisätään nimi ja käytetty aika.
+     * @return VBox jossa nimi ja käytetty aika.
+     */
+
     public VBox textBox() {
         VBox vbox = new VBox(10);
         Text workingTime = new Text("Working time: " + this.tag.getReport().getHoursMinutesAndSeconds());
@@ -76,6 +108,11 @@ public class TagsHBox {
         vbox.getChildren().addAll(workingTime);
         return vbox;
     }
+
+    /**
+     * Metodi back luo Buttonin jossa on takaisin meno vaihtoehto edelliseen näkymään.
+     * @return button edelliseen näkymään
+     */
 
     public Button back() {
         Button button = new Button("Back");
@@ -86,6 +123,11 @@ public class TagsHBox {
         });
         return button;
     }
+
+    /**
+     * Metodi addData antaa kuvaajan datan ulos jokaista projektissa mitattavana olevaa päivää kohden.
+     * @return kuvaajan data.
+     */
 
     public XYChart.Series addData() {
         XYChart.Series series = new XYChart.Series();

@@ -14,6 +14,10 @@ Päivä | Tunnit | Kuvaus
 06.04.2017 | 3h | Uudet luokkakaaviot, koodausta ja suunnittelua.
 06.04.2017 | 4h | Valmistelin palautusta
 17.04.2017 | 1h | Pientä refaktorointia
-19.04.2017 | 5h | Tein UI:table
+19.04.2017 | 5h | Tein UI:ta
 20.04.2017 | 3h | Tein javadockkeja, kovalevy hajosi koneesta.
 21.04.2017 | 7h | Valmistelin palaustusta ja koodasin kahden viikon hommat uudestaan.
+24.04.2017 | 2h | Tein UI:ta
+25.04.2017 | 1h | Pientä parantelua UI:n ulkoasuun
+26.04.2017 | 5h | Valmistelin palautusta, huomasin että UI leviää vähän käsiin.
+27.04.2017 | 2h | Korjailin

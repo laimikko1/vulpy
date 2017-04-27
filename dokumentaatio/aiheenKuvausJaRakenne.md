@@ -1,10 +1,10 @@
 # Ajanhallintajärjestelmä
 
-Toteutan ajanhallintajärjestelmän, jonka avulla voidaan mitata ajankäyttöä reaaliajassa eri projekteille. Projekteilla voi olla aliprojekteja tai tägejä, joiden ajankäyttöä myös mitataan.
+Toteutan ajanhallintajärjestelmän, jonka avulla voidaan mitata ajankäyttöä reaaliajassa eri projekteille. Projekteilla voi olla aliprojekteja tai tägejä, joiden ajankäyttöä myös mitataan. Ohjelmassa voi tarkastella raportteja projektejen ajankäytöstä.
 
 Ohjelmasta voi ottaa ulos json-tiedoston ajankäytöstä jokaisesta projektista, tagistä, tai aliprojektista.
 
-Lisäksi toteutan ominaisuuden jossa käyttäjä voi halutessaan määrittää aiheestaan saaman tuntipalkan, ja tulostaa ohjelmasta ulos pdf-muotoisen raportin.
+Lisäksi toteutan ominaisuuden jossa käyttäjä voi halutessaan määrittää aiheestaan saaman tuntipalkan.
 
 Ajanhallintajärjestelmän tulee tukea Windows, Ubuntu ja Mac OS käyttöjärjestelmiä.
 
@@ -13,15 +13,14 @@ Kaikilla käyttäjillä on samat toiminnot.
 Kaikkien käyttäjien toiminnot:
 
  - Aiheen lisääminen
- - Aliaiheen lisääminen
- - Tagin lisääminen aiheelle tai aliaiheelle
+ - Tagin lisääminen aiheelle
  - Ajankäytön mittaamisen aloittaminen ja lopettaminen
  - Tuntipalkan määrittäminen
  - Raportin ulosotto
 
 ## Rakennekuvaus
 
-Ohjelman tärkeimmät luokat on calendar, tracker ja systemTimeSupplier, jotka hoitavat kaiken ajanlaskentaan tarvittavan ohjelmallisuuden.
+Ohjelman tärkeimmät luokat on Calendar, Tracker ja SystemTimeSupplier, jotka hoitavat kaiken ajanlaskentaan tarvittavan ohjelmallisuuden.
 Collector luokka yhdistää tagit ja projektit UI:n käytettäväksi, ja pitää huolen että ajanlasku tapahtuu oikein. Report tarjoaa reportin projektista tai tagista. UI:n puoli on vielä vähän epäselvä, mutta yksinkertaisuudessaan on olemassa kolme näkymää. Report näkymä tarjoaa kaiken reporteista. Project näkymä tarjoaa kaiken projekteista ja tag näkymä tarjoaa kaiken tageista. Tätä kaikkea ohjaa sidebar luokka, joka pitää huolen sivussa olevasta valikosta.
 
 ## Luokkakaavio

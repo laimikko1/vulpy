@@ -152,6 +152,12 @@ public class Projects {
         return this.collector;
     }
 
+    /**
+     * Metodi getProjectsSection päivittää ensin mahdolliset muutokset mitä ohjelmassa on tapahtunut.
+     * Tämän jälkeen palautetaan projekti osion VBox.
+     * @return palauttaa projektit osion päivitettynä.
+     */
+
     public VBox getProjectsSection() {
         refresh();
         return projectsSection;

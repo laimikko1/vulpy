@@ -1,3 +1,15 @@
 # Käyttöohjeet
 
-Menussa on kolme painiketta (Projects, Reports ja Tags) joiden avulla voi vaihtaa näkymää. Kun projekti on luotu, voi sen ajan laskemisen aloittaa painamalla S painiketta. Kun ajankäyttö on aloitettu alkaa myös ajankäytön laskeminen projektin tageissa. Tuntipalkkaa projektille voi vaihtaa report välilehden kautta.
+Ohjelman oikeassa reunassa olevassa menussa on kolme painiketta (Projects, Reports ja Tags). Näiden avulla voi vaihtaa näkymää ohjelman sisäistä näkymää.
+
+#### Projects
+
+Projects näkymässä voit luoda itsellesi projekteja, kirjoittamalla molempiin alareinassa oleviin tekstikenttiin tekstiä ja tämän jälkeen painamalla Add nappia. Projektin luomisen jälkeen on mahdollista mitata ajankäyttöä liittyen tähän tiettyyn projektiin ja sen tageihin. Tämä tapahtuu painamalla projektin vieressä olevaa 'S' nappia.
+
+#### Reports
+
+Reports näkymässä voit käydä katsomassa raportit tekemistäsi projekeista. Raportin kautta voit käydä vaihtamassa projektilla olevaa tuntipalkkaa.
+
+#### Tags
+
+Tags valikosta voit käydä katsomassa raportit jo merkatuista tageistä.

@@ -10,6 +10,10 @@ import vulpy.core.Tag;
 
 import java.util.Map;
 
+/**
+ * Tags-luokka tarjoaa lista näkymän jossa on kaikki tagit listattuna.
+ */
+
 public class Tags {
 
     private Collector collector;
@@ -18,6 +22,13 @@ public class Tags {
     private VBox right;
     private VBox left;
 
+    /**
+     * Konstruktorissa otetaan Projects olio vastaan jossa on kaikista projekteista viite.
+     * Myös päivitettävä ScrollPane olio otetaan sisälle luokkaan.
+     * @param content ScrollPane jota päivitetään.
+     * @param collector collector, josta saadaan tagit joille näkymä tehdään.
+     */
+
     public Tags(Collector collector, ScrollPane content) {
         this.content = content;
         this.collector = collector;
@@ -25,6 +36,10 @@ public class Tags {
         formatTags();
         addAllTags();
     }
+
+    /**
+     * Metodi formatReports luo koko näkymän ja alustaa oliot uusiksi.
+     */
 
     public void formatTags() {
         Map<String, Tag> tagMap = this.collector.getTagMap();
@@ -41,6 +56,10 @@ public class Tags {
         this.box.getChildren().addAll(text, subBox);
     }
 
+    /**
+     * Metodi addAllTags jaoittelee tagit niiden määrän mukaan kahteen osioon, vasempaan ja oikeaan.
+     */
+
     public void addAllTags() {
         int i = 0;
         for (String name:this.collector.getTagMap().keySet()) {
@@ -53,16 +72,28 @@ public class Tags {
         }
     }
 
+    /**
+     * Metodi addTagButton luo tagButtonin eli jokaisesta tagista tehdään nappi.
+     * @param name nimi mikä tagi on kyseessä.
+     * @return nappi jokaista tagia kohti.
+     */
+
     public Button addTagButton(String name) {
-        Button reportButton = new Button();
-        addButtonFunctions(reportButton, name);
-        reportButton.setPrefWidth(250);
-        reportButton.setPrefHeight(30);
-        reportButton.setId("reportButton");
-        reportButton.setText(name);
-        addButtonFunctions(reportButton, name);
-        return reportButton;
+        Button tagButton = new Button();
+        addButtonFunctions(tagButton, name);
+        tagButton.setPrefWidth(250);
+        tagButton.setPrefHeight(30);
+        tagButton.setId("reportButton");
+        tagButton.setText(name);
+        addButtonFunctions(tagButton, name);
+        return tagButton;
     }
+
+    /**
+     * Metodi addButtonFunctions lisää napille funktion että saadaan ulos raportti.
+     * @param button nappi mihin funktio lisätään.
+     * @param name nimi mikä tagi on kyseessä.
+     */
 
     public void addButtonFunctions(Button button, String name) {
         TagsHBox tagsHbox = new TagsHBox(this.collector.getTag(name), this);
@@ -72,6 +103,12 @@ public class Tags {
             this.content.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         });
     }
+
+    /**
+     * Metodi getBox tarjoaa tagienlistaus näkymän boxin.
+     * Tätä ennen metodi kumminkin päivittää tagilistauksen uusimpaan versioon.
+     * @return VBox jossa tagien raporttilistaus sijaitsee.
+     */
 
     public VBox getBox() {
         formatTags();

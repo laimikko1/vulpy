@@ -12,11 +12,21 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import vulpy.core.Project;
 
+/**
+ * ReportHBox-luokka tarjoaa raportin projektista.
+ */
+
 public class ReportHBox {
 
     private HBox hBox;
     private Project project;
     private Reports reports;
+
+    /**
+     * Konstruktorissa otetaan luokalle sisään projekti mistä raportti tehdään, sekä reports-olio, jotta voimme päivittää näkymää.
+     * @param project projekti mille tehdään reportti.
+     * @param reports reports olio mitä päivitetään.
+     */
 
     public ReportHBox(Project project, Reports reports) {
         this.hBox = new HBox();
@@ -25,12 +35,19 @@ public class ReportHBox {
         greateHBox();
     }
 
+    /**
+     * Metodi refresh päivittää kaikki sellaiset kentät mitkä voi muuttua ohjelman käytön aikana.
+     */
+
     public void refresh() {
         this.hBox = new HBox();
         greateHBox();
         this.reports.getContent().setContent(this.hBox);
     }
 
+    /**
+     * Metodi greateHBox luo boxin missä on melkeen kaikki tieto raportista.
+     */
 
     public void greateHBox() {
         this.hBox.setId("reportHBox");
@@ -50,14 +67,25 @@ public class ReportHBox {
         this.hBox.getChildren().addAll(vbox);
     }
 
+    /**
+     * Metodi editingBox rakentaa HBoxin joka sisältää kaksi VBoxia.
+     * Vasen on textBox ja oikea sisältää datan vaihtoon liittyviä asioita.
+     * @return HBox jossa on reportin tietoja.
+     */
+
     public HBox editingBox() {
         HBox hBox = new HBox(10);
         VBox left = textBox();
-        VBox right = new VBox();
-        right.getChildren().addAll(buttons());
+        VBox right = buttons();
         hBox.getChildren().addAll(left, right);
         return hBox;
     }
+
+    /**
+     * Metodi buttons tarjoaa reportissa olevat mahdollisuudet datan muuttamiseen.
+     * Metodi luo kaksi nappia, sekä kaksi tekstikenttää.
+     * @return VBox jossa napit sekä tekstikentät sijaitsee.
+     */
 
     public VBox buttons() {
         VBox vBox = new VBox(10);
@@ -85,6 +113,12 @@ public class ReportHBox {
         return vBox;
     }
 
+    /**
+     * Metodi textBox luo VBoxin jossa on kaikki tärkeimmät tiedot projektista.
+     * VBoxiin lisätään nimi, tuntipalkka, käytettyaika ja palkka.
+     * @return VBox jossa nimi, tuntipalkka, käytettyaika ja palkka.
+     */
+
     public VBox textBox() {
         VBox vbox = new VBox(10);
         Text workingTime = new Text("Working time: " + this.project.getReport().getHoursMinutesAndSeconds());
@@ -98,6 +132,11 @@ public class ReportHBox {
         return vbox;
     }
 
+    /**
+     * Metodi addData antaa kuvaajan datan ulos jokaista projektissa mitattavana olevaa päivää kohden.
+     * @return kuvaajan data.
+     */
+
     public XYChart.Series addData() {
         XYChart.Series series = new XYChart.Series();
         for (String date:project.getCalendar().getDates().keySet()) {
@@ -105,6 +144,11 @@ public class ReportHBox {
         }
         return series;
     }
+
+    /**
+     * Metodi back luo Buttonin jossa on takaisin meno vaihtoehto edelliseen näkymään.
+     * @return button edelliseen näkymään.
+     */
 
     public Button back() {
         Button button = new Button("Back");
