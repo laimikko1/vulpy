@@ -1,7 +1,7 @@
 package vulpy.core;
 
 /**
- * HourlyWage tarjoaa tärkeimmät metodit tuntipalkan laskemiseen kolmella isoimmalla valuutalla.
+ * HourlyWage-luokka tarjoaa toiminnallisuuden palkkojen laskemiseen.
  */
 
 public class HourlyWage {
@@ -22,8 +22,7 @@ public class HourlyWage {
     }
 
     /**
-     * setHourlyWage metodin avulla voi vaihtaa HourlyWagea lennosta.
-     * Metodi asettaa sekä uuden unitin ja wagen.
+     * setHourlyWage metodin avulla voi vaihtaa tuntipalkkaa olion sisällä.
      * @param wage tuntipalkka
      */
 
@@ -33,8 +32,8 @@ public class HourlyWage {
     }
 
     /**
-     * getSymbol metodi palauttaa kyseisen unitin symbolin.
-     * @return palauttaa kyseisen unitin symbolin.
+     * getSymbol metodi palauttaa kyseisen yksikön symbolin.
+     * @return palauttaa kyseisen yksikön symbolin.
      */
 
     public String getSymbol() {
@@ -43,8 +42,8 @@ public class HourlyWage {
 
     /**
      * getSalary metodi antaa kokonaispalkan. Käytetään projekti-luokasta.
-     * @param hours tunnit mitä kyseiseen projektiin on käytetty
-     * @return palauttaa kokonaispalkan
+     * @param hours tunnit mitä kyseiseen projektiin on käytetty.
+     * @return palauttaa kokonaispalkan.
      */
 
     public int getSalary(int hours) {

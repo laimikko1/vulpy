@@ -7,6 +7,11 @@ import java.util.Map;
 
 public class Collector {
 
+    /**
+     * Collector-luokka tarjoaa yhtymäpinnan projektejen ja tagejen välille.
+     * Luokalle kuuluu vastuu siitä että miten tagejen ja projektejen ajastimet on päällä tai pois päältä.
+     */
+
     private List<Project> projectList;
     private Map<String, Tag> tagMap;
     private Map<String, Integer> howManyTagsIsOnSameTime;

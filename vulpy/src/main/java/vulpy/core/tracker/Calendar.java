@@ -25,12 +25,13 @@ public class Calendar {
     }
 
     /**
-     * Metodi aloittaa tämän päivän ajanlaskemisen.
+     * Metodi aloittaa tämän päivän ajanlaskemisen. Metodi käyttää stopAllOthers metodia varmistaakseen, ettei mikään muu tracker ole päällä.
      */
 
     public void start() {
         String currentDate = getCurrentDate();
         ifNotContainsCurrentDate(currentDate);
+        stopAllOthers();
         dates.get(currentDate).startTracking();
     }
 
@@ -45,8 +46,22 @@ public class Calendar {
     }
 
     /**
+     * Metodi stopAllOthers varmistaa sen että ainoastaan yksi tracker on päällä yhtäaikaa yhdessä projektissa.
+     * Metodi stoppaa kaikki trackerit kuin tämän päivän tracker.
+     */
+
+    public void stopAllOthers(){
+        String currentDate = getCurrentDate();
+        for (String date:this.dates.keySet()) {
+            if(!date.equals(currentDate)){
+                this.dates.get(date).stopTracking();
+            }
+        }
+    }
+
+    /**
      * Metodi käy koko hashmapin läpi ja laskee koko projektiin käytetyn ajan sekuntteina.
-     * @return koko projektiin käytetty aika.
+     * @return koko projektiin yhteensä käytetty aika.
      */
 
     public long getCentiSeconds() {

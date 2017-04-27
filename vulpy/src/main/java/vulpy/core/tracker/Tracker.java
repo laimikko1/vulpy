@@ -13,23 +13,28 @@ public class Tracker {
     private long startTime;
     private long centiseconds;
     private boolean on;
-    private int max;
 
-    public Tracker() {
-        this(new SystemTimeSupplier());
-        this.centiseconds = 0;
-        this.max = 0;
-    }
-
-    public Tracker(int max) {
-        this(new SystemTimeSupplier());
-        this.centiseconds = 0;
-        this.max = max;
-    }
+    /**
+     * Konstruktorissa alustetaan tietyn trackerin mitattu aika, sekä annetaan systemTimeSupplier luokalle.
+     * @param timeSupplier trackerin käyttämä timeSupplier olio.
+     */
 
     public Tracker(TimeSupplier timeSupplier) {
         this.timeSupplier = timeSupplier;
     }
+
+    /**
+     * Konstruktorissa alustetaan tietyn trackerin mitattu aika, sekä annetaan systemTimeSupplier luokalle.
+     */
+
+    public Tracker() {
+        this(new SystemTimeSupplier());
+        this.centiseconds = 0;
+    }
+
+    /**
+     * Aloittaa ajanlaskemisen, vain jos tracker on ennestään ollut pois päältä.
+     */
 
     public void startTracking() {
         if(!this.on){
@@ -38,12 +43,21 @@ public class Tracker {
         }
     }
 
+    /**
+     * Lopettaa ajanlaskemisen, vain jos tracker on ennestään ollut päällä.
+     */
+
     public void stopTracking() {
         if(this.on){
             this.centiseconds += nanosecondsToCentiseconds(timeSupplier.getNanoseconds() - this.startTime);
             this.on = false;
         }
     }
+
+    /**
+     * Metodi getCentiseconds tarjoaa trackerin mittaaman ajan senttisekuntteina.
+     * @return senttisekuntteina trackerin mittaaman ajan.
+     */
 
     public long getCentiseconds() {
         long currentNano = timeSupplier.getNanoseconds();
@@ -60,11 +74,16 @@ public class Tracker {
         return this.centiseconds;
     }
 
+    /**
+     * Tarjoaa tietyn trackerin mittaamat minuutit.
+     * @return mitatut minuutit.
+     */
+
     public double getMinutes() {
         return (double) getCentiseconds() / 6000;
     }
 
-    public long nanosecondsToCentiseconds(Long nanoseconds) {
+    private long nanosecondsToCentiseconds(Long nanoseconds) {
         return nanoseconds / 10000000;
     }
 }
