@@ -2,14 +2,11 @@ package vulpy.core.tracker;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Calendar-luokka tarjoaa ajanlaskuun tarvittavat metodit päivien tasolla.
- * Jokaisella projektilla on yksi Calendar-olio, jokaista mitattua päivää kohden yksi Tracker olio.
+ * Jokaisella projektilla on yksi Calendar-olio, jokaista mitattua päivää kohden yksi Tracker-olio.
  */
 
 public class Calendar {
@@ -25,7 +22,8 @@ public class Calendar {
     }
 
     /**
-     * Metodi aloittaa tämän päivän ajanlaskemisen. Metodi käyttää stopAllOthers metodia varmistaakseen, ettei mikään muu tracker ole päällä.
+     * Metodi start aloittaa tämän päivän ajanlaskemisen.
+     * Metodi käyttää stopAllOthers metodia varmistaakseen, ettei mikään muu tracker ole päällä.
      */
 
     public void start() {
@@ -36,7 +34,7 @@ public class Calendar {
     }
 
     /**
-     * Metodi lopettaaa tämän päivän ajanlaskemisen.
+     * Metodi stop lopettaaa tämän päivän ajanlaskemisen.
      */
 
     public void stop() {
@@ -47,7 +45,7 @@ public class Calendar {
 
     /**
      * Metodi stopAllOthers varmistaa sen että ainoastaan yksi tracker on päällä yhtäaikaa yhdessä projektissa.
-     * Metodi stoppaa kaikki trackerit kuin tämän päivän tracker.
+     * Metodi stoppaa kaikki muut trackerit kuin tämän päivän tracker.
      */
 
     public void stopAllOthers(){
@@ -60,7 +58,7 @@ public class Calendar {
     }
 
     /**
-     * Metodi käy koko hashmapin läpi ja laskee koko projektiin käytetyn ajan sekuntteina.
+     * Metodi getCentiSeconds käy koko hashmapin läpi ja laskee koko projektiin käytetyn ajan sekuntteina.
      * @return koko projektiin yhteensä käytetty aika.
      */
 
@@ -69,7 +67,7 @@ public class Calendar {
     }
 
     /**
-     * ifNotContainsCurrentDate metodi katsoo onko kalenterissa olemassa jo kyseistä päivää.
+     * Metodi ifNotContainsCurrentDate metodi katsoo onko kalenterissa olemassa jo kyseistä päivää.
      * Jos ei niin luodaan uusi päivä.
      * @param currentDate nykyinen päivä.
      */
@@ -81,7 +79,7 @@ public class Calendar {
     }
 
     /**
-     * getCurrentDate metodi tarjoaa tämän päivän.
+     * Metodi getCurrentDate metodi tarjoaa tämän päivän.
      * @return tämänhetkinen päivä.
      */
 
@@ -92,18 +90,18 @@ public class Calendar {
     }
 
     /**
-     * Metodi käy läpi kaikki päivät milloin on laskettu aikaa.
+     * Metodi getStringList kerää string listan kaikista mitatuista päivistä.
      * @return kaikki päivät milloin on mitattu aikaa.
      */
 
-    public ArrayList<String> getStringDates() {
-        ArrayList<String> stringDates = new ArrayList<>();
+    public List<String> getStringDates() {
+        List<String> stringDates = new ArrayList<>();
         this.dates.keySet().stream().forEach(o -> stringDates.add(o));
         return stringDates;
     }
 
     /**
-     * putOneDate metodi antaa mahdollisuuden lisätä kalenteriin yhden päivän.
+     * Metodi putOneDate antaa mahdollisuuden lisätä kalenteriin yhden päivän.
      * @param date päivä.
      */
 

@@ -12,7 +12,7 @@ public class HourlyWage {
     private String unit;
 
     /**
-     * luodaan uusi HourlyWage olio.
+     * Konstruktorissa luodaan uusi HourlyWage olio.
      * @param wage tuntipalkka
      * @param unit rahayksikkö
      */
@@ -22,7 +22,7 @@ public class HourlyWage {
     }
 
     /**
-     * setHourlyWage metodin avulla voi vaihtaa tuntipalkkaa olion sisällä.
+     * Metodin setHourlyWage avulla voi vaihtaa tuntipalkkaa olion sisällä.
      * @param wage tuntipalkka
      */
 
@@ -32,8 +32,8 @@ public class HourlyWage {
     }
 
     /**
-     * getSymbol metodi palauttaa kyseisen yksikön symbolin.
-     * @return palauttaa kyseisen yksikön symbolin.
+     * Metodi getSymbol palauttaa kyseisen rahayksikön symbolin.
+     * @return palauttaa kyseisen rahayksikön symbolin.
      */
 
     public String getSymbol() {
@@ -41,7 +41,7 @@ public class HourlyWage {
     }
 
     /**
-     * getSalary metodi antaa kokonaispalkan. Käytetään projekti-luokasta.
+     * Metodi getSalary antaa projektin kokonaispalkan. Käytetään projekti-luokasta.
      * @param hours tunnit mitä kyseiseen projektiin on käytetty.
      * @return palauttaa kokonaispalkan.
      */

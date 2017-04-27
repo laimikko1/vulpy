@@ -3,8 +3,8 @@ package vulpy.core;
 import vulpy.core.tracker.Calendar;
 
 /**
- * Tag-luokka tarjoaa tagin, jota voi hyödyntää niinkuin projektia.
- * Kuitenkin yksi projekti voi käyttää useita tagejä.
+ * Tag-luokka tarjoaa tagin, jota voi hyödyntää samalla tavalla kuin projektia.
+ * Kuitenkin yhdellä projektilla voi olla useita tagejä.
  */
 
 public class Tag implements Measurable {
@@ -14,7 +14,7 @@ public class Tag implements Measurable {
     private Report report;
 
     /**
-     * Konstruktorissa luodaan Tag-olio.
+     * Konstruktorissa alustetaan Tag-olio.
      * @param name tagin nimi.
      */
 
@@ -24,19 +24,28 @@ public class Tag implements Measurable {
         this.report = new Report(this);
     }
 
-    public String getName() {
-        return name;
-    }
+    /**
+     * Metodi startTracking tarjoaa tagin ajanlaskun aloituksen.
+     */
 
     @Override
     public void startTracking() {
         this.calendar.start();
     }
 
+    /**
+     * Metodi stopTracking tarjoaa tagin ajanlaskun lopettamisen.
+     */
+
     @Override
     public void stopTracking() {
         this.calendar.stop();
     }
+
+    /**
+     * Metodi getTime tarjoaa tietylle tagille mitatun ajan senttisekuntteina.
+     * @return tagille mitattu aika senttisekuntteina.
+     */
 
     @Override
     public long getTime() {
@@ -51,15 +60,11 @@ public class Tag implements Measurable {
         return calendar;
     }
 
-    public void setCalendar(Calendar calendar) {
-        this.calendar = calendar;
-    }
-
     public Report getReport() {
         return report;
     }
 
-    public void setReport(Report report) {
-        this.report = report;
+    public String getName() {
+        return name;
     }
 }

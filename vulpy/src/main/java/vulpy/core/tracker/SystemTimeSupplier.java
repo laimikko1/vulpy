@@ -1,13 +1,13 @@
 package vulpy.core.tracker;
 
 /**
- * Luokka tarjoaa ainoastaan getNanoseconds metodin Tracker-luokalle.
+ * SystemTimeSupplier-luokka tarjoaa ainoastaan getNanoseconds metodin Tracker-luokalle.
  */
 
 class SystemTimeSupplier implements TimeSupplier {
 
     /**
-     * getNanoseconds metodi antaa tietokoneen tämänhetkisen ajan nanosekuntteina.
+     * Metodi getNanoseconds antaa tietokoneen tämänhetkisen ajan nanosekuntteina.
      * @return Tietokoneen tämänhetkinen aika nanosekuntteina.
      */
 

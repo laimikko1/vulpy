@@ -1,28 +1,39 @@
 package vulpy.core;
-
 import com.google.gson.JsonObject;
 
 /**
  * RerortJson luokka tarjoaa Json muotoisen raportin projektista
+ * Sekä metodit sen lähettämiseen Post komennolla serverille.
  */
 
 public class ReportJson {
 
     private Measurable measurable;
+    private String url;
+
+    /**
+     * Konstruktorissa alustetaan alkio mistä alkiosta json-reportti tehdään.
+     * @param measurable reporttia kaipaava alkio.
+     */
 
     public ReportJson(Measurable measurable){
         this.measurable = measurable;
     }
 
+    /**
+     * Metodi getJson tarjoaa json muotoisen rapostin tietystä mitatusta oliosta.
+     * @return json raportti.
+     */
+
     public String getJson(){
         return "";
     }
 
-    public String getJsonSeconds(){
-        return "";
-    }
+    /**
+     * Metodi setUrl tarjoaa mahdollisuuden asettaa osoite mihin json-tiedosto lähetetään.
+     */
 
-    public String getJsonDays(){
-        return "";
+    public void setUrl(String url){
+        this.url = url;
     }
 }

@@ -45,7 +45,7 @@ public class Project implements Measurable{
     }
 
     /**
-     * startTracking metodi aloittaa ajan laskemisen kyseiselle projektille.
+     * Metodi startTracking aloittaa ajan laskemisen kyseiselle projektille.
      */
 
     public void startTracking() {
@@ -53,12 +53,17 @@ public class Project implements Measurable{
     }
 
     /**
-     * stopTracking metodi lopettaa ajan laskemisen kyseiseltä projektilta.
+     * Metodi stopTracking lopettaa ajan laskemisen kyseiseltä projektilta.
      */
 
     public void stopTracking() {
         this.calendar.stop();
     }
+
+    /**
+     * Metodi getTagsString tarjoaa toiminnan tagejen ulos saannin String muodossa.
+     * @return merkkijonona projektin tagit pilkulla eroteltuna.
+     */
 
     public String getTagsString() {
         String tagStrign = "Tags: ";
@@ -73,9 +78,13 @@ public class Project implements Measurable{
     }
 
     /**
-     * addTag metodi tarjoaa toiminnon yhden tagin lisäämiseen.
-     * @param tag annetaan String muodossa tag.
+     * Metodi getTime tarjoaa tietylle projektille mitatun ajan senttisekuntteina.
+     * @return projektille mitattu aika senttisekuntteina.
      */
+
+    public long getTime() {
+        return this.calendar.getCentiSeconds();
+    }
 
     public void addTag(String tag) {
         this.tags.add(tag);
@@ -84,11 +93,7 @@ public class Project implements Measurable{
     public List<String> getTags() {
         return this.tags;
     }
-
-    public long getTime() {
-        return this.calendar.getCentiSeconds();
-    }
-
+    
     public HourlyWage getHourlyWage() {
         return hourlyWage;
     }
@@ -107,9 +112,5 @@ public class Project implements Measurable{
 
     public Report getReport() {
         return report;
-    }
-
-    public void setReport(Report report) {
-        this.report = report;
     }
 }

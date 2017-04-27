@@ -16,11 +16,22 @@ public class Collector {
     private Map<String, Tag> tagMap;
     private Map<String, Integer> howManyTagsIsOnSameTime;
 
+    /**
+     * Konstruktorissa alustetaan projektilista, tagi mappi, sekä tieto siitä että onko
+     * monella projektilla tällähetkellä tagejen ajanmittaaminen käynnissä.
+     */
+
     public Collector(){
         this.projectList = new ArrayList<>();
         this.tagMap = new HashMap<>();
         this.howManyTagsIsOnSameTime = new HashMap<>();
     }
+
+    /**
+     * Metodi startTrackingByProject tarjoaa toiminnallisuuden tämän projektin ajanlaskennan aloittamiseen,
+     * sekä jokaisen tämän projektin tagin ajanlaskun käynnistämiseen.
+     * @param project projekti jonka ajanlasku halutaan aloittaa.
+     */
 
     public void startTrackingByProject(Project project){
         List<String> tags = project.getTags();
@@ -38,6 +49,13 @@ public class Collector {
         project.startTracking();
     }
 
+    /**
+     * Metodi stopTrackingByProject tarjoaa toiminnallisuuden tämän projektin ajanlaskennan lopettamiseen,
+     * sekä jokaisen tämän projektin tagin ajanlaskun lopettamiseen, jos tällähetkellä ei ole muita projekteja
+     * päällä laskemassa tagin aikaa.
+     * @param project projekti jonka ajanlasku halutaan lopettaa.
+     */
+
     public void stopTrackingByProject(Project project){
         List<String> tags = project.getTags();
         for (int j = 0; j < tags.size(); j++) {
@@ -54,13 +72,26 @@ public class Collector {
         project.stopTracking();
     }
 
+    /**
+     * Metodi getProject palauttaa listasta tietyssä indeksissä olevan projektin.
+     */
+
     public Project getProject(int i){
         return projectList.get(i);
     }
 
+    /**
+     * Metodi getProjectListSize palauttaa projekti listauksen koon.
+     */
+
     public int getProjectListSize(){
         return projectList.size();
     }
+
+    /**
+     * Metodi addProject tarjoaa mahdollisuuden lisätä projekteja collectoriin.
+     * @param project lisättävä projekti.
+     */
 
     public void addProject(Project project){
         for (int i = 0; i < project.getTags().size(); i++) {
@@ -71,11 +102,10 @@ public class Collector {
         this.projectList.add(project);
     }
 
-    public void addTag(String tag){
-        if(!tagMap.containsKey(tag)){
-            tagMap.put(tag ,new Tag(tag));
-        }
-    }
+    /**
+     * Metodi getTag palauttaa tag olion, jos sellainen on olemassa.
+     * @return Tag-olio, jos sellainen on olemassa.
+     */
 
     public Tag getTag(String tag){
         if(tagMap.containsKey(tag)){
@@ -85,16 +115,11 @@ public class Collector {
         }
     }
 
-
     public Map<String, Tag> getTagMap(){
         return tagMap;
     }
 
     public List<Project> getProjectList() {
         return projectList;
-    }
-
-    public void setProjectList(List<Project> projectList) {
-        this.projectList = projectList;
     }
 }

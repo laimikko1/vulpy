@@ -1,7 +1,7 @@
 package vulpy.core.tracker;
 
 /**
- * Tracker-luokka tarjoaa ajanlaskuun tarvittavat metodit.
+ * Tracker-luokka tarjoaa ajanlaskuun tarvittavat metodit yhtä päivää kohden.
  * Yksi tracker-olio voi korkeintaan laskea 24h aikaa.
  */
 
@@ -33,7 +33,7 @@ public class Tracker {
     }
 
     /**
-     * Aloittaa ajanlaskemisen, vain jos tracker on ennestään ollut pois päältä.
+     * Metodi startTracking aloittaa ajanlaskemisen, vain jos tracker on ennestään ollut pois päältä.
      */
 
     public void startTracking() {
@@ -44,7 +44,7 @@ public class Tracker {
     }
 
     /**
-     * Lopettaa ajanlaskemisen, vain jos tracker on ennestään ollut päällä.
+     * Metodi stopTracking lopettaa ajanlaskemisen, vain jos tracker on ennestään ollut päällä.
      */
 
     public void stopTracking() {
@@ -75,7 +75,7 @@ public class Tracker {
     }
 
     /**
-     * Tarjoaa tietyn trackerin mittaamat minuutit.
+     * Metodi getMinutes tarjoaa tietyn trackerin mittaamat minuutit.
      * @return mitatut minuutit.
      */
 

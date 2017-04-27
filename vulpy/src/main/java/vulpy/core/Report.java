@@ -1,12 +1,10 @@
 package vulpy.core;
 
 import vulpy.core.tracker.Tracker;
-
-import java.util.ArrayList;
 import java.util.Map;
 
 /**
- * Luokka tarjoaa reportin jokaisesta projektista, pahasti keskeneräinen.
+ * Report-luokka tarjoaa peruselementit raporttejen luomiseen.
  */
 
 public class Report {
@@ -15,11 +13,21 @@ public class Report {
     private Map<String,Tracker> dates;
     private ReportJson json;
 
+    /**
+     * Konstruktorissa alustetaan ReportJson-olio, sekä yksilöidään mistä projektista halutaan raportti.
+     * @param measurable reporttia kaipaava mitattu olio.
+     */
+
     public Report(Measurable measurable){
         this.measurable = measurable;
         this.dates = measurable.getCalendar().getDates();
         this.json = new ReportJson(measurable);
     }
+
+    /**
+     * Metodi getHoursMinutesAndSeconds tarjoaa string muodossa olevan merkkijonon mitattavaan kohteesee käytetystä ajasta.
+     * @return string muodossa oleva projektiin käytetty aika.
+     */
 
     public String getHoursMinutesAndSeconds(){
         long longVal = this.measurable.getTime() / 100;
@@ -32,7 +40,7 @@ public class Report {
         return hoursMinutesAndSeconds;
     }
 
-    public String underTen(int n){
+    private String underTen(int n){
         String number = "";
         if(n < 10){
             number += "0";
