@@ -12,3 +12,5 @@ Time tracking system for everyone
 [checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/checkstyle-raportti/checkstyle.html)
 
 [gui-suunnittelu](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/gui-suunnittelu)
+
+[käyttöohjeet](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/kayttoohjeet.md)
