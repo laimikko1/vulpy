@@ -26,8 +26,8 @@ public class Tags {
         addAllTags();
     }
 
-    public void formatTags(){
-        Map<String,Tag> tagMap = this.collector.getTagMap();
+    public void formatTags() {
+        Map<String, Tag> tagMap = this.collector.getTagMap();
         this.box = new VBox(10);
         this.box.setId("tagBox");
         HBox subBox = new HBox(10);
@@ -37,14 +37,14 @@ public class Tags {
         left.setId("tagSubBox");
         Text text = new Text("Your tags!");
         text.setId("yourTags");
-        subBox.getChildren().addAll(right,left);
-        this.box.getChildren().addAll(text,subBox);
+        subBox.getChildren().addAll(right, left);
+        this.box.getChildren().addAll(text, subBox);
     }
 
-    public void addAllTags(){
+    public void addAllTags() {
         int i = 0;
         for (String name:this.collector.getTagMap().keySet()) {
-            if(i % 2 == 0){
+            if (i % 2 == 0) {
                 this.right.getChildren().addAll(addTagButton(name));
             } else {
                 this.left.getChildren().addAll(addTagButton(name));
@@ -53,19 +53,19 @@ public class Tags {
         }
     }
 
-    public Button addTagButton(String name){
+    public Button addTagButton(String name) {
         Button reportButton = new Button();
-        addButtonFunctions(reportButton,name);
+        addButtonFunctions(reportButton, name);
         reportButton.setPrefWidth(250);
         reportButton.setPrefHeight(30);
         reportButton.setId("reportButton");
         reportButton.setText(name);
-        addButtonFunctions(reportButton,name);
+        addButtonFunctions(reportButton, name);
         return reportButton;
     }
 
-    public void addButtonFunctions(Button button, String name){
-        TagsHBox tagsHbox = new TagsHBox(this.collector.getTag(name),this);
+    public void addButtonFunctions(Button button, String name) {
+        TagsHBox tagsHbox = new TagsHBox(this.collector.getTag(name), this);
         HBox hbox = tagsHbox.getBox();
         button.setOnAction(e -> {
             this.content.setContent(hbox);

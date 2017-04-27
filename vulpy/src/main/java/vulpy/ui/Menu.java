@@ -20,6 +20,14 @@ public class Menu {
     private BorderPane layout;
     private ScrollPane content;
 
+    /**
+     * Konstruktorissa luodaan kaikki vasemmalle puolelle ruutua scrollPane,
+     * ja oikealle puolelle alustetaan createSidebar komennolla valikko.
+     * @param layout borderpane näkymä, johon lisätään elementtejä.
+     * @param scene tämänhetkinen ohjelman näkymä.
+     * @param window koko ohjelman ikkuna.
+     */
+
     public Menu(Stage window, BorderPane layout, Scene scene) {
         this.window = window;
         this.layout = layout;
@@ -31,11 +39,15 @@ public class Menu {
         createSidebar();
     }
 
+    /**
+     * Metodi createSidebar tarjoaa ominaisuuden menun luontiin.
+     */
+
     public void createSidebar() {
         Button toProjects = new Button("Projects");
         Projects projects = new Projects();
         Reports reports = new Reports(projects, this.content);
-        Tags tags = new Tags(projects.getCollector(),this.content);
+        Tags tags = new Tags(projects.getCollector(), this.content);
 
         toProjects.setMinWidth(200);
         toProjects.setOnAction(e -> {

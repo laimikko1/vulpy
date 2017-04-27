@@ -37,7 +37,7 @@ public class Tracker {
      */
 
     public void startTracking() {
-        if(!this.on){
+        if (!this.on) {
             this.startTime = timeSupplier.getNanoseconds();
             this.on = true;
         }
@@ -48,7 +48,7 @@ public class Tracker {
      */
 
     public void stopTracking() {
-        if(this.on){
+        if (this.on) {
             this.centiseconds += nanosecondsToCentiseconds(timeSupplier.getNanoseconds() - this.startTime);
             this.on = false;
         }

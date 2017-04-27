@@ -7,7 +7,7 @@ import java.util.List;
  * Project-luokka tarjoaa projektin luontia varten tärkeimmät metodit.
  */
 
-public class Project implements Measurable{
+public class Project implements Measurable {
 
     private String name;
     private Calendar calendar;
@@ -86,6 +86,11 @@ public class Project implements Measurable{
         return this.calendar.getCentiSeconds();
     }
 
+    /**
+     * Metodi addTag tarjoaa mahdollisuuden lisätä tagejä projektiin.
+     * @param tag String tagin nimi, mikä halutaan lisätä ja luoda.
+     */
+
     public void addTag(String tag) {
         this.tags.add(tag);
     }
@@ -93,7 +98,7 @@ public class Project implements Measurable{
     public List<String> getTags() {
         return this.tags;
     }
-    
+
     public HourlyWage getHourlyWage() {
         return hourlyWage;
     }
@@ -106,7 +111,7 @@ public class Project implements Measurable{
         return this.name;
     }
 
-    public Calendar getCalendar(){
+    public Calendar getCalendar() {
         return this.calendar;
     }
 

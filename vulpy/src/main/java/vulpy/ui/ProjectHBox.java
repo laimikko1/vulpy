@@ -13,6 +13,10 @@ import vulpy.core.Project;
 import javafx.animation.Timeline;
 import javafx.scene.layout.HBox;
 
+/**
+ * ProjectHBox-luokka tarjoaa ominaisuuden yksittäisen projektivalikossa olevan projektipalkin luontiin.
+ */
+
 public class ProjectHBox {
 
     private Collector collector;
@@ -22,6 +26,11 @@ public class ProjectHBox {
     private Text time;
     private Text hourlyWage;
     private boolean onOff;
+
+    /**
+     * Konstruktorissa alustetaan kaikki tarvittavat boxit, sekä niiden koot.
+     * @param collector saa collector olion jossa on kaikki tarvittava tieto coresta.
+     */
 
     public ProjectHBox(Collector collector) {
         this.project = collector.getProject(collector.getProjectListSize() - 1);
@@ -38,6 +47,10 @@ public class ProjectHBox {
         makeProjectHbox();
     }
 
+    /**
+     * Metodi makeProjectHbox luo projektipalkin.
+     */
+
     public void makeProjectHbox() {
         Text name = new Text(this.project.getName());
         Text tags = new Text(this.project.getTagsString());
@@ -51,6 +64,11 @@ public class ProjectHBox {
         startButton.setAlignment(Pos.CENTER_LEFT);
         this.hbox.getChildren().addAll(name, tags, this.hourlyWage, this.time, startButton);
     }
+
+    /**
+     * Metodi greateButton tarjoaa ominaisuuden ajan laskemisen napin lisäämiselle.
+     * @return nappi ajankäytön laskemisen aloittamiselle.
+     */
 
     public Button greateButton() {
         Button button = new Button();
@@ -83,7 +101,11 @@ public class ProjectHBox {
         return button;
     }
 
-    public void refresh(){
+    /**
+     * Metodi refresh tarjoaa päivitys toiminnon, jossa päivitetään kaikki kentätä jotka ovat voineet muuttua ohjelman suorituksen aikana.
+     */
+
+    public void refresh() {
         this.hourlyWage.setText(project.getHourlyWage().getWage() + " " + project.getHourlyWage().getSymbol() + " / hour");
     }
 

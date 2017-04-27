@@ -10,7 +10,7 @@ import java.util.Map;
 public class Report {
 
     private Measurable measurable;
-    private Map<String,Tracker> dates;
+    private Map<String, Tracker> dates;
     private ReportJson json;
 
     /**
@@ -18,7 +18,7 @@ public class Report {
      * @param measurable reporttia kaipaava mitattu olio.
      */
 
-    public Report(Measurable measurable){
+    public Report(Measurable measurable) {
         this.measurable = measurable;
         this.dates = measurable.getCalendar().getDates();
         this.json = new ReportJson(measurable);
@@ -29,7 +29,7 @@ public class Report {
      * @return string muodossa oleva projektiin käytetty aika.
      */
 
-    public String getHoursMinutesAndSeconds(){
+    public String getHoursMinutesAndSeconds() {
         long longVal = this.measurable.getTime() / 100;
         int hours = (int) longVal / 3600;
         int remainder = (int) longVal - hours * 3600;
@@ -40,9 +40,9 @@ public class Report {
         return hoursMinutesAndSeconds;
     }
 
-    private String underTen(int n){
+    private String underTen(int n) {
         String number = "";
-        if(n < 10){
+        if (n < 10) {
             number += "0";
         }
         number += n;

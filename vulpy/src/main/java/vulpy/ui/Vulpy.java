@@ -17,6 +17,11 @@ public class Vulpy extends Application {
 
     public static Stage window;
 
+    /**
+     * Metodi main käynnistää ohjelman.
+     * @param args args
+     */
+
     public static void main(String[] args) {
         URL iconURL  = Vulpy.class.getClassLoader().getResource("ui/logo.png");
         java.awt.Image image = new ImageIcon(iconURL).getImage();

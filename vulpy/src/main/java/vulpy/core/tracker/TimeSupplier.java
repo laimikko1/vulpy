@@ -7,5 +7,11 @@ package vulpy.core.tracker;
 
 @FunctionalInterface
 public interface TimeSupplier {
+
+    /**
+     * Metodi getNanoseconds tarjoaa tietokoneen tämänhetkisen ajan nanosekuntteina.
+     * @return tietokoneen tämänhetkinen aika nanosekuntteina.
+     */
+
     long getNanoseconds();
 }

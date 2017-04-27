@@ -48,10 +48,10 @@ public class Calendar {
      * Metodi stoppaa kaikki muut trackerit kuin tämän päivän tracker.
      */
 
-    public void stopAllOthers(){
+    public void stopAllOthers() {
         String currentDate = getCurrentDate();
         for (String date:this.dates.keySet()) {
-            if(!date.equals(currentDate)){
+            if (!date.equals(currentDate)) {
                 this.dates.get(date).stopTracking();
             }
         }
@@ -130,7 +130,7 @@ public class Calendar {
         return this.dates.size();
     }
 
-    public Map<String,Tracker> getDates(){
+    public Map<String, Tracker> getDates() {
         return this.dates;
     }
 }

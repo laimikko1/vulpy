@@ -21,7 +21,7 @@ public class Collector {
      * monella projektilla tällähetkellä tagejen ajanmittaaminen käynnissä.
      */
 
-    public Collector(){
+    public Collector() {
         this.projectList = new ArrayList<>();
         this.tagMap = new HashMap<>();
         this.howManyTagsIsOnSameTime = new HashMap<>();
@@ -33,16 +33,16 @@ public class Collector {
      * @param project projekti jonka ajanlasku halutaan aloittaa.
      */
 
-    public void startTrackingByProject(Project project){
+    public void startTrackingByProject(Project project) {
         List<String> tags = project.getTags();
         for (int j = 0; j < tags.size(); j++) {
-            if(!this.howManyTagsIsOnSameTime.containsKey(tags.get(j))){
+            if (!this.howManyTagsIsOnSameTime.containsKey(tags.get(j))) {
                 this.howManyTagsIsOnSameTime.put(tags.get(j), 1);
             } else {
                 this.howManyTagsIsOnSameTime.put(tags.get(j), this.howManyTagsIsOnSameTime.get(tags.get(j)) + 1);
             }
-            if(!this.tagMap.containsKey(tags.get(j))){
-                this.tagMap.put(tags.get(j),new Tag(tags.get(j)));
+            if (!this.tagMap.containsKey(tags.get(j))) {
+                this.tagMap.put(tags.get(j), new Tag(tags.get(j)));
             }
             this.tagMap.get(tags.get(j)).startTracking();
         }
@@ -56,13 +56,13 @@ public class Collector {
      * @param project projekti jonka ajanlasku halutaan lopettaa.
      */
 
-    public void stopTrackingByProject(Project project){
+    public void stopTrackingByProject(Project project) {
         List<String> tags = project.getTags();
         for (int j = 0; j < tags.size(); j++) {
-            if(this.howManyTagsIsOnSameTime.containsKey(tags.get(j)) && this.howManyTagsIsOnSameTime.get(tags.get(j)) == 1){
+            if (this.howManyTagsIsOnSameTime.containsKey(tags.get(j)) && this.howManyTagsIsOnSameTime.get(tags.get(j)) == 1) {
                 this.howManyTagsIsOnSameTime.remove(tags.get(j));
-                if(!this.tagMap.containsKey(tags.get(j))){
-                    this.tagMap.put(tags.get(j),new Tag(tags.get(j)));
+                if (!this.tagMap.containsKey(tags.get(j))) {
+                    this.tagMap.put(tags.get(j), new Tag(tags.get(j)));
                 }
                 this.tagMap.get(tags.get(j)).stopTracking();
             } else {
@@ -74,17 +74,20 @@ public class Collector {
 
     /**
      * Metodi getProject palauttaa listasta tietyssä indeksissä olevan projektin.
+     * @param i indeksi mistä kohtaa listasta halutaan projekti.
+     * @return projekti mikä saadaan on i:n kohdalla listassa.
      */
 
-    public Project getProject(int i){
+    public Project getProject(int i) {
         return projectList.get(i);
     }
 
     /**
      * Metodi getProjectListSize palauttaa projekti listauksen koon.
+     * @return listan koko.
      */
 
-    public int getProjectListSize(){
+    public int getProjectListSize() {
         return projectList.size();
     }
 
@@ -93,10 +96,10 @@ public class Collector {
      * @param project lisättävä projekti.
      */
 
-    public void addProject(Project project){
+    public void addProject(Project project) {
         for (int i = 0; i < project.getTags().size(); i++) {
-            if(!this.tagMap.containsKey(project.getTags().get(i))){
-                this.tagMap.put(project.getTags().get(i),new Tag(project.getTags().get(i)));
+            if (!this.tagMap.containsKey(project.getTags().get(i))) {
+                this.tagMap.put(project.getTags().get(i), new Tag(project.getTags().get(i)));
             }
         }
         this.projectList.add(project);
@@ -104,18 +107,19 @@ public class Collector {
 
     /**
      * Metodi getTag palauttaa tag olion, jos sellainen on olemassa.
+     * @param tag haettavan olion nimi.
      * @return Tag-olio, jos sellainen on olemassa.
      */
 
-    public Tag getTag(String tag){
-        if(tagMap.containsKey(tag)){
+    public Tag getTag(String tag) {
+        if (tagMap.containsKey(tag)) {
             return tagMap.get(tag);
         } else {
             return null;
         }
     }
 
-    public Map<String, Tag> getTagMap(){
+    public Map<String, Tag> getTagMap() {
         return tagMap;
     }
 

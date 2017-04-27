@@ -16,7 +16,7 @@ public class ReportJson {
      * @param measurable reporttia kaipaava alkio.
      */
 
-    public ReportJson(Measurable measurable){
+    public ReportJson(Measurable measurable) {
         this.measurable = measurable;
     }
 
@@ -25,15 +25,16 @@ public class ReportJson {
      * @return json raportti.
      */
 
-    public String getJson(){
+    public String getJson() {
         return "";
     }
 
     /**
      * Metodi setUrl tarjoaa mahdollisuuden asettaa osoite mihin json-tiedosto lähetetään.
+     * @param url url-osoite joka halutaan lisätä oliolle.
      */
 
-    public void setUrl(String url){
+    public void setUrl(String url) {
         this.url = url;
     }
 }
