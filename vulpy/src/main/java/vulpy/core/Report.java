@@ -48,4 +48,8 @@ public class Report {
         number += n;
         return number;
     }
+
+    public ReportJson getJson() {
+        return json;
+    }
 }
