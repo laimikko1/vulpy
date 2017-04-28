@@ -42,5 +42,11 @@ public class HourlyWageTest {
         this.hourlyWage.setWage(1200);
         assertEquals(12*1200, this.hourlyWage.getSalary(hours));
     }
+
+    @Test
+    public void getRightUnitAndSymbol(){
+        assertEquals("€", this.hourlyWage.getSymbol());
+        assertEquals("EURO", this.hourlyWage.getUnit());
+    }
 }
 

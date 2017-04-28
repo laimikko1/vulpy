@@ -44,9 +44,9 @@ public class CollectorTest {
 
     @Test
     public void correctSize(){
-        assertEquals(this.collector.getProjectListSize(),0);
+        assertEquals(this.collector.getProjectListSize(), 0);
         this.collector.addProject(projectList.get(0));
-        assertEquals(this.collector.getProjectListSize(),1);
+        assertEquals(this.collector.getProjectListSize(), 1);
     }
 
     @Test
@@ -56,7 +56,7 @@ public class CollectorTest {
         assertEquals(project.getCalendar().getCentiSeconds(),0l);
         this.collector.startTrackingByProject(project);
         Thread.sleep(10);
-        assertNotEquals(project.getCalendar().getCentiSeconds(),0l);
+        assertNotEquals(0l, project.getCalendar().getCentiSeconds());
 }
 
     @Test
@@ -68,7 +68,7 @@ public class CollectorTest {
         this.collector.stopTrackingByProject(project);
         long seconds = project.getCalendar().getCentiSeconds();
         Thread.sleep(10);
-        assertEquals(project.getCalendar().getCentiSeconds(),seconds);
+        assertEquals(seconds, project.getCalendar().getCentiSeconds());
     }
 
     @Test
@@ -76,15 +76,15 @@ public class CollectorTest {
         this.collector.addProject(projectList.get(0));
         assertEquals(this.collector.getTag("vulpy"), null);
         this.collector.addProject(projectList.get(projectList.size() - 1));
-        assertEquals(this.collector.getTag("Java").getName(), "Java");
+        assertEquals("Java", this.collector.getTag("Java").getName());
     }
 
     @Test
     public void rightAmountTags(){
         this.collector.addProject(projectList.get(projectList.size() - 1));
-        assertEquals(this.collector.getTagMap().size(), 2);
+        assertEquals(2, this.collector.getTagMap().size());
         this.collector.addProject(projectList.get(projectList.size() - 2));
-        assertEquals(this.collector.getTagMap().size(), 2);
+        assertEquals(2, this.collector.getTagMap().size());
     }
 
 }
