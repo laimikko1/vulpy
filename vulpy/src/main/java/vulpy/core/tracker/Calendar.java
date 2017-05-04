@@ -1,12 +1,14 @@
 package vulpy.core.tracker;
 
+import org.joda.time.DateTime;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
  * Calendar-luokka tarjoaa ajanlaskuun tarvittavat metodit päivien tasolla.
- * Jokaisella projektilla on yksi Calendar-olio, jokaista mitattua päivää kohden yksi Tracker-olio.
+ * Jokaisella projektilla on yksi Calendar-olio, jolla on jokaista mitattua päivää kohden yksi Tracker-olio.
  */
 
 public class Calendar {
@@ -22,22 +24,23 @@ public class Calendar {
     }
 
     /**
-     * Metodi start aloittaa tämän päivän ajanlaskemisen.
+     * Metodi start aloittaa juuri tämän päivän ajanlaskemisen.
      * Metodi käyttää stopAllOthers metodia varmistaakseen, ettei mikään muu tracker ole päällä.
      */
 
     public void start() {
+        stopAllOthers();
         String currentDate = getCurrentDate();
         ifNotContainsCurrentDate(currentDate);
-        stopAllOthers();
         dates.get(currentDate).startTracking();
     }
 
     /**
-     * Metodi stop lopettaaa tämän päivän ajanlaskemisen.
+     * Metodi stop lopettaa kaikkien laskureiden ajanlaskemisen.
      */
 
     public void stop() {
+        stopAllOthers();
         String currentDate = getCurrentDate();
         ifNotContainsCurrentDate(currentDate);
         dates.get(currentDate).stopTracking();
@@ -45,7 +48,7 @@ public class Calendar {
 
     /**
      * Metodi stopAllOthers varmistaa sen että ainoastaan yksi tracker on päällä yhtäaikaa yhdessä projektissa.
-     * Metodi stoppaa kaikki muut trackerit kuin tämän päivän tracker.
+     * Metodi lopettaa kaikki muut trackerit kuin tämän päivän trackerin.
      */
 
     public void stopAllOthers() {
@@ -58,46 +61,46 @@ public class Calendar {
     }
 
     /**
-     * Metodi getCentiSeconds käy koko hashmapin läpi ja laskee koko projektiin käytetyn ajan sekuntteina.
-     * @return koko projektiin yhteensä käytetty aika.
+     * Metodi getCentiSeconds käy koko hashmapin läpi ja laskee koko projektiin käytetyn ajan senttisekuntteina.
+     * @return koko projektiin yhteensä käytetty aika senttisekuntteina.
      */
 
-    public long getCentiSeconds() {
-        return this.dates.values().stream().mapToLong(Tracker::getCentiseconds).sum();
+    public long getMilliSeconds() {
+        return this.dates.values().stream().mapToLong(Tracker::getMilliseconds).sum();
     }
 
     /**
-     * Metodi ifNotContainsCurrentDate metodi katsoo onko kalenterissa olemassa jo kyseistä päivää.
-     * Jos ei niin luodaan uusi päivä.
+     * Metodi ifNotContainsCurrentDate metodi tarkistaa onko kalenterissa olemassa jo kyseistä päivää.
+     * Jos ei ole niin luodaan uusi päivä.
      * @param currentDate nykyinen päivä.
      */
 
     private void ifNotContainsCurrentDate(String currentDate) {
         if (!dates.containsKey(currentDate)) {
-            dates.put(currentDate, new Tracker());
+            dates.put(currentDate, new Tracker(maxTime()));
         }
     }
 
     /**
-     * Metodi getCurrentDate metodi tarjoaa tämän päivän.
-     * @return tämänhetkinen päivä.
+     * Metodi maxTime tarjoaa tämän päivän maksimiajan mitä on käytössä.
+     * @return aika millisekuntteina mitä on loppupäivänä jäljellä.
+     */
+
+    private long maxTime(){
+        long fullDayMilliSeconds = 1000 * 60 * 60 * 24;
+        long milliTimeNow = DateTime.now().millisOfDay().get();
+        return fullDayMilliSeconds - milliTimeNow;
+    }
+
+    /**
+     * Metodi getCurrentDate tarjoaa tämänhetkisen päivän muodossa dd/MM/YYYY.
+     * @return tämänhetkinen päivä muodossa dd/MM/YYYY.
      */
 
     public String getCurrentDate() {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
         return dateFormat.format(date);
-    }
-
-    /**
-     * Metodi getStringList kerää string listan kaikista mitatuista päivistä.
-     * @return kaikki päivät milloin on mitattu aikaa.
-     */
-
-    public List<String> getStringDates() {
-        List<String> stringDates = new ArrayList<>();
-        this.dates.keySet().stream().forEach(o -> stringDates.add(o));
-        return stringDates;
     }
 
     /**

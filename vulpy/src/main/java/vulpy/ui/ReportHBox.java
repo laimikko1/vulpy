@@ -124,7 +124,7 @@ public class ReportHBox {
         Text workingTime = new Text("Working time: " + this.project.getReport().getHoursMinutesAndSeconds());
         String hourlyWage = "Hourly wage: " + this.project.getHourlyWage().getWage() + " " + this.project.getHourlyWage().getSymbol() + " / h";
         Text hw = new Text(hourlyWage);
-        Text salary = new Text("Salary: " + this.project.getHourlyWage().getSalary((int) (this.project.getCalendar().getCentiSeconds() / (6000l * 60))) + " " + this.project.getHourlyWage().getSymbol());
+        Text salary = new Text("Salary: " + this.project.getHourlyWage().getSalary((int) (this.project.getCalendar().getMilliSeconds() / (6000l * 60))) + " " + this.project.getHourlyWage().getSymbol());
         workingTime.setId("reportTextBox");
         hw.setId("reportTextBox");
         salary.setId("reportTextBox");

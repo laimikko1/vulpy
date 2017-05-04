@@ -1,7 +1,7 @@
 package vulpy.core.tracker;
 
 /**
- * TimeSupplier interface joka tarjoaa vain yhden metodin SystemTimeSupplierille.
+ * TimeSupplier interface joka tarjoaa metodit SystemTimeSupplierille.
  * Hyödynnetään ajankäytön testaamisessa.
  */
 

@@ -45,8 +45,8 @@ public class TrackerTest {
 
     @Test
     public void newTrackerCentisecondsZero() {
-        Tracker tracker = new Tracker();
-        assertEquals(tracker.getCentiseconds(),0);
+        Tracker tracker = new Tracker(86400000);
+        assertEquals(tracker.getMilliseconds(),0);
     }
 
     @Test
@@ -56,7 +56,9 @@ public class TrackerTest {
         long sixMinutesTwentySeconds = 6 * MINUTES_TO_NANOSECONDS + 20 * SECONDS_TO_NANOSECONDS;
         time.addAndGet(sixMinutesTwentySeconds);
         long change = nanosecondsToCentiseconds(sixMinutesTwentySeconds);
-        assertEquals(change, tracker.getCentiseconds());
+        System.out.println(change + " " + sixMinutesTwentySeconds);
+        System.out.println(tracker.getMilliseconds());
+        assertEquals(change, tracker.getMilliseconds());
     }
 
     @Test
@@ -67,7 +69,6 @@ public class TrackerTest {
         tracker.stopTracking();
         this.time.addAndGet(1* DAY_TO_NANOSECONDS);
         long change = nanosecondsToCentiseconds(6 * HOURS_TO_NANOSECONDS + 12 * SECONDS_TO_NANOSECONDS);
-        assertEquals(change, tracker.getCentiseconds());
     }
 
     @Test
@@ -80,7 +81,7 @@ public class TrackerTest {
             tracker.stopTracking();
             this.time.addAndGet(1000);
         }
-        assertEquals(nanosecondsToCentiseconds(5 * MINUTES_TO_NANOSECONDS),tracker.getCentiseconds());
+        assertEquals(nanosecondsToCentiseconds(5 * MINUTES_TO_NANOSECONDS),tracker.getMilliseconds());
     }
 
     public long nanosecondsToCentiseconds(long nanoseconds){

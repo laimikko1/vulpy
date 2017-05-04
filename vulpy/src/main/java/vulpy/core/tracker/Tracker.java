@@ -2,16 +2,15 @@ package vulpy.core.tracker;
 
 /**
  * Tracker-luokka tarjoaa ajanlaskuun tarvittavat metodit yhtä päivää kohden.
- * Yksi tracker-olio voi korkeintaan laskea 24h aikaa.
+ * Yksi tracker-olio voi korkeintaan laskea maxTime verran aikaa
  */
 
 public class Tracker {
 
-    private static final long DAY_TO_CENTISECONDS = 8640000;
-
     private final TimeSupplier timeSupplier;
     private long startTime;
-    private long centiseconds;
+    private long milliseconds;
+    private long maxTime;
     private boolean on;
 
     /**
@@ -25,11 +24,13 @@ public class Tracker {
 
     /**
      * Konstruktorissa alustetaan tietyn trackerin mitattu aika, sekä annetaan systemTimeSupplier luokalle.
+     * @param maxTime senttisekuntteina oleva maksimi aika kuinka kauan tracker voi maksimissaan olla päällä.
      */
 
-    public Tracker() {
+    public Tracker(long maxTime) {
         this(new SystemTimeSupplier());
-        this.centiseconds = 0;
+        this.milliseconds = 0;
+        this.maxTime = maxTime;
     }
 
     /**
@@ -49,7 +50,7 @@ public class Tracker {
 
     public void stopTracking() {
         if (this.on) {
-            this.centiseconds += nanosecondsToCentiseconds(timeSupplier.getNanoseconds() - this.startTime);
+            this.milliseconds += nanosecondsToMilliseconds(timeSupplier.getNanoseconds() - this.startTime);
             this.on = false;
         }
     }
@@ -59,19 +60,19 @@ public class Tracker {
      * @return senttisekuntteina trackerin mittaaman ajan.
      */
 
-    public long getCentiseconds() {
+    public long getMilliseconds() {
         long currentNano = timeSupplier.getNanoseconds();
-        if ((this.on && (nanosecondsToCentiseconds(currentNano - startTime) + this.centiseconds) > DAY_TO_CENTISECONDS)) {
+        if ((this.on && (nanosecondsToMilliseconds(currentNano - startTime) + this.milliseconds) > maxTime)) {
             this.on = false;
-            return DAY_TO_CENTISECONDS;
-        } else if (this.centiseconds > DAY_TO_CENTISECONDS) {
+            return this.maxTime;
+        } else if (this.milliseconds > this.maxTime) {
             this.on = false;
-            return DAY_TO_CENTISECONDS;
+            return this.maxTime;
         }
         if (this.on) {
-            return this.centiseconds + nanosecondsToCentiseconds(currentNano - startTime);
+            return this.milliseconds + nanosecondsToMilliseconds(currentNano - startTime);
         }
-        return this.centiseconds;
+        return this.milliseconds;
     }
 
     /**
@@ -80,10 +81,10 @@ public class Tracker {
      */
 
     public double getMinutes() {
-        return (double) getCentiseconds() / 6000;
+        return (double) getMilliseconds() / 60000;
     }
 
-    private long nanosecondsToCentiseconds(Long nanoseconds) {
-        return nanoseconds / 10000000;
+    private long nanosecondsToMilliseconds(Long nanoseconds) {
+        return nanoseconds / 1000000;
     }
 }

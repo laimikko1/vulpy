@@ -54,26 +54,12 @@ public class CalendarTest {
     }
 
     @Test
-    public void getCorrectStringListOfDates(){
-        List<String> Dates = calendar.getStringDates();
-        boolean b = false;
-        for (int i = 0; i < 5; i++) {
-            String contains = Dates.get(i);
-            if(contains.equals("10/12/1990")){
-                b = true;
-            }
-        }
-        assertEquals(true,b);
-        assertEquals(5,Dates.size());
-    }
-
-    @Test
     public void rightTimeAfterSevenHoursTenMinutesFiveSeconds(){
         this.calendar.putOneDateAndTracker(currentDate(),new Tracker(timeSupplier));
         this.calendar.start();
         long sevenHoursTenMinutesFiveSeconds = 7 * HOURS_TO_NANOSECONDS + 10 * MINUTES_TO_NANOSECONDS + 5 * SECONDS_TO_NANOSECONDS;
         time.addAndGet(sevenHoursTenMinutesFiveSeconds);
-        assertEquals(nanosecondsToCentiseconds(sevenHoursTenMinutesFiveSeconds),this.calendar.getCentiSeconds());
+        assertEquals(nanosecondsToCentiseconds(sevenHoursTenMinutesFiveSeconds),this.calendar.getMilliSeconds());
     }
 
     @Test
@@ -84,7 +70,7 @@ public class CalendarTest {
         time.addAndGet(clock);
         this.calendar.stop();
         time.addAndGet(clock);
-        assertEquals(nanosecondsToCentiseconds(clock),this.calendar.getCentiSeconds());
+        assertEquals(nanosecondsToCentiseconds(clock),this.calendar.getMilliSeconds());
     }
 
     @Test
@@ -94,6 +80,11 @@ public class CalendarTest {
         assertEquals(6,this.calendar.getCalendarSize());
         this.calendar.putOneDate("12/12/1982");
         assertEquals(6,this.calendar.getCalendarSize());
+    }
+
+    @Test
+    public void IfDayChangesWhenTrackerIsOn(){
+
     }
 
     public String currentDate(){

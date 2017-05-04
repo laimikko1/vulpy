@@ -49,7 +49,7 @@ public class Tag implements Measurable {
 
     @Override
     public long getTime() {
-        return this.calendar.getCentiSeconds();
+        return this.calendar.getMilliSeconds();
     }
 
     public void setName(String name) {

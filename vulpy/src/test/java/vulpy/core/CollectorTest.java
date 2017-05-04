@@ -53,22 +53,22 @@ public class CollectorTest {
     public void startTrackingWorks() throws InterruptedException {
         Project project = projectList.get(this.projectList.size() -1);
         this.collector.addProject(project);
-        assertEquals(project.getCalendar().getCentiSeconds(),0l);
+        assertEquals(project.getCalendar().getMilliSeconds(),0l);
         this.collector.startTrackingByProject(project);
         Thread.sleep(10);
-        assertNotEquals(0l, project.getCalendar().getCentiSeconds());
+        assertNotEquals(0l, project.getCalendar().getMilliSeconds());
 }
 
     @Test
     public void stopTrackingWorks() throws InterruptedException {
         Project project = projectList.get(this.projectList.size() - 1);
         this.collector.addProject(project);
-        assertEquals(project.getCalendar().getCentiSeconds(),0l);
+        assertEquals(project.getCalendar().getMilliSeconds(),0l);
         this.collector.startTrackingByProject(project);
         this.collector.stopTrackingByProject(project);
-        long seconds = project.getCalendar().getCentiSeconds();
+        long seconds = project.getCalendar().getMilliSeconds();
         Thread.sleep(10);
-        assertEquals(seconds, project.getCalendar().getCentiSeconds());
+        assertEquals(seconds, project.getCalendar().getMilliSeconds());
     }
 
     @Test
