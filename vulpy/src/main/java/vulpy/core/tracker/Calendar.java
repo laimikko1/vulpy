@@ -5,6 +5,10 @@ import org.joda.time.DateTime;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Calendar-luokka tarjoaa ajanlaskuun tarvittavat metodit päivien tasolla.
@@ -14,6 +18,9 @@ import java.util.*;
 public class Calendar {
 
     Map<String, Tracker> dates;
+    ScheduledThreadPoolExecutor scheduler = (ScheduledThreadPoolExecutor) Executors.newScheduledThreadPool(1);
+    private ScheduledFuture<?> future;
+    private boolean on;
 
     /**
      * Konstruktorissa luodaan uusi Calendar-olio.
@@ -21,6 +28,7 @@ public class Calendar {
 
     public Calendar() {
         this.dates = new HashMap<>();
+        this.on = false;
     }
 
     /**
@@ -29,7 +37,9 @@ public class Calendar {
      */
 
     public void start() {
+        this.on = true;
         stopAllOthers();
+        future = scheduler.scheduleAtFixedRate(refreshingTask, 1, 1, TimeUnit.SECONDS);
         String currentDate = getCurrentDate();
         ifNotContainsCurrentDate(currentDate);
         dates.get(currentDate).startTracking();
@@ -40,7 +50,9 @@ public class Calendar {
      */
 
     public void stop() {
+        this.on = false;
         stopAllOthers();
+        future.cancel(false);
         String currentDate = getCurrentDate();
         ifNotContainsCurrentDate(currentDate);
         dates.get(currentDate).stopTracking();
@@ -140,4 +152,22 @@ public class Calendar {
     public Map<String, Tracker> getDates() {
         return this.dates;
     }
+
+    private void refresh(){
+        ifNotContainsCurrentDate(getCurrentDate());
+        start();
+    }
+
+    Runnable refreshingTask = new Runnable(){
+        @Override
+        public void run() {
+            try{
+                if(on){
+                    refresh();
+                }
+            }catch(Exception e){
+
+            }
+        }
+    };
 }
