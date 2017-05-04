@@ -17,4 +17,4 @@ Time tracking system for everyone
 
 [Javadocs](https://github.com/rovaniemi/vulpy/tree/master/javadocs/)
 
-[Testidokumentti](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/testidokumentti.md)
+[Testidokumentti](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/testausdokumentti.md)
