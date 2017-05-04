@@ -2,11 +2,9 @@ package vulpy.core;
 import com.google.gson.JsonObject;
 import java.awt.datatransfer.*;
 import java.awt.Toolkit;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * RerortJson luokka tarjoaa Json muotoisen raportin projektista
+ * RerortJson luokka tarjoaa Json muotoisen raportin projektista.
  */
 
 public class ReportJson {
@@ -37,7 +35,11 @@ public class ReportJson {
         return jsonObject.toString();
     }
 
-    public void copyJsonToClipboard(){
+    /**
+     * Metodi copyJsonToClipboard tarjoaa toiminnallisuuden json-reportin kopioimiseen leikepyödälle.
+     */
+
+    public void copyJsonToClipboard() {
         String jsonString = getJson();
         StringSelection stringSelection = new StringSelection(jsonString);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();

@@ -14,3 +14,5 @@ Time tracking system for everyone
 [Gui-suunnittelu](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/gui-suunnittelu)
 
 [Käyttöohjeet](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/kayttoohjeet.md)
+
+[Javadocs](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/apidocs/)

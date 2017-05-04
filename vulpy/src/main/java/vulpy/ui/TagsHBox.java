@@ -93,7 +93,7 @@ public class TagsHBox {
         jsonButton.setOnAction(e -> {
             this.tag.getReport().getJson().copyJsonToClipboard();
         });
-        json.getChildren().addAll(label,jsonButton);
+        json.getChildren().addAll(label, jsonButton);
         vBox.getChildren().addAll(json);
         return vBox;
     }

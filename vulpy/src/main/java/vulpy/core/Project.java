@@ -33,7 +33,7 @@ public class Project implements Measurable {
      * Konstruktori jota käytetään testejen kanssa.
      * @param name projektin nimi.
      * @param tags Lista tageja jota projektilla on.
-     * @param calendar Calendar olio jota yleensä puukotetaan testeissä.
+     * @param calendar Calendar olio.
      */
 
     public Project(String name, List<String> tags, Calendar calendar) {

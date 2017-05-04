@@ -10,6 +10,11 @@
 
     <actions>
         <action>
+            <actionName>CUSTOM-Javadoc</actionName>
+            <displayName>Javadoc</displayName>
+            <goals>
+                <goal>javadoc:javadoc</goal>
+            </goals>
             <actionName>CUSTOM-checkstyle</actionName>
             <displayName>Checkstyle</displayName>
             <goals>

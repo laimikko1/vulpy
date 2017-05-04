@@ -43,7 +43,7 @@ public class Tag implements Measurable {
     @Override
     public void stopTracking() {
         this.howManyProjectsAreOn--;
-        if(this.howManyProjectsAreOn < 1){
+        if (this.howManyProjectsAreOn < 1) {
             this.calendar.stop();
             this.howManyProjectsAreOn = 0;
         }

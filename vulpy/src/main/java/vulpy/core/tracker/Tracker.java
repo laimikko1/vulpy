@@ -2,7 +2,7 @@ package vulpy.core.tracker;
 
 /**
  * Tracker-luokka tarjoaa ajanlaskuun tarvittavat metodit yhtä päivää kohden.
- * Yksi tracker-olio voi korkeintaan laskea maxTime verran aikaa
+ * Yksi tracker-olio voi korkeintaan laskea oliomuuttujan maxTime verran aikaa
  */
 
 public class Tracker {
@@ -59,7 +59,7 @@ public class Tracker {
     /**
      * Metodi getMilliseconds tarjoaa trackerin mittaaman ajan millisekunteina.
      * Jos aika on mennyt yli maksimaalisesta mitatusta ajasta annetaan ulos maxTime.
-     * @return senttisekuntteina trackerin mittaaman ajan.
+     * @return millisekuntteina trackerin mittaama aika.
      */
 
     public long getMilliseconds() {

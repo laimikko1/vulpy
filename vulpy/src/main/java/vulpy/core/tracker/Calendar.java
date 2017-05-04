@@ -68,7 +68,7 @@ public class Calendar {
 
     /**
      * Metodi getMilliSeconds käy koko hashmapin läpi ja laskee koko projektiin käytetyn ajan millisekuntteina.
-     * @return koko projektiin yhteensä käytetty aika senttisekuntteina.
+     * @return koko projektiin yhteensä käytetty aika millisekuntteina.
      */
 
     public long getMilliSeconds() {
@@ -76,8 +76,8 @@ public class Calendar {
     }
 
     /**
-     * Metodi getSeconds käy koko hashmapin läpi ja laskee koko projektiin käytetyn ajan millisekuntteina.
-     * @return koko projektiin yhteensä käytetty aika senttisekuntteina.
+     * Metodi getSeconds käy koko hashmapin läpi ja laskee koko projektiin käytetyn ajan sekuntteina.
+     * @return koko projektiin yhteensä käytetty aika sekuntteina.
      */
 
     public long getSeconds() {
@@ -97,11 +97,11 @@ public class Calendar {
     }
 
     /**
-     * Metodi maxTime tarjoaa tämän päivän maksimiajan mitä on käytössä.
+     * Metodi maxTime tarjoaa tämän päivän maksimiajan mitä on vielä jäljellä.
      * @return aika millisekuntteina mitä on loppupäivänä jäljellä.
      */
 
-    private long maxTime(){
+    private long maxTime() {
         long fullDayMilliSeconds = 1000 * 60 * 60 * 24;
         long milliTimeNow = DateTime.now().millisOfDay().get();
         return fullDayMilliSeconds - milliTimeNow;
@@ -152,20 +152,19 @@ public class Calendar {
         return this.dates;
     }
 
-    private void refresh(){
+    private void refresh() {
         ifNotContainsCurrentDate(getCurrentDate());
         start();
     }
 
-    Runnable refreshingTask = new Runnable(){
+    Runnable refreshingTask = new Runnable() {
         @Override
         public void run() {
-            try{
-                if(on){
+            try {
+                if (on) {
                     refresh();
                 }
-            }catch(Exception e){
-
+            } catch (Exception e) {
             }
         }
     };

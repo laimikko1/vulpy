@@ -9,15 +9,13 @@ public class Collector {
 
     /**
      * Collector-luokka tarjoaa yhtymäpinnan projektejen ja tagejen välille.
-     * Luokalle kuuluu vastuu siitä että miten tagejen ja projektejen ajastimet on päällä tai pois päältä.
      */
 
     private List<Project> projectList;
     private Map<String, Tag> tagMap;
 
     /**
-     * Konstruktorissa alustetaan projektilista, tagi mappi, sekä tieto siitä että onko
-     * monella projektilla tällähetkellä tagejen ajanmittaaminen käynnissä.
+     * Konstruktorissa alustetaan projektilista, sekä tagMap.
      */
 
     public Collector() {
@@ -50,11 +48,11 @@ public class Collector {
      * @param project projekti jonka ajanlasku halutaan lopettaa.
      */
 
-    public void stopTrackingByProject(Project project){
+    public void stopTrackingByProject(Project project) {
         List<String> tags = project.getTags();
         for (int i = 0; i < tags.size(); i++) {
             String tag = tags.get(i);
-            if(tagMap.containsKey(tag)){
+            if (tagMap.containsKey(tag)) {
                 tagMap.get(tag).stopTracking();
             }
             project.stopTracking();

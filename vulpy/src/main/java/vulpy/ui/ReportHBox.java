@@ -14,7 +14,7 @@ import javafx.scene.text.Text;
 import vulpy.core.Project;
 
 /**
- * ReportHBox-luokka tarjoaa raportin projektista.
+ * ReportHBox-luokka tarjoaa UI:lle raportti näkymän projektista.
  */
 
 public class ReportHBox {
@@ -110,7 +110,7 @@ public class ReportHBox {
         });
         Label label = new Label();
         label.setPrefWidth(200);
-        json.getChildren().addAll(label,jsonButton);
+        json.getChildren().addAll(label, jsonButton);
         hourlyWage.getChildren().addAll(newHourlyWage, hourlyWageButton);
         vBox.getChildren().addAll(json, hourlyWage);
         return vBox;
