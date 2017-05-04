@@ -29,6 +29,7 @@ public class Calendar {
     public Calendar() {
         this.dates = new HashMap<>();
         this.on = false;
+        future = scheduler.scheduleAtFixedRate(refreshingTask, 1, 1, TimeUnit.SECONDS);
     }
 
     /**
@@ -39,7 +40,6 @@ public class Calendar {
     public void start() {
         this.on = true;
         stopAllOthers();
-        future = scheduler.scheduleAtFixedRate(refreshingTask, 1, 1, TimeUnit.SECONDS);
         String currentDate = getCurrentDate();
         ifNotContainsCurrentDate(currentDate);
         dates.get(currentDate).startTracking();
@@ -52,7 +52,6 @@ public class Calendar {
     public void stop() {
         this.on = false;
         stopAllOthers();
-        future.cancel(false);
         String currentDate = getCurrentDate();
         ifNotContainsCurrentDate(currentDate);
         dates.get(currentDate).stopTracking();
