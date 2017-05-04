@@ -25,7 +25,7 @@ public class Vulpy extends Application {
     public static void main(String[] args) {
         URL iconURL  = Vulpy.class.getClassLoader().getResource("ui/logo.png");
         java.awt.Image image = new ImageIcon(iconURL).getImage();
-        com.apple.eawt.Application.getApplication().setDockIconImage(image);
+        //com.apple.eawt.Application.getApplication().setDockIconImage(image);
         launch(args);
     }
 

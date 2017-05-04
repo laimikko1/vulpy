@@ -2,21 +2,70 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="947e40bf-eb7d-4b49-a334-75d0d83a8b35" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dokumentaatio/aiheenKuvausJaRakenne.md" afterPath="$PROJECT_DIR$/../dokumentaatio/aiheenKuvausJaRakenne.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dokumentaatio/gui-suunnitelmia.md" afterPath="$PROJECT_DIR$/../dokumentaatio/gui-suunnitelmia.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dokumentaatio/tuntikirjanpito.md" afterPath="$PROJECT_DIR$/../dokumentaatio/tuntikirjanpito.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/allclasses-frame.html" afterPath="$PROJECT_DIR$/../javadocs/allclasses-frame.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/allclasses-noframe.html" afterPath="$PROJECT_DIR$/../javadocs/allclasses-noframe.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/constant-values.html" afterPath="$PROJECT_DIR$/../javadocs/constant-values.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/deprecated-list.html" afterPath="$PROJECT_DIR$/../javadocs/deprecated-list.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/help-doc.html" afterPath="$PROJECT_DIR$/../javadocs/help-doc.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/index-all.html" afterPath="$PROJECT_DIR$/../javadocs/index-all.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/index.html" afterPath="$PROJECT_DIR$/../javadocs/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/overview-frame.html" afterPath="$PROJECT_DIR$/../javadocs/overview-frame.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/overview-summary.html" afterPath="$PROJECT_DIR$/../javadocs/overview-summary.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/overview-tree.html" afterPath="$PROJECT_DIR$/../javadocs/overview-tree.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/package-list" afterPath="$PROJECT_DIR$/../javadocs/package-list" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/script.js" afterPath="$PROJECT_DIR$/../javadocs/script.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/stylesheet.css" afterPath="$PROJECT_DIR$/../javadocs/stylesheet.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/Collector.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/Collector.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/HourlyWage.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/HourlyWage.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/Measurable.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/Measurable.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/Project.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/Project.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/Report.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/Report.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/ReportJson.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/ReportJson.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/Tag.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/Tag.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/class-use/Collector.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/class-use/Collector.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/class-use/HourlyWage.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/class-use/HourlyWage.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/class-use/Measurable.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/class-use/Measurable.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/class-use/Project.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/class-use/Project.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/class-use/Report.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/class-use/Report.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/class-use/ReportJson.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/class-use/ReportJson.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/class-use/Tag.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/class-use/Tag.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/package-frame.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/package-frame.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/package-summary.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/package-summary.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/package-tree.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/package-tree.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/package-use.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/package-use.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/tracker/Calendar.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/tracker/Calendar.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/tracker/TimeSupplier.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/tracker/TimeSupplier.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/tracker/Tracker.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/tracker/Tracker.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/tracker/class-use/Calendar.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/tracker/class-use/Calendar.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/tracker/class-use/TimeSupplier.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/tracker/class-use/TimeSupplier.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/tracker/class-use/Tracker.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/tracker/class-use/Tracker.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/tracker/package-frame.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/tracker/package-frame.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/tracker/package-summary.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/tracker/package-summary.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/tracker/package-tree.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/tracker/package-tree.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/core/tracker/package-use.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/core/tracker/package-use.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/Menu.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/Menu.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/ProjectHBox.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/ProjectHBox.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/Projects.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/Projects.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/ReportHBox.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/ReportHBox.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/Reports.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/Reports.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/Tags.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/Tags.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/TagsHBox.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/TagsHBox.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/Vulpy.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/Vulpy.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/class-use/Menu.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/class-use/Menu.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/class-use/ProjectHBox.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/class-use/ProjectHBox.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/class-use/Projects.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/class-use/Projects.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/class-use/ReportHBox.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/class-use/ReportHBox.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/class-use/Reports.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/class-use/Reports.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/class-use/Tags.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/class-use/Tags.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/class-use/TagsHBox.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/class-use/TagsHBox.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/class-use/Vulpy.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/class-use/Vulpy.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/package-frame.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/package-frame.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/package-summary.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/package-summary.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/package-tree.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/package-tree.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../dokumentaatio/apidocs/vulpy/ui/package-use.html" afterPath="$PROJECT_DIR$/../javadocs/vulpy/ui/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../README.md" afterPath="$PROJECT_DIR$/../README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nbactions.xml" afterPath="$PROJECT_DIR$/nbactions.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/core/Collector.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/core/Collector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/core/HourlyWage.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/core/HourlyWage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/core/Project.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/core/Project.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/core/ReportJson.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/core/ReportJson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/core/Tag.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/core/Tag.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/core/tracker/Calendar.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/core/tracker/Calendar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/core/tracker/Tracker.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/core/tracker/Tracker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/ui/ReportHBox.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/ui/ReportHBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/ui/TagsHBox.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/ui/TagsHBox.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/ui/Vulpy.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/ui/Vulpy.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/vulpy-core/target/" />
@@ -72,17 +121,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="45">
               <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nbactions.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nbactions.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nbactions.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -114,11 +163,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/core/Project.java">
+      <file leaf-file-name="Vulpy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/ui/Vulpy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-621">
-              <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+            <state relative-caret-position="-66">
+              <caret line="27" column="10" lean-forward="false" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -233,7 +282,6 @@
         <option value="$PROJECT_DIR$/src/test/java/vulpy/core/HourlyWageTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/vulpy/core/tracker/SystemTimeSupplier.java" />
         <option value="$PROJECT_DIR$/src/main/java/vulpy/core/tracker/TimeSupplier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/vulpy/ui/Vulpy.java" />
         <option value="$PROJECT_DIR$/src/test/java/vulpy/core/CollectorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/vulpy/core/Report.java" />
         <option value="$PROJECT_DIR$/src/test/java/vulpy/core/tracker/SystemTimeSupplierTest.java" />
@@ -254,6 +302,7 @@
         <option value="$PROJECT_DIR$/src/main/java/vulpy/ui/ReportHBox.java" />
         <option value="$PROJECT_DIR$/nbactions.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/vulpy/ui/Vulpy.java" />
       </list>
     </option>
   </component>
@@ -310,7 +359,61 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="shade" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="vulpy" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Plugins" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
           <option name="myItemId" value="javadoc" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="vulpy" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Plugins" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jar" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="vulpy" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Plugins" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="clean" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -319,7 +422,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="735" />
+    <option name="height" value="733" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -1252,7 +1355,7 @@
       <workItem from="1493917417801" duration="3589000" />
       <workItem from="1493923092023" duration="64000" />
       <workItem from="1493923180283" duration="1215000" />
-      <workItem from="1493924677029" duration="4923000" />
+      <workItem from="1493924677029" duration="5644000" />
     </task>
     <servers />
   </component>
@@ -1289,17 +1392,17 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249078000" />
+    <option name="totallyTimeSpent" value="249799000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="735" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1280" height="733" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="TMC Test Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23263328" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23263328" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1314,7 +1417,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20528771" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20592824" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22859451" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TMC Project List" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1453958" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1496,16 +1599,6 @@
             <element signature="imports" expanded="false" />
             <element signature="e#3540#3541#0" expanded="false" />
             <element signature="e#3570#3571#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/ui/Vulpy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1711,18 +1804,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nbactions.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/ui/Vulpy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="27" column="10" lean-forward="false" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
           <folding />
         </state>
       </provider>

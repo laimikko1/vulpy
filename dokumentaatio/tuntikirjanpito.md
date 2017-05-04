@@ -21,5 +21,5 @@ Päivä | Tunnit | Kuvaus
 25.04.2017 | 1h | Pientä parantelua UI:n ulkoasuun.
 26.04.2017 | 5h | Valmistelin palautusta, huomasin että UI leviää vähän käsiin.
 27.04.2017 | 2h | Korjailin.
-02.04.2017 | 2h | Korjailin viime palautusta ja lisäsin testejä.
-04.04.2017 | 5h | Valmistelin lopullisen palautuksen.
+02.05.2017 | 2h | Korjailin viime palautusta ja lisäsin testejä.
+04.05.2017 | 5h | Valmistelin lopullisen palautuksen.
