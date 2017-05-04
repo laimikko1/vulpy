@@ -43,7 +43,7 @@ public class HourlyWage {
     /**
      * Metodi getSalary antaa projektin kokonaispalkan. Käytetään projekti-luokasta.
      * @param hours tunnit mitä kyseiseen projektiin on käytetty.
-     * @return palauttaa kokonaispalkan.
+     * @return palauttaa kokonaispalkan. Palkkaa kertyy vain koko tunneista.
      */
 
     public int getSalary(int hours) {

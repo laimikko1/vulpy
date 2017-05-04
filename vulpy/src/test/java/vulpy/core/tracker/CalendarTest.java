@@ -83,6 +83,16 @@ public class CalendarTest {
     }
 
     @Test
+    public void stopAllOthersWorksCorrectly(){
+        Calendar calendar = new Calendar();
+        Tracker tracker = new Tracker(1000000);
+        calendar.putOneDateAndTracker("12.12.1992",tracker);
+        tracker.startTracking();
+        calendar.stop();
+        assertEquals(0,calendar.getSeconds());
+    }
+
+    @Test
     public void IfDayChangesWhenTrackerIsOn(){
 
     }

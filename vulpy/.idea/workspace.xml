@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="947e40bf-eb7d-4b49-a334-75d0d83a8b35" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/vulpy/core/ProjectTest.java" afterPath="$PROJECT_DIR$/src/test/java/vulpy/core/ProjectTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/vulpy/core/ReportJsonTest.java" afterPath="$PROJECT_DIR$/src/test/java/vulpy/core/ReportJsonTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/vulpy/core/TagTest.java" afterPath="$PROJECT_DIR$/src/test/java/vulpy/core/TagTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/vulpy/core/HourlyWage.java" afterPath="$PROJECT_DIR$/src/main/java/vulpy/core/HourlyWage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/vulpy/core/tracker/CalendarTest.java" afterPath="$PROJECT_DIR$/src/test/java/vulpy/core/tracker/CalendarTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/vulpy-core/target/" />
@@ -41,35 +39,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/core/Project.java">
+      <file leaf-file-name="ReportHBox.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/ui/ReportHBox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
-              <caret line="80" column="21" lean-forward="false" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="21" />
+            <state relative-caret-position="-13">
+              <caret line="110" column="22" lean-forward="false" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tracker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/core/tracker/Tracker.java">
+      <file leaf-file-name="HourlyWage.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/core/HourlyWage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-579">
-              <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+            <state relative-caret-position="124">
+              <caret line="45" column="76" lean-forward="false" selection-start-line="45" selection-start-column="76" selection-end-line="45" selection-end-column="76" />
               <folding>
-                <marker date="1493923080000" expanded="true" signature="364:547" ph="/**...*/" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReportJson.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/core/ReportJson.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="42" column="79" lean-forward="false" selection-start-line="42" selection-start-column="79" selection-end-line="42" selection-end-column="79" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1135#1136#0" expanded="true" />
+                <element signature="e#1175#1176#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,12 +120,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CollectorTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CollectorTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/vulpy/core/CollectorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="70" column="69" lean-forward="false" selection-start-line="70" selection-start-column="69" selection-end-line="70" selection-end-column="69" />
+            <state relative-caret-position="353">
+              <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalendarTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/vulpy/core/tracker/CalendarTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="91" column="44" lean-forward="false" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
+              <folding>
+                <element signature="e#3339#3340#0" expanded="true" />
+                <element signature="e#3383#3384#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -222,7 +222,6 @@
         <option value="$PROJECT_DIR$/src/main/java/vulpy/ui/Report.java" />
         <option value="$PROJECT_DIR$/src/main/java/vulpy/core/tracker/Collector.java" />
         <option value="$PROJECT_DIR$/src/main/resources/vulpy.css" />
-        <option value="$PROJECT_DIR$/src/main/java/vulpy/core/HourlyWage.java" />
         <option value="$PROJECT_DIR$/src/main/java/vulpy/core/Measurable.java" />
         <option value="$PROJECT_DIR$/src/main/java/vulpy/ui/Menu.java" />
         <option value="$PROJECT_DIR$/src/main/java/vulpy/ui/ProjectHBox.java" />
@@ -243,7 +242,6 @@
         <option value="$PROJECT_DIR$/src/main/java/vulpy/ui/TagsHBox.java" />
         <option value="$PROJECT_DIR$/src/test/java/vulpy/core/tracker/SystemTimeSupplierTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/vulpy/core/tracker/Tracker.java" />
-        <option value="$PROJECT_DIR$/src/test/java/vulpy/core/tracker/CalendarTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/vulpy/core/ReportTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/vulpy/core/tracker/TrackerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/vulpy/core/tracker/Calendar.java" />
@@ -251,6 +249,8 @@
         <option value="$PROJECT_DIR$/src/test/java/vulpy/core/TagTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/vulpy/core/ReportJsonTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/vulpy/core/ProjectTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/vulpy/core/tracker/CalendarTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/vulpy/core/HourlyWage.java" />
       </list>
     </option>
   </component>
@@ -558,6 +558,10 @@
               <option name="myItemId" value="vulpy" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -661,7 +665,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProjectTest">
+  <component name="RunManager" selected="Application.vulpy">
     <configuration default="false" name="vulpy.core in vulpy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -676,32 +680,6 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="TagTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="vulpy.core.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="vulpy" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="vulpy.core" />
-      <option name="MAIN_CLASS_NAME" value="vulpy.core.TagTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -773,6 +751,32 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="vulpy.core" />
       <option name="MAIN_CLASS_NAME" value="vulpy.core.ProjectTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="CalendarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="vulpy.core.tracker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="vulpy" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="vulpy.core.tracker" />
+      <option name="MAIN_CLASS_NAME" value="vulpy.core.tracker.CalendarTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1260,18 +1264,18 @@
       <item index="0" class="java.lang.String" itemvalue="Application.vulpy-core" />
       <item index="1" class="java.lang.String" itemvalue="Application.vulpy" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.vulpy.core in vulpy" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TagTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.All in vulpy" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.ReportJsonTest" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.ProjectTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.All in vulpy" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ReportJsonTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.ProjectTest" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.CalendarTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ProjectTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ReportJsonTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.All in vulpy" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.vulpy.core in vulpy" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TagTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.CalendarTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ProjectTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ReportJsonTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.All in vulpy" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.vulpy.core in vulpy" />
       </list>
     </recent_temporary>
   </component>
@@ -1317,11 +1321,14 @@
       <workItem from="1493917417801" duration="3589000" />
       <workItem from="1493923092023" duration="64000" />
       <workItem from="1493923180283" duration="1215000" />
-      <workItem from="1493924677029" duration="2664000" />
+      <workItem from="1493924677029" duration="3287000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="CalendarTest - 2017.05.04 at 22h 56m 24s.xml">
+      <configuration name="CalendarTest" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="ProjectTest - 2017.05.04 at 22h 45m 53s.xml">
       <configuration name="ProjectTest" configurationId="JUnit" />
     </history-entry>
@@ -1330,9 +1337,6 @@
     </history-entry>
     <history-entry file="ProjectTest - 2017.05.04 at 22h 46m 58s.xml">
       <configuration name="ProjectTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ReportJsonTest - 2017.05.04 at 22h 33m 32s.xml">
-      <configuration name="ReportJsonTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ReportJsonTest - 2017.05.04 at 22h 33m 48s.xml">
       <configuration name="ReportJsonTest" configurationId="JUnit" />
@@ -1354,7 +1358,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246819000" />
+    <option name="totallyTimeSpent" value="247442000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="734" extended-state="6" />
@@ -1374,15 +1378,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32761312" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271028" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20560747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20560747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31663975" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TMC Project List" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1453958" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1390,7 +1395,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1544,14 +1548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/core/HourlyWage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="43" column="40" lean-forward="false" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/core/Collector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="936">
@@ -1595,14 +1591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/vulpy/core/tracker/CalendarTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="66" column="84" lean-forward="false" selection-start-line="66" selection-start-column="84" selection-end-line="66" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/vulpy/core/ReportTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -1617,6 +1605,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
           <caret line="77" column="25" lean-forward="false" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1647,14 +1636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
           <caret line="87" column="14" lean-forward="false" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/ui/ReportHBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="110" column="22" lean-forward="false" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1791,9 +1772,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/vulpy/core/CollectorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="70" column="69" lean-forward="false" selection-start-line="70" selection-start-column="69" selection-end-line="70" selection-end-column="69" />
+        <state relative-caret-position="353">
+          <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/vulpy/core/tracker/CalendarTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="91" column="44" lean-forward="false" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
+          <folding>
+            <element signature="e#3339#3340#0" expanded="true" />
+            <element signature="e#3383#3384#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/ui/ReportHBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13">
+          <caret line="110" column="22" lean-forward="false" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vulpy/core/HourlyWage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="45" column="76" lean-forward="false" selection-start-line="45" selection-start-column="76" selection-end-line="45" selection-end-column="76" />
+          <folding>
+            <element signature="e#1135#1136#0" expanded="true" />
+            <element signature="e#1175#1176#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
