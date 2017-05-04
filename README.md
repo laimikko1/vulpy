@@ -7,7 +7,7 @@ Time tracking system for everyone
 
 [Tuntikirjanpito](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/tuntikirjanpito.md)
 
-[Pit-raportti](https://htmlpreview.github.io/?https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/pit-raportti/201704062322/index.html)
+[Pit-raportti](https://htmlpreview.github.io/?https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/pit-raportti/201705042256/index.html)
 
 [Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/checkstyle-raportti/checkstyle.html)
 
