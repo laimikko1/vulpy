@@ -48,7 +48,7 @@ public class ProjectTest {
         Calendar calendar = new Calendar();
         this.time = new AtomicLong(System.currentTimeMillis());
         this.timeSupplier = time::get;
-        Tracker tracker = new Tracker(timeSupplier);
+        Tracker tracker = new Tracker(timeSupplier, 86400000);
         calendar.putOneDateAndTracker(currentDate(),tracker);
         this.project = new Project("työmaa", tags,calendar);
     }
@@ -67,7 +67,7 @@ public class ProjectTest {
         this.project.startTracking();
         long threeHoursFiveMinutesAndTenSeconds = 3 * HOURS_TO_NANOSECONDS + 5 * MINUTES_TO_NANOSECONDS + 10 * SECONDS_TO_NANOSECONDS;
         this.time.addAndGet(threeHoursFiveMinutesAndTenSeconds);
-        assertEquals(nanosecondsToCentiseconds(threeHoursFiveMinutesAndTenSeconds),this.project.getTime());
+        assertEquals(nanosecondsToMilliseconds(threeHoursFiveMinutesAndTenSeconds) / 1000,this.project.getTime());
     }
 
     @Test
@@ -77,7 +77,7 @@ public class ProjectTest {
         this.time.addAndGet(threeHoursFiveMinutesAndTenSeconds);
         this.project.stopTracking();
         this.time.addAndGet(threeHoursFiveMinutesAndTenSeconds);
-        assertEquals(nanosecondsToCentiseconds(threeHoursFiveMinutesAndTenSeconds),this.project.getTime());
+        assertEquals(nanosecondsToMilliseconds(threeHoursFiveMinutesAndTenSeconds) / 1000,this.project.getTime());
     }
 
     @Test
@@ -113,8 +113,8 @@ public class ProjectTest {
         return dateFormat.format(date);
     }
 
-    public long nanosecondsToCentiseconds(long nanoseconds){
-        return nanoseconds / 10000000;
+    public long nanosecondsToMilliseconds(long nanoseconds){
+        return nanoseconds / 1000000;
     }
 
 }

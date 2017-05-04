@@ -35,7 +35,7 @@ public class ReportJsonTest {
 
     @Test
     public void correctJson(){
-        assertEquals(this.project.getReport().getJson().getJson(),"");
+        assertEquals(this.project.getReport().getJson().getJson(),"{\"Olor\":{}}");
     }
 
 }

@@ -43,7 +43,7 @@ public class ReportTest {
         Calendar calendar = this.project.getCalendar();
         this.time = new AtomicLong(System.currentTimeMillis());
         this.timeSupplier = time::get;
-        Tracker tracker = new Tracker(timeSupplier);
+        Tracker tracker = new Tracker(timeSupplier, 86400000);
         calendar.putOneDateAndTracker(currentDate(),tracker);
         this.report = new Report(this.project);
     }

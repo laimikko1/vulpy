@@ -38,7 +38,7 @@ public class CalendarTest {
     public void setUp() {
         this.time = new AtomicLong(System.currentTimeMillis());
         this.timeSupplier = time::get;
-        Tracker tracker = new Tracker(timeSupplier);
+        Tracker tracker = new Tracker(timeSupplier, 86400000);
         for (int i = 0; i < 5; i++) {
             this.calendar.putOneDateAndTracker("1" + i + "/12/199" + i,tracker);
         }
@@ -55,22 +55,22 @@ public class CalendarTest {
 
     @Test
     public void rightTimeAfterSevenHoursTenMinutesFiveSeconds(){
-        this.calendar.putOneDateAndTracker(currentDate(),new Tracker(timeSupplier));
+        this.calendar.putOneDateAndTracker(currentDate(),new Tracker(timeSupplier, 86400000));
         this.calendar.start();
         long sevenHoursTenMinutesFiveSeconds = 7 * HOURS_TO_NANOSECONDS + 10 * MINUTES_TO_NANOSECONDS + 5 * SECONDS_TO_NANOSECONDS;
         time.addAndGet(sevenHoursTenMinutesFiveSeconds);
-        assertEquals(nanosecondsToCentiseconds(sevenHoursTenMinutesFiveSeconds),this.calendar.getMilliSeconds());
+        assertEquals(nanosecondsToMilliseconds(sevenHoursTenMinutesFiveSeconds),this.calendar.getMilliSeconds());
     }
 
     @Test
     public void rightTimeIfStartAndStop(){
-        this.calendar.putOneDateAndTracker(currentDate(),new Tracker(timeSupplier));
+        this.calendar.putOneDateAndTracker(currentDate(),new Tracker(timeSupplier, 86400000));
         this.calendar.start();
         long clock = 12 * HOURS_TO_NANOSECONDS + 12 * MINUTES_TO_NANOSECONDS;
         time.addAndGet(clock);
         this.calendar.stop();
         time.addAndGet(clock);
-        assertEquals(nanosecondsToCentiseconds(clock),this.calendar.getMilliSeconds());
+        assertEquals(nanosecondsToMilliseconds(clock),this.calendar.getMilliSeconds());
     }
 
     @Test
@@ -93,8 +93,8 @@ public class CalendarTest {
         return dateFormat.format(date);
     }
 
-    public long nanosecondsToCentiseconds(long nanoseconds){
-        return nanoseconds / 10000000;
+    public long nanosecondsToMilliseconds(long nanoseconds){
+        return nanoseconds / 1000000;
     }
 }
 
