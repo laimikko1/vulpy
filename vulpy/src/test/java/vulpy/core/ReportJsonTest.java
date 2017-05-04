@@ -2,7 +2,14 @@ package vulpy.core;
 
 import org.junit.*;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 
@@ -34,9 +41,23 @@ public class ReportJsonTest {
     }
 
     @Test
-    public void correctJson(){
-        assertEquals(this.project.getReport().getJson().getJson(),"{\"Olor\":{}}");
+    public void correctJson() {
+        assertEquals("{\"Olor\":{}}",this.project.getReport().getJson().getJson());
     }
 
+    @Test
+    public void correctJsonAfterTracking() throws InterruptedException {
+        this.project.startTracking();
+        TimeUnit.MILLISECONDS.sleep(10);
+        this.project.stopTracking();
+        assertEquals("{\"Olor\":{\"" + this.project.getCalendar().getCurrentDate() + "\":" + this.project.getCalendar().getSeconds() +"}}",this.project.getReport().getJson().getJson());
+    }
+
+    @Test
+    public void dataCopiedToClipboard() throws IOException, UnsupportedFlavorException {
+        this.project.getReport().getJson().copyJsonToClipboard();
+        String data = (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
+        assertEquals("{\"Olor\":{}}",data);
+    }
 }
 

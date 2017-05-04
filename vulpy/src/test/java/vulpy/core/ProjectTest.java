@@ -89,6 +89,16 @@ public class ProjectTest {
     }
 
     @Test
+    public void getRightTagString(){
+        for (int i = 0; i < 4; i++) {
+            this.project.addTag("tagii");
+        }
+        String tagStrign = this.project.getTagsString();
+        String expected = "Tags: Testi0Testi, Testi1Testi, Testi2Testi, Testi3Testi, Testi4Testi, Testi5Testi, Testi6Testi, Testi7Testi, Testi8Testi, Testi9Testi, Testi10Testi, Testi11Testi, tagii, tagii, tagii, tagii";
+        assertEquals(expected,tagStrign);
+    }
+
+    @Test
     public void rightHourlyWage(){
         assertEquals(0,this.project.getHourlyWage().getWage());
         this.project.setHourlyWage(new HourlyWage(100,"EURO"));
