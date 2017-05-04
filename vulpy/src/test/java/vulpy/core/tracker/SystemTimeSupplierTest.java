@@ -30,17 +30,17 @@ public class SystemTimeSupplierTest {
     @Test
     public void getRightTime() {
         SystemTimeSupplier systemTimeSupplier = new SystemTimeSupplier();
-        assertEquals(nanosecondsToCentiseconds(System.nanoTime()),nanosecondsToCentiseconds(systemTimeSupplier.getNanoseconds()));
+        assertEquals(nanosecondsToMilliseconds(System.nanoTime()),nanosecondsToMilliseconds(systemTimeSupplier.getNanoseconds()));
     }
 
     @Test
     public void notGetWrongTime() {
         SystemTimeSupplier systemTimeSupplier = new SystemTimeSupplier();
-        assertNotEquals(nanosecondsToCentiseconds(System.nanoTime()),nanosecondsToCentiseconds(systemTimeSupplier.getNanoseconds()) + 1);
+        assertNotEquals(nanosecondsToMilliseconds(System.nanoTime()),nanosecondsToMilliseconds(systemTimeSupplier.getNanoseconds()) + 1);
     }
 
-    public long nanosecondsToCentiseconds(long nanoseconds){
-        return nanoseconds / 10000000;
+    public long nanosecondsToMilliseconds(long nanoseconds){
+        return nanoseconds / 1000000;
     }
 }
 

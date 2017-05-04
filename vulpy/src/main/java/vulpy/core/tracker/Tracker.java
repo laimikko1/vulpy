@@ -16,10 +16,13 @@ public class Tracker {
     /**
      * Konstruktorissa alustetaan tietyn trackerin mitattu aika, sekä annetaan systemTimeSupplier luokalle.
      * @param timeSupplier trackerin käyttämä timeSupplier olio.
+     * @param maxTime millisekuntteina oleva maksimiaika kuinka kauan tracker voi maksimissaan olla päällä.
      */
 
-    public Tracker(TimeSupplier timeSupplier) {
+    public Tracker(TimeSupplier timeSupplier, long maxTime) {
         this.timeSupplier = timeSupplier;
+        this.milliseconds = 0;
+        this.maxTime = maxTime;
     }
 
     /**
@@ -28,9 +31,7 @@ public class Tracker {
      */
 
     public Tracker(long maxTime) {
-        this(new SystemTimeSupplier());
-        this.milliseconds = 0;
-        this.maxTime = maxTime;
+        this(new SystemTimeSupplier(), maxTime);
     }
 
     /**

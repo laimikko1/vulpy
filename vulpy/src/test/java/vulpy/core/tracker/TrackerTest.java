@@ -51,19 +51,17 @@ public class TrackerTest {
 
     @Test
     public void centisecondsCorrectAfterStartAndSixMinutesTwentySeconds() {
-        Tracker tracker = new Tracker(this.timeSupplier);
+        Tracker tracker = new Tracker(this.timeSupplier, 86400000);
         tracker.startTracking();
         long sixMinutesTwentySeconds = 6 * MINUTES_TO_NANOSECONDS + 20 * SECONDS_TO_NANOSECONDS;
         time.addAndGet(sixMinutesTwentySeconds);
         long change = nanosecondsToCentiseconds(sixMinutesTwentySeconds);
-        System.out.println(change + " " + sixMinutesTwentySeconds);
-        System.out.println(tracker.getMilliseconds());
         assertEquals(change, tracker.getMilliseconds());
     }
 
     @Test
     public void centisecondsCorrectIfStop() {
-        Tracker tracker = new Tracker(this.timeSupplier);
+        Tracker tracker = new Tracker(this.timeSupplier, 86400000);
         tracker.startTracking();
         this.time.addAndGet(6 * HOURS_TO_NANOSECONDS + 12 * SECONDS_TO_NANOSECONDS);
         tracker.stopTracking();
@@ -73,7 +71,7 @@ public class TrackerTest {
 
     @Test
     public void centisecondsCorrectIfStopAndStart() {
-        Tracker tracker = new Tracker(this.timeSupplier);
+        Tracker tracker = new Tracker(this.timeSupplier, 86400000);
         tracker.startTracking();
         for (int i = 0; i < 5; i++) {
             tracker.startTracking();
@@ -85,7 +83,7 @@ public class TrackerTest {
     }
 
     public long nanosecondsToCentiseconds(long nanoseconds){
-        return nanoseconds / 10000000;
+        return nanoseconds / 1000000;
     }
 }
 
