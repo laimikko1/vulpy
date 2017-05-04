@@ -5,6 +5,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
@@ -81,16 +82,18 @@ public class TagsHBox {
     public VBox buttons() {
         VBox vBox = new VBox(10);
         HBox json = new HBox(10);
-        TextArea postUrl = new TextArea("Add url");
-        postUrl.setPrefRowCount(1);
-        postUrl.setMaxWidth(200);
         TextArea newHourlyWage = new TextArea("Add new hourly wage");
         newHourlyWage.setPrefRowCount(1);
         newHourlyWage.setMaxWidth(200);
-        Button jsonButton = new Button("Send Json");
+        Label label = new Label();
+        label.setPrefWidth(200);
+        Button jsonButton = new Button("Copy Json to clipboard");
         jsonButton.setPrefWidth(160);
         jsonButton.setId("reportWindowButtons");
-        json.getChildren().addAll(postUrl, jsonButton);
+        jsonButton.setOnAction(e -> {
+            this.tag.getReport().getJson().copyJsonToClipboard();
+        });
+        json.getChildren().addAll(label,jsonButton);
         vBox.getChildren().addAll(json);
         return vBox;
     }

@@ -12,6 +12,7 @@ public class Tag implements Measurable {
     private String name;
     private Calendar calendar;
     private Report report;
+    private int howManyProjectsAreOn;
 
     /**
      * Konstruktorissa alustetaan Tag-olio.
@@ -22,6 +23,7 @@ public class Tag implements Measurable {
         this.name = name;
         this.calendar = new Calendar();
         this.report = new Report(this);
+        this.howManyProjectsAreOn = 0;
     }
 
     /**
@@ -31,6 +33,7 @@ public class Tag implements Measurable {
     @Override
     public void startTracking() {
         this.calendar.start();
+        this.howManyProjectsAreOn++;
     }
 
     /**
@@ -39,7 +42,11 @@ public class Tag implements Measurable {
 
     @Override
     public void stopTracking() {
-        this.calendar.stop();
+        this.howManyProjectsAreOn--;
+        if(this.howManyProjectsAreOn < 1){
+            this.calendar.stop();
+            this.howManyProjectsAreOn = 0;
+        }
     }
 
     /**
@@ -49,7 +56,7 @@ public class Tag implements Measurable {
 
     @Override
     public long getTime() {
-        return this.calendar.getMilliSeconds();
+        return this.calendar.getSeconds();
     }
 
     public void setName(String name) {

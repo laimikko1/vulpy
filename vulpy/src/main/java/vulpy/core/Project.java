@@ -83,7 +83,7 @@ public class Project implements Measurable {
      */
 
     public long getTime() {
-        return this.calendar.getMilliSeconds();
+        return this.calendar.getSeconds();
     }
 
     /**

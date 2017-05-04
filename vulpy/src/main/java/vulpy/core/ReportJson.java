@@ -1,15 +1,17 @@
 package vulpy.core;
 import com.google.gson.JsonObject;
+import java.awt.datatransfer.*;
+import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * RerortJson luokka tarjoaa Json muotoisen raportin projektista
- * Sekä metodit sen lähettämiseen Post komennolla serverille.
  */
 
 public class ReportJson {
 
     private Measurable measurable;
-    private String url;
 
     /**
      * Konstruktorissa alustetaan alkio mistä alkiosta json-reportti tehdään.
@@ -21,24 +23,24 @@ public class ReportJson {
     }
 
     /**
-     * Metodi getJson tarjoaa json muotoisen rapostin tietystä mitatusta oliosta.
+     * Metodi getJson tarjoaa json muotoisen raportin tietystä mitatusta oliosta.
      * @return json raportti.
      */
 
     public String getJson() {
-        return "";
+        JsonObject innerObject = new JsonObject();
+        for (String date:measurable.getCalendar().getDates().keySet()) {
+            innerObject.addProperty(date, measurable.getCalendar().getDates().get(date).getSeconds());
+        }
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.add(measurable.getName(), innerObject);
+        return jsonObject.toString();
     }
 
-    /**
-     * Metodi setUrl tarjoaa mahdollisuuden asettaa osoite mihin json-tiedosto lähetetään.
-     * @param url url-osoite joka halutaan lisätä oliolle.
-     */
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getUrl() {
-        return url;
+    public void copyJsonToClipboard(){
+        String jsonString = getJson();
+        StringSelection stringSelection = new StringSelection(jsonString);
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(stringSelection, null);
     }
 }

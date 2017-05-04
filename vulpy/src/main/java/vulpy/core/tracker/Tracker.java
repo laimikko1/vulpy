@@ -23,8 +23,8 @@ public class Tracker {
     }
 
     /**
-     * Konstruktorissa alustetaan tietyn trackerin mitattu aika, sekä annetaan systemTimeSupplier luokalle.
-     * @param maxTime senttisekuntteina oleva maksimi aika kuinka kauan tracker voi maksimissaan olla päällä.
+     * Konstruktorissa alustetaan tietyn trackerin mitaama aika, sekä annetaan systemTimeSupplier luokalle.
+     * @param maxTime millisekuntteina oleva maksimiaika kuinka kauan tracker voi maksimissaan olla päällä.
      */
 
     public Tracker(long maxTime) {
@@ -56,17 +56,16 @@ public class Tracker {
     }
 
     /**
-     * Metodi getCentiseconds tarjoaa trackerin mittaaman ajan senttisekuntteina.
+     * Metodi getMilliseconds tarjoaa trackerin mittaaman ajan millisekunteina.
+     * Jos aika on mennyt yli maksimaalisesta mitatusta ajasta annetaan ulos maxTime.
      * @return senttisekuntteina trackerin mittaaman ajan.
      */
 
     public long getMilliseconds() {
         long currentNano = timeSupplier.getNanoseconds();
-        if ((this.on && (nanosecondsToMilliseconds(currentNano - startTime) + this.milliseconds) > maxTime)) {
+        if ((this.on && (nanosecondsToMilliseconds(currentNano - this.startTime) + this.milliseconds) > this.maxTime)) {
             this.on = false;
-            return this.maxTime;
-        } else if (this.milliseconds > this.maxTime) {
-            this.on = false;
+            this.milliseconds = this.maxTime;
             return this.maxTime;
         }
         if (this.on) {
@@ -76,7 +75,16 @@ public class Tracker {
     }
 
     /**
-     * Metodi getMinutes tarjoaa tietyn trackerin mittaamat minuutit.
+     * Metodi getSeconds tarjoaa trackerin mittaaman ajan sekunteina.
+     * @return sekunteina trackerin mittaaman ajan.
+     */
+
+    public long getSeconds() {
+        return getMilliseconds() / 1000l;
+    }
+
+    /**
+     * Metodi getMinutes tarjoaa tietyn trackerin mittaamat minuutit liukulukuna.
      * @return mitatut minuutit.
      */
 

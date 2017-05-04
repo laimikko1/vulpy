@@ -30,7 +30,7 @@ public class Report {
      */
 
     public String getHoursMinutesAndSeconds() {
-        long longVal = this.measurable.getTime() / 100;
+        long longVal = this.measurable.getTime();
         int hours = (int) longVal / 3600;
         int remainder = (int) longVal - hours * 3600;
         int mins = remainder / 60;

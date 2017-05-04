@@ -38,11 +38,5 @@ public class ReportJsonTest {
         assertEquals(this.project.getReport().getJson().getJson(),"");
     }
 
-    @Test
-    public void setUrlWorks(){
-        this.project.getReport().getJson().setUrl("http://localhost.com:3000");
-        String url = this.project.getReport().getJson().getUrl();
-        assertEquals(url,"http://localhost.com:3000");
-    }
 }
 

@@ -14,7 +14,6 @@ public class Collector {
 
     private List<Project> projectList;
     private Map<String, Tag> tagMap;
-    private Map<String, Integer> howManyTagsIsOnSameTime;
 
     /**
      * Konstruktorissa alustetaan projektilista, tagi mappi, sekä tieto siitä että onko
@@ -24,7 +23,6 @@ public class Collector {
     public Collector() {
         this.projectList = new ArrayList<>();
         this.tagMap = new HashMap<>();
-        this.howManyTagsIsOnSameTime = new HashMap<>();
     }
 
     /**
@@ -35,16 +33,12 @@ public class Collector {
 
     public void startTrackingByProject(Project project) {
         List<String> tags = project.getTags();
-        for (int j = 0; j < tags.size(); j++) {
-            if (!this.howManyTagsIsOnSameTime.containsKey(tags.get(j))) {
-                this.howManyTagsIsOnSameTime.put(tags.get(j), 1);
-            } else {
-                this.howManyTagsIsOnSameTime.put(tags.get(j), this.howManyTagsIsOnSameTime.get(tags.get(j)) + 1);
+        for (int i = 0; i < tags.size(); i++) {
+            String tag = tags.get(i);
+            if (!this.tagMap.containsKey(tag)) {
+                this.tagMap.put(tag, new Tag(tag));
             }
-            if (!this.tagMap.containsKey(tags.get(j))) {
-                this.tagMap.put(tags.get(j), new Tag(tags.get(j)));
-            }
-            this.tagMap.get(tags.get(j)).startTracking();
+            this.tagMap.get(tags.get(i)).startTracking();
         }
         project.startTracking();
     }
@@ -56,20 +50,15 @@ public class Collector {
      * @param project projekti jonka ajanlasku halutaan lopettaa.
      */
 
-    public void stopTrackingByProject(Project project) {
+    public void stopTrackingByProject(Project project){
         List<String> tags = project.getTags();
-        for (int j = 0; j < tags.size(); j++) {
-            if (this.howManyTagsIsOnSameTime.containsKey(tags.get(j)) && this.howManyTagsIsOnSameTime.get(tags.get(j)) == 1) {
-                this.howManyTagsIsOnSameTime.remove(tags.get(j));
-                if (!this.tagMap.containsKey(tags.get(j))) {
-                    this.tagMap.put(tags.get(j), new Tag(tags.get(j)));
-                }
-                this.tagMap.get(tags.get(j)).stopTracking();
-            } else {
-                this.howManyTagsIsOnSameTime.put(tags.get(j), this.howManyTagsIsOnSameTime.get(tags.get(j)) - 1);
+        for (int i = 0; i < tags.size(); i++) {
+            String tag = tags.get(i);
+            if(tagMap.containsKey(tag)){
+                tagMap.get(tag).stopTracking();
             }
+            project.stopTracking();
         }
-        project.stopTracking();
     }
 
     /**

@@ -46,12 +46,7 @@ public class Calendar {
         dates.get(currentDate).stopTracking();
     }
 
-    /**
-     * Metodi stopAllOthers varmistaa sen että ainoastaan yksi tracker on päällä yhtäaikaa yhdessä projektissa.
-     * Metodi lopettaa kaikki muut trackerit kuin tämän päivän trackerin.
-     */
-
-    public void stopAllOthers() {
+    private void stopAllOthers() {
         String currentDate = getCurrentDate();
         for (String date:this.dates.keySet()) {
             if (!date.equals(currentDate)) {
@@ -61,12 +56,21 @@ public class Calendar {
     }
 
     /**
-     * Metodi getCentiSeconds käy koko hashmapin läpi ja laskee koko projektiin käytetyn ajan senttisekuntteina.
+     * Metodi getMilliSeconds käy koko hashmapin läpi ja laskee koko projektiin käytetyn ajan millisekuntteina.
      * @return koko projektiin yhteensä käytetty aika senttisekuntteina.
      */
 
     public long getMilliSeconds() {
         return this.dates.values().stream().mapToLong(Tracker::getMilliseconds).sum();
+    }
+
+    /**
+     * Metodi getSeconds käy koko hashmapin läpi ja laskee koko projektiin käytetyn ajan millisekuntteina.
+     * @return koko projektiin yhteensä käytetty aika senttisekuntteina.
+     */
+
+    public long getSeconds() {
+        return this.dates.values().stream().mapToLong(Tracker::getSeconds).sum();
     }
 
     /**
