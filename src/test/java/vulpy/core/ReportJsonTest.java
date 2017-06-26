@@ -52,12 +52,5 @@ public class ReportJsonTest {
         this.project.stopTracking();
         assertEquals("{\"Olor\":{\"" + this.project.getCalendar().getCurrentDate() + "\":" + this.project.getCalendar().getSeconds() +"}}",this.project.getReport().getJson().getJson());
     }
-
-    @Test
-    public void dataCopiedToClipboard() throws IOException, UnsupportedFlavorException {
-        this.project.getReport().getJson().copyJsonToClipboard();
-        String data = (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
-        assertEquals("{\"Olor\":{}}",data);
-    }
 }
 
