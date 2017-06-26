@@ -1,4 +1,6 @@
 # vulpy
+![travis](https://travis-ci.org/rovaniemi/vulpy.svg?branch=master)
+[![Code Coverage](https://img.shields.io/codecov/c/github/rovaniemi/vulpy/master.svg)](https://codecov.io/github/rovaniemi/vulpy)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/rovaniemi/vulpy/blob/master/LICENSE)
 
 Time tracking system for everyone
