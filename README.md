@@ -1,20 +1,20 @@
 # vulpy
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/rovaniemi/vulpy/blob/master/LICENSE)
+
 Time tracking system for everyone
 
-## Dokumentaatio (Finnish)
+### Prerequisites
 
-[Aiheen kuvaus ja rakenne](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/aiheenKuvausJaRakenne.md)
+You will need a Java Runtime Environment (JRE) to run java programs. You can download it [here](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html).
 
-[Tuntikirjanpito](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/tuntikirjanpito.md)
+## Built With
 
-[Pit-raportti](https://htmlpreview.github.io/?https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/pit-raportti/201705042256/index.html)
+* [Maven](https://maven.apache.org/) - Project Management
 
-[Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/rovaniemi/vulpy/blob/master/dokumentaatio/checkstyle-raportti/checkstyle.html)
+## Authors
 
-[Gui-suunnittelu](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/gui-suunnittelu)
+* **Mauri Karlin** - *Owner* - [Rovaniemi](https://github.com/Rovaniemi)
 
-[Käyttöohjeet](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/kayttoohjeet.md)
+## License
 
-[Javadocs](https://github.com/rovaniemi/vulpy/tree/master/javadocs/)
-
-[Testidokumentti](https://github.com/rovaniemi/vulpy/tree/master/dokumentaatio/testausdokumentti.md)
+This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE](LICENSE) file for details
